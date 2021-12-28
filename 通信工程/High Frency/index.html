@@ -1,0 +1,3800 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.3">
+    
+    
+      
+        <title>通信电子线路 - hrz's notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.edf004c2.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="hrz&#39;s notes" class="md-header__button md-logo" aria-label="hrz's notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            hrz's notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              通信电子线路
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="hrz&#39;s notes" class="md-nav__button md-logo" aria-label="hrz's notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    hrz's notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        书单
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          数据结构与算法
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="数据结构与算法" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          数据结构与算法
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/BasicMathProblem/" class="md-nav__link">
+        公约数与公倍数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/SumOfXOR/" class="md-nav__link">
+        异或的应用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/code/" class="md-nav__link">
+        代码片段
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          编程语言
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="编程语言" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          编程语言
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/CorCLanguage/" class="md-nav__link">
+        C++
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/LatexSymbol/" class="md-nav__link">
+        Latex
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/TimerInCpp/" class="md-nav__link">
+        时间函数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/remainder/" class="md-nav__link">
+        余数的值
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          英语
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="英语" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          英语
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%8B%B1%E8%AF%AD/class/" class="md-nav__link">
+        类型模板
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%8B%B1%E8%AF%AD/writing/" class="md-nav__link">
+        写作句型
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          读书笔记
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="读书笔记" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          读书笔记
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/CSAPP/" class="md-nav__link">
+        深入理解计算机系统
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/C_Primer/" class="md-nav__link">
+        C++ Primer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/discrete_math/" class="md-nav__link">
+        离散数学
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/math_postgraduate/" class="md-nav__link">
+        张宇考研数学
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/network/" class="md-nav__link">
+        计算机网络
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/politics/" class="md-nav__link">
+        徐涛考研政治
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7" type="checkbox" id="__nav_5_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_7">
+          Ucore操作系统
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Ucore操作系统" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_7">
+          <span class="md-nav__icon md-icon"></span>
+          Ucore操作系统
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7_1" type="checkbox" id="__nav_5_7_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_7_1">
+          Appendix
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Appendix" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_7_1">
+          <span class="md-nav__icon md-icon"></span>
+          Appendix
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/appendix/gcc_inline_asm/" class="md-nav__link">
+        Gcc inline asm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/appendix/gdb/" class="md-nav__link">
+        Gdb
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/appendix/global_var/" class="md-nav__link">
+        Global var
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/appendix/interrupt/" class="md-nav__link">
+        原理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/appendix/struct/" class="md-nav__link">
+        Struct
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7_2" type="checkbox" id="__nav_5_7_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_7_2">
+          Lab1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lab1" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          Lab1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab1/1/" class="md-nav__link">
+        1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab1/2/" class="md-nav__link">
+        2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab1/3/" class="md-nav__link">
+        3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab1/4/" class="md-nav__link">
+        4
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab1/5/" class="md-nav__link">
+        5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab1/6/" class="md-nav__link">
+        6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab1/7/" class="md-nav__link">
+        7
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab1/data_struct/" class="md-nav__link">
+        Data struct
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab1/my_note/" class="md-nav__link">
+        My note
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7_3" type="checkbox" id="__nav_5_7_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_7_3">
+          Lab2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lab2" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          Lab2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab2/1/" class="md-nav__link">
+        1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab2/2/" class="md-nav__link">
+        2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab2/3/" class="md-nav__link">
+        3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab2/data_stuct/" class="md-nav__link">
+        Data stuct
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab2/my_note/" class="md-nav__link">
+        My note
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7_4" type="checkbox" id="__nav_5_7_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_7_4">
+          Lab3
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lab3" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_7_4">
+          <span class="md-nav__icon md-icon"></span>
+          Lab3
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab3/1/" class="md-nav__link">
+        1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab3/2/" class="md-nav__link">
+        2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab3/data_struct/" class="md-nav__link">
+        Data struct
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab3/my_note/" class="md-nav__link">
+        My note
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7_5" type="checkbox" id="__nav_5_7_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_7_5">
+          Lab4
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lab4" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_7_5">
+          <span class="md-nav__icon md-icon"></span>
+          Lab4
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab4/1/" class="md-nav__link">
+        1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab4/2/" class="md-nav__link">
+        2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab4/3/" class="md-nav__link">
+        3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab4/data_struct/" class="md-nav__link">
+        Data struct
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab4/my_note/" class="md-nav__link">
+        My note
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7_6" type="checkbox" id="__nav_5_7_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_7_6">
+          Lab5
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lab5" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_7_6">
+          <span class="md-nav__icon md-icon"></span>
+          Lab5
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab5/data_struct/" class="md-nav__link">
+        Data struct
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab5/lab5/" class="md-nav__link">
+        Lab5 Report
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab5/my_note/" class="md-nav__link">
+        My note
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7_7" type="checkbox" id="__nav_5_7_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_7_7">
+          Lab6
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lab6" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_7_7">
+          <span class="md-nav__icon md-icon"></span>
+          Lab6
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab6/1/" class="md-nav__link">
+        1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab6/2/" class="md-nav__link">
+        2
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7_8" type="checkbox" id="__nav_5_7_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_7_8">
+          Lab7
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lab7" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_7_8">
+          <span class="md-nav__icon md-icon"></span>
+          Lab7
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab7/1/" class="md-nav__link">
+        1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab7/2/" class="md-nav__link">
+        2
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7_9" type="checkbox" id="__nav_5_7_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_7_9">
+          Lab8
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lab8" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_7_9">
+          <span class="md-nav__icon md-icon"></span>
+          Lab8
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab8/lab8/" class="md-nav__link">
+        Lab8 Report
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab8/my_note/" class="md-nav__link">
+        笔记
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_8" type="checkbox" id="__nav_5_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_8">
+          数据结构与算法（C++版）
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="数据结构与算法（C++版）" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_8">
+          <span class="md-nav__icon md-icon"></span>
+          数据结构与算法（C++版）
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%88C%2B%2B%E7%89%88%EF%BC%89/dsa/" class="md-nav__link">
+        原理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%88C%2B%2B%E7%89%88%EF%BC%89/graph/" class="md-nav__link">
+        算法图解
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%88C%2B%2B%E7%89%88%EF%BC%89/info/" class="md-nav__link">
+        代码
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_9" type="checkbox" id="__nav_5_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_9">
+          计算机组成原理 软硬件接口
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="计算机组成原理 软硬件接口" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_9">
+          <span class="md-nav__icon md-icon"></span>
+          计算机组成原理 软硬件接口
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%20%E8%BD%AF%E7%A1%AC%E4%BB%B6%E6%8E%A5%E5%8F%A3/gen/" class="md-nav__link">
+        硬件基础
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%20%E8%BD%AF%E7%A1%AC%E4%BB%B6%E6%8E%A5%E5%8F%A3/mips_cpu/" class="md-nav__link">
+        MIPS CPU
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%20%E8%BD%AF%E7%A1%AC%E4%BB%B6%E6%8E%A5%E5%8F%A3/store/" class="md-nav__link">
+        存储器与IO
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          通信工程
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="通信工程" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          通信工程
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Digital%20Signal%20Processing/" class="md-nav__link">
+        数字信号处理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../EMC/" class="md-nav__link">
+        EMC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          通信电子线路
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        通信电子线路
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    绪论
+  </a>
+  
+    <nav class="md-nav" aria-label="绪论">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    通信系统
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    无线信道及传播方式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    无线电发送设备
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    无线电接受设备
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    通信电子线路研究对象
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    高频基础电路
+  </a>
+  
+    <nav class="md-nav" aria-label="高频基础电路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lc" class="md-nav__link">
+    LC串并联谐振回路
+  </a>
+  
+    <nav class="md-nav" aria-label="LC串并联谐振回路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    高频等效：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    串联谐振回路
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    并联谐振回路：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    接入系数与变化关系
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    高频小信号放大器
+  </a>
+  
+    <nav class="md-nav" aria-label="高频小信号放大器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    晶体管高频参数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    单调谐回路谐振放大器
+  </a>
+  
+    <nav class="md-nav" aria-label="单调谐回路谐振放大器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#y" class="md-nav__link">
+    Y参数等效电路
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    多级单调谐回路谐振放大器
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    稳定性
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    高频功率放大器
+  </a>
+  
+    <nav class="md-nav" aria-label="高频功率放大器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    折线分析法
+  </a>
+  
+    <nav class="md-nav" aria-label="折线分析法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    动态特性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    负载特性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    各级电压影响
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    丙类功放电路
+  </a>
+  
+    <nav class="md-nav" aria-label="丙类功放电路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    匹配网络
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    宽频带功放
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    功率合成
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    正弦波振荡器
+  </a>
+  
+    <nav class="md-nav" aria-label="正弦波振荡器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lc_1" class="md-nav__link">
+    反馈型LC振荡
+  </a>
+  
+    <nav class="md-nav" aria-label="反馈型LC振荡">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    互感耦合振荡电路
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    考比兹振荡器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    哈莱特振荡器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    判断准则
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    频率稳定原理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lc_2" class="md-nav__link">
+    高稳定度LC振荡器
+  </a>
+  
+    <nav class="md-nav" aria-label="高稳定度LC振荡器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    一般的
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clapp" class="md-nav__link">
+    Clapp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#siler" class="md-nav__link">
+    Siler
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    晶体振荡电路
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    振幅调制电路
+  </a>
+  
+    <nav class="md-nav" aria-label="振幅调制电路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#am" class="md-nav__link">
+    普通调幅波（AM）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dsb" class="md-nav__link">
+    DSB波
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssb" class="md-nav__link">
+    SSB波
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    电路
+  </a>
+  
+    <nav class="md-nav" aria-label="电路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    低电平调幅电路
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    高电平调幅电路
+  </a>
+  
+    <nav class="md-nav" aria-label="高电平调幅电路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    集电极调幅电路：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_40" class="md-nav__link">
+    基极调幅电路：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_41" class="md-nav__link">
+    单边带信号产生
+  </a>
+  
+    <nav class="md-nav" aria-label="单边带信号产生">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_42" class="md-nav__link">
+    滤波法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_43" class="md-nav__link">
+    移相法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_44" class="md-nav__link">
+    检波器
+  </a>
+  
+    <nav class="md-nav" aria-label="检波器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_45" class="md-nav__link">
+    二极管大信号检波电路
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_46" class="md-nav__link">
+    小信号检波
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_47" class="md-nav__link">
+    同步检波器
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_48" class="md-nav__link">
+    角度调制电路
+  </a>
+  
+    <nav class="md-nav" aria-label="角度调制电路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_49" class="md-nav__link">
+    调频电路
+  </a>
+  
+    <nav class="md-nav" aria-label="调频电路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_50" class="md-nav__link">
+    变容二极管直接调频电路
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_51" class="md-nav__link">
+    晶体振荡器直接调频
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_52" class="md-nav__link">
+    调相电路
+  </a>
+  
+    <nav class="md-nav" aria-label="调相电路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_53" class="md-nav__link">
+    可变移相法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_54" class="md-nav__link">
+    可变时延法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_55" class="md-nav__link">
+    矢量合成法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_56" class="md-nav__link">
+    鉴频器和鉴相器
+  </a>
+  
+    <nav class="md-nav" aria-label="鉴频器和鉴相器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_57" class="md-nav__link">
+    鉴相器
+  </a>
+  
+    <nav class="md-nav" aria-label="鉴相器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_58" class="md-nav__link">
+    乘积型
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_59" class="md-nav__link">
+    鉴频器
+  </a>
+  
+    <nav class="md-nav" aria-label="鉴频器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    调频-调幅调频变换型
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_60" class="md-nav__link">
+    混频器
+  </a>
+  
+    <nav class="md-nav" aria-label="混频器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_61" class="md-nav__link">
+    干扰与失真
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_62" class="md-nav__link">
+    反馈控制电路与频率合成
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Information%20Theory/" class="md-nav__link">
+        信息论
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5" type="checkbox" id="__nav_6_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_5">
+          Experiment
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Experiment" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_5">
+          <span class="md-nav__icon md-icon"></span>
+          Experiment
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment/QuickAlarm/" class="md-nav__link">
+        基于51的定时闹钟
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5_2" type="checkbox" id="__nav_6_5_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_5_2">
+          Digital Signal Processing Experiment
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Digital Signal Processing Experiment" data-md-level="3">
+        <label class="md-nav__title" for="__nav_6_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Digital Signal Processing Experiment
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment/Digital%20Signal%20Processing%20Experiment/DFT/" class="md-nav__link">
+        离散傅里叶变换
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment/Digital%20Signal%20Processing%20Experiment/FrenquencySpectrumAnalyzer/" class="md-nav__link">
+        音频频谱分析仪设计与实现
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment/Digital%20Signal%20Processing%20Experiment/IIR%26FIR/" class="md-nav__link">
+        离散时间滤波器设计
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment/Digital%20Signal%20Processing%20Experiment/Sample/" class="md-nav__link">
+        抽样
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Experiment/Digital%20Signal%20Processing%20Experiment/SpectrumAnalysis/" class="md-nav__link">
+        谱分析
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          配置
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="配置" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          配置
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%85%8D%E7%BD%AE/Linux%20latex/" class="md-nav__link">
+        Linux latex 配置
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%85%8D%E7%BD%AE/LinuxIcon/" class="md-nav__link">
+        Linux 日常
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%85%8D%E7%BD%AE/Windows10%20Config/" class="md-nav__link">
+        Windows10 Config
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    绪论
+  </a>
+  
+    <nav class="md-nav" aria-label="绪论">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    通信系统
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    无线信道及传播方式
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    无线电发送设备
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    无线电接受设备
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    通信电子线路研究对象
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    高频基础电路
+  </a>
+  
+    <nav class="md-nav" aria-label="高频基础电路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lc" class="md-nav__link">
+    LC串并联谐振回路
+  </a>
+  
+    <nav class="md-nav" aria-label="LC串并联谐振回路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    高频等效：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    串联谐振回路
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    并联谐振回路：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    接入系数与变化关系
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    高频小信号放大器
+  </a>
+  
+    <nav class="md-nav" aria-label="高频小信号放大器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    晶体管高频参数
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    单调谐回路谐振放大器
+  </a>
+  
+    <nav class="md-nav" aria-label="单调谐回路谐振放大器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#y" class="md-nav__link">
+    Y参数等效电路
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    多级单调谐回路谐振放大器
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    稳定性
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    高频功率放大器
+  </a>
+  
+    <nav class="md-nav" aria-label="高频功率放大器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    折线分析法
+  </a>
+  
+    <nav class="md-nav" aria-label="折线分析法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    动态特性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    负载特性
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    各级电压影响
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    丙类功放电路
+  </a>
+  
+    <nav class="md-nav" aria-label="丙类功放电路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    匹配网络
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    宽频带功放
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    功率合成
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    正弦波振荡器
+  </a>
+  
+    <nav class="md-nav" aria-label="正弦波振荡器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lc_1" class="md-nav__link">
+    反馈型LC振荡
+  </a>
+  
+    <nav class="md-nav" aria-label="反馈型LC振荡">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    互感耦合振荡电路
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    考比兹振荡器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    哈莱特振荡器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    判断准则
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    频率稳定原理
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lc_2" class="md-nav__link">
+    高稳定度LC振荡器
+  </a>
+  
+    <nav class="md-nav" aria-label="高稳定度LC振荡器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    一般的
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clapp" class="md-nav__link">
+    Clapp
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#siler" class="md-nav__link">
+    Siler
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    晶体振荡电路
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    振幅调制电路
+  </a>
+  
+    <nav class="md-nav" aria-label="振幅调制电路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#am" class="md-nav__link">
+    普通调幅波（AM）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dsb" class="md-nav__link">
+    DSB波
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssb" class="md-nav__link">
+    SSB波
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    电路
+  </a>
+  
+    <nav class="md-nav" aria-label="电路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    低电平调幅电路
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    高电平调幅电路
+  </a>
+  
+    <nav class="md-nav" aria-label="高电平调幅电路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_39" class="md-nav__link">
+    集电极调幅电路：
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_40" class="md-nav__link">
+    基极调幅电路：
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_41" class="md-nav__link">
+    单边带信号产生
+  </a>
+  
+    <nav class="md-nav" aria-label="单边带信号产生">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_42" class="md-nav__link">
+    滤波法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_43" class="md-nav__link">
+    移相法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_44" class="md-nav__link">
+    检波器
+  </a>
+  
+    <nav class="md-nav" aria-label="检波器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_45" class="md-nav__link">
+    二极管大信号检波电路
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_46" class="md-nav__link">
+    小信号检波
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_47" class="md-nav__link">
+    同步检波器
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_48" class="md-nav__link">
+    角度调制电路
+  </a>
+  
+    <nav class="md-nav" aria-label="角度调制电路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_49" class="md-nav__link">
+    调频电路
+  </a>
+  
+    <nav class="md-nav" aria-label="调频电路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_50" class="md-nav__link">
+    变容二极管直接调频电路
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_51" class="md-nav__link">
+    晶体振荡器直接调频
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_52" class="md-nav__link">
+    调相电路
+  </a>
+  
+    <nav class="md-nav" aria-label="调相电路">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_53" class="md-nav__link">
+    可变移相法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_54" class="md-nav__link">
+    可变时延法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_55" class="md-nav__link">
+    矢量合成法
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_56" class="md-nav__link">
+    鉴频器和鉴相器
+  </a>
+  
+    <nav class="md-nav" aria-label="鉴频器和鉴相器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_57" class="md-nav__link">
+    鉴相器
+  </a>
+  
+    <nav class="md-nav" aria-label="鉴相器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_58" class="md-nav__link">
+    乘积型
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_59" class="md-nav__link">
+    鉴频器
+  </a>
+  
+    <nav class="md-nav" aria-label="鉴频器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#-" class="md-nav__link">
+    调频-调幅调频变换型
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_60" class="md-nav__link">
+    混频器
+  </a>
+  
+    <nav class="md-nav" aria-label="混频器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_61" class="md-nav__link">
+    干扰与失真
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_62" class="md-nav__link">
+    反馈控制电路与频率合成
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+<h1 id="_1">通信电子线路</h1>
+<h2 id="_2">绪论</h2>
+<h3 id="_3">通信系统</h3>
+<p>定义：实现信息的传输所需设备综合</p>
+<pre><code class="language-mermaid">graph LR;
+    信息--&gt;输入变换器;
+    输入变换器--&gt;发送设备;
+    发送设备--&gt;传输信道;
+    传输信道--&gt;接受设备;
+    接受设备--&gt;输出变换器;
+    输出变换器--&gt;受信者;
+    噪声--&gt;传输信道;
+</code></pre>
+<p>组成：以上5个基本部分</p>
+<p>输入变换器：非电量转换为基带信号。</p>
+<p>发送设备：基带信号变换为适合信道传输的信号
+两大任务：
+1. 信号变换（调制）
+2. 信号放大（电压和功率）</p>
+<p>接收设备：
+1. 解调
+2. 选择有用信号，抑制干扰信号</p>
+<p>分类：按信道，通信方式，传输的基带信号分</p>
+<h3 id="_4">无线信道及传播方式</h3>
+<p>频段的划分</p>
+<p>传播方式：地波（绕射），天波（折射和反射），直线（视距）传播，决定方式为信号的波长，长中波地波，短波天波，超短波直线</p>
+<h3 id="_5">无线电发送设备</h3>
+<p>基本任务：以自由空间为信道，把信息变换为无线电波传送到远方</p>
+<p>要求：远，多路传输</p>
+<p>为什么不直接发送基带信号：
+1. 基带信号是低频信号，要用很长的天线
+2. 带宽不同，多路通信困难</p>
+<p>载波调制：用基带信号去控制高频载波信号的三参量之一，使其随基波线性变化</p>
+<p>方式：
+1. 模拟调制
+2. 数字调制</p>
+<pre><code class="language-mermaid">graph LR;
+    主振器--&gt;缓冲器;
+    缓冲器--&gt;高频放大;
+    高频放大--&gt;调制器;
+    调制器--&gt;功率放大;
+    功率放大--&gt;天线;
+    调制信号--&gt;调制器;
+</code></pre>
+<p>调幅广播为例，变化为：</p>
+<pre><code class="language-mermaid">graph LR;
+    声电变换器--&gt;前置放大器;
+    前置放大器--&gt;低频功率放大;
+    低频功率放大--&gt;AM调制器;
+</code></pre>
+<p>低频部分+高频部分+天线</p>
+<h3 id="_6">无线电接受设备</h3>
+<p>解调：检波，鉴频和鉴相</p>
+<p>直接检波式接收机，灵敏度，选择性低</p>
+<p>直接放大式接收机：适用于固定频率的接收</p>
+<p>超外差接收机，同时兼顾高灵敏度和高选择性，调幅广播为例：</p>
+<pre><code class="language-mermaid">graph LR;
+    天线--&gt;高频小信号放大器;
+    高频小信号放大器--&gt;混频器;
+    混频器--&gt;中频放大;
+    中频放大--&gt;检波器;
+    检波器--&gt;低频电压放大;
+    低频电压放大--&gt;低频功率放大;
+    本机振荡--&gt;混频器;
+</code></pre>
+<h3 id="_7">通信电子线路研究对象</h3>
+<p>发射设备和接收设备的各种高频电路</p>
+<p>高频：几百KHz到几百MHz</p>
+<h2 id="_8">高频基础电路</h2>
+<h3 id="lc">LC串并联谐振回路</h3>
+<h4 id="_9">高频等效：</h4>
+<ol>
+<li>电感：理想电感与损耗电阻串联或损耗电导并联。
+    <span class="arithmatex"><span class="MathJax_Preview">Q_0</span><script type="math/tex">Q_0</script></span>为理想品质因数，可在工作频率下通过Q表直接测得，<span class="arithmatex"><span class="MathJax_Preview">Q_0 \gg 1</span><script type="math/tex">Q_0 \gg 1</script></span>时，
+    <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">r_0=\frac{\omega_0L}{Q_0}</span><script type="math/tex">r_0=\frac{\omega_0L}{Q_0}</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">r_0=\frac{\omega_0L}{Q_0}</span><script type="math/tex">r_0=\frac{\omega_0L}{Q_0}</script></span></script></span>
+    <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">g_0=\frac{1}{\omega_0LQ_0}</span><script type="math/tex">g_0=\frac{1}{\omega_0LQ_0}</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">g_0=\frac{1}{\omega_0LQ_0}</span><script type="math/tex">g_0=\frac{1}{\omega_0LQ_0}</script></span></script></span></li>
+<li>电容：等效为理想电容</li>
+</ol>
+<p><span class="arithmatex"><span class="MathJax_Preview">Q=\frac{\omega L}{R}</span><script type="math/tex">Q=\frac{\omega L}{R}</script></span>，并联谐振回路<span class="arithmatex"><span class="MathJax_Preview">Q=\frac{R}{\omega L}=</span><script type="math/tex">Q=\frac{R}{\omega L}=</script></span></p>
+<h4 id="_10">串联谐振回路</h4>
+<p>谐振时电流最大，阻抗最小，回路品质因素越大，相对幅频特性，相对相频特性越陡，随<span class="arithmatex"><span class="MathJax_Preview">\omega</span><script type="math/tex">\omega</script></span>增加，阻抗由容抗向感抗转化</p>
+<h4 id="_11">并联谐振回路：</h4>
+<ol>
+<li>
+<p>空载时
+<span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">谐振频率:\omega_p=\omega_0\sqrt{1-\frac{1}{Q_0^2}}</span><script type="math/tex">谐振频率:\omega_p=\omega_0\sqrt{1-\frac{1}{Q_0^2}}</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">谐振频率:\omega_p=\omega_0\sqrt{1-\frac{1}{Q_0^2}}</span><script type="math/tex">谐振频率:\omega_p=\omega_0\sqrt{1-\frac{1}{Q_0^2}}</script></span></script></span>
+<span class="arithmatex"><span class="MathJax_Preview">Q_0 \gg 1</span><script type="math/tex">Q_0 \gg 1</script></span>时，<span class="arithmatex"><span class="MathJax_Preview">\omega_p=\omega_0</span><script type="math/tex">\omega_p=\omega_0</script></span>，且此时有回路电阻<span class="arithmatex"><span class="MathJax_Preview">R_p=Q_0^2r_0</span><script type="math/tex">R_p=Q_0^2r_0</script></span></p>
+</li>
+<li>
+<p>带载
+加一负载，不影响谐振频率，谐振时，电阻减小，品质因素减小。</p>
+</li>
+</ol>
+<p>谐振时电压最大，阻抗最大，回路品质因素越大，相对幅频特性，相对相频特性越陡，随<span class="arithmatex"><span class="MathJax_Preview">\omega</span><script type="math/tex">\omega</script></span>增加，阻抗由感抗向容抗转化</p>
+<h4 id="_12">接入系数与变化关系</h4>
+<p>阻抗变换为除以<span class="arithmatex"><span class="MathJax_Preview">p^2</span><script type="math/tex">p^2</script></span>，导纳变换为乘以<span class="arithmatex"><span class="MathJax_Preview">p^2</span><script type="math/tex">p^2</script></span>，电压源为除，电流源为乘。</p>
+<h2 id="_13">高频小信号放大器</h2>
+<p>功能：对微弱高频信号的不失真放大和选频滤波</p>
+<p>特点：
+1. 频率高，三极管极间电容不能忽略
+2. 输入信号小，晶体管工作在线性范围</p>
+<p>分类：按放大信号的带宽，按负载性质</p>
+<p>技术指标：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">A_u,A_p,2\triangle f_{0.7},K_{r0.1},N_F=\frac{P_{si}/P_{ni}}{P_{so}/P_{no}}</div>
+<script type="math/tex; mode=display">A_u,A_p,2\triangle f_{0.7},K_{r0.1},N_F=\frac{P_{si}/P_{ni}}{P_{so}/P_{no}}</script>
+</div>
+<p>实际放大器矩形系数恒大于1，越小越好，噪声系数接近于1好</p>
+<h3 id="_14">晶体管高频参数</h3>
+<p>截至频率<span class="arithmatex"><span class="MathJax_Preview">f_\beta</span><script type="math/tex">f_\beta</script></span>，特征频率<span class="arithmatex"><span class="MathJax_Preview">f_T</span><script type="math/tex">f_T</script></span>，最高振荡频率<span class="arithmatex"><span class="MathJax_Preview">f_{max}</span><script type="math/tex">f_{max}</script></span></p>
+<div class="arithmatex">
+<div class="MathJax_Preview">|\beta |=\frac{\beta_0}{\sqrt{1-(\frac{f}{f_\beta})^2}}</div>
+<script type="math/tex; mode=display">|\beta |=\frac{\beta_0}{\sqrt{1-(\frac{f}{f_\beta})^2}}</script>
+</div>
+<p>当<span class="arithmatex"><span class="MathJax_Preview">\beta  \gg  1</span><script type="math/tex">\beta  \gg  1</script></span>时，<span class="arithmatex"><span class="MathJax_Preview">f_T=\beta_0 f_b</span><script type="math/tex">f_T=\beta_0 f_b</script></span></p>
+<h3 id="_15">单调谐回路谐振放大器</h3>
+<p>分为Y参数等效电路和混合<span class="arithmatex"><span class="MathJax_Preview">\pi</span><script type="math/tex">\pi</script></span>型等效电路</p>
+<h4 id="y">Y参数等效电路</h4>
+<p><span class="arithmatex"><span class="MathJax_Preview">y_i=\dot{I_1}/\dot{U_1}|_{U_2=0}</span><script type="math/tex">y_i=\dot{I_1}/\dot{U_1}|_{U_2=0}</script></span>，输出短路输入导纳，<span class="arithmatex"><span class="MathJax_Preview">y_o</span><script type="math/tex">y_o</script></span>，输出导纳，<span class="arithmatex"><span class="MathJax_Preview">y_r</span><script type="math/tex">y_r</script></span>，反向传输导纳，<span class="arithmatex"><span class="MathJax_Preview">y_f</span><script type="math/tex">y_f</script></span>，正向传输导纳</p>
+<p>共射电路，简化为，<span class="arithmatex"><span class="MathJax_Preview">y_{re}=0</span><script type="math/tex">y_{re}=0</script></span></p>
+<p>每级三极管参数都相同时，等效到谐振回路：
+1. 左边：<span class="arithmatex"><span class="MathJax_Preview">p_1\dot{U_i}y_{fe},p_1^2g_{oe},p_1^2C_{oe}</span><script type="math/tex">p_1\dot{U_i}y_{fe},p_1^2g_{oe},p_1^2C_{oe}</script></span>
+2. 中间：<span class="arithmatex"><span class="MathJax_Preview">C,g_0,L</span><script type="math/tex">C,g_0,L</script></span>
+3. 右边：<span class="arithmatex"><span class="MathJax_Preview">p_2^2g_{ie},p_2^2C_{ie},\frac{\dot{U_o}}{p_2}</span><script type="math/tex">p_2^2g_{ie},p_2^2C_{ie},\frac{\dot{U_o}}{p_2}</script></span></p>
+<p>由<span class="arithmatex"><span class="MathJax_Preview">\dot{U_o}=-\frac{p_1\dot{U_i}y_{fe}}{Y_{\Sigma}}</span><script type="math/tex">\dot{U_o}=-\frac{p_1\dot{U_i}y_{fe}}{Y_{\Sigma}}</script></span>得：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\dot{A_u}=-\frac{p_1p_2y_{fe}}{Y_\Sigma}</div>
+<script type="math/tex; mode=display">\dot{A_u}=-\frac{p_1p_2y_{fe}}{Y_\Sigma}</script>
+</div>
+<p>谐振时最大，其中<span class="arithmatex"><span class="MathJax_Preview">Y_{\Sigma}=g_{\Sigma}</span><script type="math/tex">Y_{\Sigma}=g_{\Sigma}</script></span>
+相对电压增益：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\frac{\dot{A_u}}{\dot{A_{u0}}}=\frac{1}{1+jQ_L2\triangle f/f_0}</div>
+<script type="math/tex; mode=display">\frac{\dot{A_u}}{\dot{A_{u0}}}=\frac{1}{1+jQ_L2\triangle f/f_0}</script>
+</div>
+<p>其中<span class="arithmatex"><span class="MathJax_Preview">Q_L=1/(\omega_0 g_{\Sigma} L)</span><script type="math/tex">Q_L=1/(\omega_0 g_{\Sigma} L)</script></span>，若<span class="arithmatex"><span class="MathJax_Preview">\xi=Q_L 2\triangle f/f_0</span><script type="math/tex">\xi=Q_L 2\triangle f/f_0</script></span>，称为广义失谐</p>
+<p>通频带：<span class="arithmatex"><span class="MathJax_Preview">\triangle 2f_{0.7} = f_0/Q_L</span><script type="math/tex">\triangle 2f_{0.7} = f_0/Q_L</script></span>，矩形系数：<span class="arithmatex"><span class="MathJax_Preview">K_{r0.1}=\sqrt{99} \gg 1</span><script type="math/tex">K_{r0.1}=\sqrt{99} \gg 1</script></span>选择性差
+通频带和谐振电压增益为常数</p>
+<h4 id="_16">多级单调谐回路谐振放大器</h4>
+<div class="arithmatex">
+<div class="MathJax_Preview">A_m=(A_{u1})^m</div>
+<script type="math/tex; mode=display">A_m=(A_{u1})^m</script>
+</div>
+<div class="arithmatex">
+<div class="MathJax_Preview">\frac{A_m}{A_{mo}} = \frac{1}{(1+(Q_L 2 \triangle f/f_0)^2)^{m/2}}</div>
+<script type="math/tex; mode=display">\frac{A_m}{A_{mo}} = \frac{1}{(1+(Q_L 2 \triangle f/f_0)^2)^{m/2}}</script>
+</div>
+<div class="arithmatex">
+<div class="MathJax_Preview">(2 \triangle f_{0.7})_m = \sqrt{2^{1/m}-1} (2 \triangle f_{0.7})_1</div>
+<script type="math/tex; mode=display">(2 \triangle f_{0.7})_m = \sqrt{2^{1/m}-1} (2 \triangle f_{0.7})_1</script>
+</div>
+<p>级数越多，通频带越窄，矩形系数越小</p>
+<h3 id="_17">稳定性</h3>
+<p>引起不稳定的原因：<span class="arithmatex"><span class="MathJax_Preview">y_{re} \neq 0</span><script type="math/tex">y_{re} \neq 0</script></span>，可能构成正反馈</p>
+<p>稳定系数：<span class="arithmatex"><span class="MathJax_Preview">S = \dot{U_i}/\dot{U_i'}</span><script type="math/tex">S = \dot{U_i}/\dot{U_i'}</script></span>，其中<span class="arithmatex"><span class="MathJax_Preview">\dot{U_i'}</span><script type="math/tex">\dot{U_i'}</script></span>为正反馈电压
+S越大，越稳定，一般要求<span class="arithmatex"><span class="MathJax_Preview">\ge 5</span><script type="math/tex">\ge 5</script></span></p>
+<p>稳定电压增益：不加稳定措施，并满足S的工作于谐振频率的最大电压增益</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">|A_{u0}|=\sqrt{\frac{2|y_{fe|}}{S|y_{re}|(1+cos(\phi_{re}+\phi_{fe}))}}</div>
+<script type="math/tex; mode=display">|A_{u0}|=\sqrt{\frac{2|y_{fe|}}{S|y_{re}|(1+cos(\phi_{re}+\phi_{fe}))}}</script>
+</div>
+<p>提高稳定性措施：
+1. 中和法：电流大小相同，方向相反
+   只能对一个频率点起到完全中和作用
+2. 失配法：实质是降低电压增益</p>
+<h2 id="_18">高频功率放大器</h2>
+<p>功能：用小功率的高频输入信号去控制高频功率放大器将直流电源供给的能量转化为大功率高频能量输出</p>
+<p>分类：按工作频率，按工作类型</p>
+<p>技术指标：输出功率，效率，功率增益，谐波抑制度（非线性功放）</p>
+<p>中间级和输出级都可等效为输入回路，非线性器件，带通滤波</p>
+<p>特点：
+1. 放大器：静态截止，动态导通和截止
+2. 谐振回路：选频，阻抗匹配</p>
+<h3 id="_19">折线分析法</h3>
+<p>三极管的三种特性曲线：输入特性，输出特性，正向传输特性</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">g_r</span><script type="math/tex">g_r</script></span>为正向传输特性曲线斜率，<span class="arithmatex"><span class="MathJax_Preview">g_{cr}</span><script type="math/tex">g_{cr}</script></span>输出特性曲线饱和区的斜率，其放大区间隔除以<span class="arithmatex"><span class="MathJax_Preview">u_{be}</span><script type="math/tex">u_{be}</script></span>变换应为<span class="arithmatex"><span class="MathJax_Preview">g_r</span><script type="math/tex">g_r</script></span></p>
+<p>输入信号<span class="arithmatex"><span class="MathJax_Preview">u_{bm}cos(\omega t)</span><script type="math/tex">u_{bm}cos(\omega t)</script></span>，<span class="arithmatex"><span class="MathJax_Preview">\omega t = 0</span><script type="math/tex">\omega t = 0</script></span>时，<span class="arithmatex"><span class="MathJax_Preview">i_c</span><script type="math/tex">i_c</script></span>最大，<span class="arithmatex"><span class="MathJax_Preview">\omega t = \theta_c</span><script type="math/tex">\omega t = \theta_c</script></span>时，<span class="arithmatex"><span class="MathJax_Preview">i_c</span><script type="math/tex">i_c</script></span>为0，<span class="arithmatex"><span class="MathJax_Preview">\theta_c</span><script type="math/tex">\theta_c</script></span>即为导通角</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">cos \theta_c = \frac{U_{BZ}-V_{BB}}{U_{bm}}</div>
+<script type="math/tex; mode=display">cos \theta_c = \frac{U_{BZ}-V_{BB}}{U_{bm}}</script>
+</div>
+<div class="arithmatex">
+<div class="MathJax_Preview">i_c = I_{cM}\frac{cos(\omega t)-cos\theta_c}{1-cos\theta_c}</div>
+<script type="math/tex; mode=display">i_c = I_{cM}\frac{cos(\omega t)-cos\theta_c}{1-cos\theta_c}</script>
+</div>
+<p>令集电极电压利用系数<span class="arithmatex"><span class="MathJax_Preview">\xi = U_{cm}/V_{cc}</span><script type="math/tex">\xi = U_{cm}/V_{cc}</script></span>，波形系数<span class="arithmatex"><span class="MathJax_Preview">g_1 = \alpha_1/\alpha_0</span><script type="math/tex">g_1 = \alpha_1/\alpha_0</script></span>，<span class="arithmatex"><span class="MathJax_Preview">U_{cm}=I_{c1m}R_P</span><script type="math/tex">U_{cm}=I_{c1m}R_P</script></span></p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\eta = \frac{P_o}{P_=} = \frac{1}{2} \frac{U_{cm}I_{c1m}}{V_{cc}I_{c0}} = \frac{1}{2} \xi g_1(\theta_c)</div>
+<script type="math/tex; mode=display">\eta = \frac{P_o}{P_=} = \frac{1}{2} \frac{U_{cm}I_{c1m}}{V_{cc}I_{c0}} = \frac{1}{2} \xi g_1(\theta_c)</script>
+</div>
+<p>兼顾效率和输出功率：<span class="arithmatex"><span class="MathJax_Preview">\theta_c</span><script type="math/tex">\theta_c</script></span>一般取60-80°</p>
+<h4 id="_20">动态特性</h4>
+<p>晶体管，电源参数确定条件下，信号振幅一定，<span class="arithmatex"><span class="MathJax_Preview">i_c = f(u_{be},u{ce})</span><script type="math/tex">i_c = f(u_{be},u{ce})</script></span>的关系</p>
+<p>截距法：斜率+截距+<span class="arithmatex"><span class="MathJax_Preview">(u_{cemax},0)</span><script type="math/tex">(u_{cemax},0)</script></span></p>
+<div class="arithmatex">
+<div class="MathJax_Preview">i_c = g_d(u_{ce}-U_0)</div>
+<script type="math/tex; mode=display">i_c = g_d(u_{ce}-U_0)</script>
+</div>
+<p>式中<span class="arithmatex"><span class="MathJax_Preview">g_d = -g_c \frac{u_{bm}}{u_{cm}}</span><script type="math/tex">g_d = -g_c \frac{u_{bm}}{u_{cm}}</script></span>，<span class="arithmatex"><span class="MathJax_Preview">U_0 = V_{cc}-u_{cm}cos\theta_c</span><script type="math/tex">U_0 = V_{cc}-u_{cm}cos\theta_c</script></span></p>
+<p>虚拟电流法：<span class="arithmatex"><span class="MathJax_Preview">(u_{cemin},u_{bemax})</span><script type="math/tex">(u_{cemin},u_{bemax})</script></span>+<span class="arithmatex"><span class="MathJax_Preview">(V_{cc},I_Q)</span><script type="math/tex">(V_{cc},I_Q)</script></span>+<span class="arithmatex"><span class="MathJax_Preview">(u_{cemax},0)</span><script type="math/tex">(u_{cemax},0)</script></span></p>
+<div class="arithmatex">
+<div class="MathJax_Preview">I_Q = -g_c (U_{BZ}-V_{BB})</div>
+<script type="math/tex; mode=display">I_Q = -g_c (U_{BZ}-V_{BB})</script>
+</div>
+<p>工作状态：欠压，临界和过压</p>
+<h4 id="_21">负载特性</h4>
+<p>电源，三极管参数，<span class="arithmatex"><span class="MathJax_Preview">U_{bm}</span><script type="math/tex">U_{bm}</script></span>一定，改变<span class="arithmatex"><span class="MathJax_Preview">R_P</span><script type="math/tex">R_P</script></span>工作状态，电压，电流，功率，效率的变化</p>
+<p>用动态特性分析：随<span class="arithmatex"><span class="MathJax_Preview">R_P</span><script type="math/tex">R_P</script></span>增大，<span class="arithmatex"><span class="MathJax_Preview">I_Q ,u_{bemin} ,\theta_c ,I_{cM}</span><script type="math/tex">I_Q ,u_{bemin} ,\theta_c ,I_{cM}</script></span>不变，<span class="arithmatex"><span class="MathJax_Preview">u_{cm}</span><script type="math/tex">u_{cm}</script></span>增大，斜率减小，工作状态由欠压向过压转化。
+但在过压区，电流不再是尖顶脉冲，分解系数改变，电流减小，但<span class="arithmatex"><span class="MathJax_Preview">u_{cm}</span><script type="math/tex">u_{cm}</script></span>增长减缓
+输出功率在临界状态达到峰值，用于末级，效率在弱过压区达到峰值，随后下降，用于中间放大级
+此外<span class="arithmatex"><span class="MathJax_Preview">R_P</span><script type="math/tex">R_P</script></span>一定不要为0</p>
+<h4 id="_22">各级电压影响</h4>
+<p>用动态特性分析即可</p>
+<h3 id="_23">丙类功放电路</h3>
+<p>输入输出回路功能：
+1. 正常偏置
+2. 选频
+3. 阻抗匹配</p>
+<p>集电极馈电：串联馈电，并联馈电</p>
+<p>基极馈电：【串联馈电，并联馈电】【外加偏压，自给偏压】</p>
+<h4 id="_24">匹配网络</h4>
+<h3 id="_25">宽频带功放</h3>
+<p>传输线变压器：传递能量的两种方式</p>
+<p>1:1传输线变压器最佳匹配条件：<span class="arithmatex"><span class="MathJax_Preview">Z_C = R_S = R_L</span><script type="math/tex">Z_C = R_S = R_L</script></span>，用作倒相器</p>
+<p>阻抗变换传输线变压器，<span class="arithmatex"><span class="MathJax_Preview">Z_i/Z_o</span><script type="math/tex">Z_i/Z_o</script></span>就是几比几的阻抗变换</p>
+<h3 id="_26">功率合成</h3>
+<p>由功率放大器，功率分配器，功率合成网络组成</p>
+<p>原理：N个功放，通过混合电路使输出功率在公共负载上叠加起来</p>
+<h2 id="_27">正弦波振荡器</h2>
+<p>分类：按波形，按原理，按元件</p>
+<p>主要技术指标：振荡频率，频率稳定度，振荡幅度，振荡波形</p>
+<h3 id="lc_1">反馈型LC振荡</h3>
+<p>调谐放大器+正反馈网络</p>
+<p>起振条件：增幅振荡
+1. 振幅起振：<span class="arithmatex"><span class="MathJax_Preview">A_0 F &gt; 1</span><script type="math/tex">A_0 F > 1</script></span>
+2. 相位起振：<span class="arithmatex"><span class="MathJax_Preview">\phi_A + \phi_F = 2n\pi</span><script type="math/tex">\phi_A + \phi_F = 2n\pi</script></span></p>
+<p>平衡条件：等幅振荡</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">A = g_c R_P (1-cos\theta_c)\alpha_1(\theta_c) = A_0v(\theta_c)</div>
+<script type="math/tex; mode=display">A = g_c R_P (1-cos\theta_c)\alpha_1(\theta_c) = A_0v(\theta_c)</script>
+</div>
+<p>最后工作状态由<span class="arithmatex"><span class="MathJax_Preview">A_0 F</span><script type="math/tex">A_0 F</script></span>决定，也决定了振幅</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\dot{U_i}\xrightarrow[\phi_Y]{Y_{fe}} \dot{I_c}\xrightarrow[\phi_z]{Z_{p1}} \dot{U_{c1}}\xrightarrow[\phi_F]{F} \dot{U_F}</div>
+<script type="math/tex; mode=display">\dot{U_i}\xrightarrow[\phi_Y]{Y_{fe}} \dot{I_c}\xrightarrow[\phi_z]{Z_{p1}} \dot{U_{c1}}\xrightarrow[\phi_F]{F} \dot{U_F}</script>
+</div>
+<p><span class="arithmatex"><span class="MathJax_Preview">\phi_F + \phi_Y \neq 0</span><script type="math/tex">\phi_F + \phi_Y \neq 0</script></span>，回路微小失调，但近似为回路谐振频率</p>
+<p>稳定条件：
+1. 振幅稳定：
+   <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">\frac{\partial A}{\partial U_c}|_{U_c = U_{cQ}} &lt; 0</span><script type="math/tex">\frac{\partial A}{\partial U_c}|_{U_c = U_{cQ}} < 0</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">\frac{\partial A}{\partial U_c}|_{U_c = U_{cQ}} &lt; 0</span><script type="math/tex">\frac{\partial A}{\partial U_c}|_{U_c = U_{cQ}} < 0</script></span></script></span>
+   措施：调节静态工作点，即<span class="arithmatex"><span class="MathJax_Preview">A_0</span><script type="math/tex">A_0</script></span>；调节F
+2. 相位稳定：
+   <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">\frac{\partial \phi_Z}{\partial \omega} &lt; 0</span><script type="math/tex">\frac{\partial \phi_Z}{\partial \omega} < 0</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">\frac{\partial \phi_Z}{\partial \omega} &lt; 0</span><script type="math/tex">\frac{\partial \phi_Z}{\partial \omega} < 0</script></span></script></span></p>
+<p>按反馈耦合元件分：互感耦合振荡器，电容反馈式振荡器，电感反馈式振荡器</p>
+<h4 id="_28">互感耦合振荡电路</h4>
+<p>共【】调【】型，瞬时极性法判断，<span class="arithmatex"><span class="MathJax_Preview">f_0 = \frac{1}{2\pi\sqrt{L_1 C}}</span><script type="math/tex">f_0 = \frac{1}{2\pi\sqrt{L_1 C}}</script></span></p>
+<p>优点：调整反馈时，不会影响振荡频率
+缺点：频率不宜过高</p>
+<h4 id="_29">考比兹振荡器</h4>
+<p>共射时：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">A_0 = \frac{|y_{fe}|}{g_\Sigma} ,F = \frac{c_1'}{c_2'}</div>
+<script type="math/tex; mode=display">A_0 = \frac{|y_{fe}|}{g_\Sigma} ,F = \frac{c_1'}{c_2'}</script>
+</div>
+<p>式中<span class="arithmatex"><span class="MathJax_Preview">g_\Sigma = g_{oe}+g_0 p_1^2+g_{ie} p^2+g_L</span><script type="math/tex">g_\Sigma = g_{oe}+g_0 p_1^2+g_{ie} p^2+g_L</script></span></p>
+<p>起振条件：三极管选定后，更改F和<span class="arithmatex"><span class="MathJax_Preview">g_L</span><script type="math/tex">g_L</script></span>的值</p>
+<p>谐振频率：<span class="arithmatex"><span class="MathJax_Preview">\omega_0 = 1/\sqrt{C_\Sigma L}</span><script type="math/tex">\omega_0 = 1/\sqrt{C_\Sigma L}</script></span></p>
+<h4 id="_30">哈莱特振荡器</h4>
+<p>共射：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">F = \frac{L_2+M}{L_1+M}</div>
+<script type="math/tex; mode=display">F = \frac{L_2+M}{L_1+M}</script>
+</div>
+<p>起振条件和考比兹相同，但<span class="arithmatex"><span class="MathJax_Preview">g_0'</span><script type="math/tex">g_0'</script></span>不同</p>
+<p>振荡频率：<span class="arithmatex"><span class="MathJax_Preview">\omega_0 = \frac{1}{\sqrt{LC}}</span><script type="math/tex">\omega_0 = \frac{1}{\sqrt{LC}}</script></span>，<span class="arithmatex"><span class="MathJax_Preview">L = L_1+L_2+2M</span><script type="math/tex">L = L_1+L_2+2M</script></span></p>
+<p>两种电路比较：感觉电容三点式好点</p>
+<h4 id="_31">判断准则</h4>
+<p>注意：c ,e ,b
+对于振荡频率：<span class="arithmatex"><span class="MathJax_Preview">X_{ce}+X_{eb}+X_{cb}=0</span><script type="math/tex">X_{ce}+X_{eb}+X_{cb}=0</script></span></p>
+<h3 id="_32">频率稳定原理</h3>
+<p>绝对频率偏差，相对频率偏差</p>
+<p>稳定度：一定时间间隔内，相对频率偏差最大值，长，短，瞬时</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">\omega_0 ,\phi_{YF} ,Q_L</span><script type="math/tex">\omega_0 ,\phi_{YF} ,Q_L</script></span>变换，会引起稳定度变化
+外因会引起这三者变化</p>
+<p>措施：减小外因，提高参数抗外因能力</p>
+<h3 id="lc_2">高稳定度LC振荡器</h3>
+<h4 id="_33">一般的</h4>
+<p><span class="arithmatex"><span class="MathJax_Preview">\triangle C_\Sigma = p_1^2 \triangle C_o+p_2^2 \triangle C_i</span><script type="math/tex">\triangle C_\Sigma = p_1^2 \triangle C_o+p_2^2 \triangle C_i</script></span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">p_1 ,p_2</span><script type="math/tex">p_1 ,p_2</script></span>不可能同时减小，故稳定度不高</p>
+<h4 id="clapp">Clapp</h4>
+<p>串一个<span class="arithmatex"><span class="MathJax_Preview">C_3</span><script type="math/tex">C_3</script></span>，满足于<span class="arithmatex"><span class="MathJax_Preview">C_3 \ll C_1 ,C_3 \ll C_2</span><script type="math/tex">C_3 \ll C_1 ,C_3 \ll C_2</script></span>，
+就有<span class="arithmatex"><span class="MathJax_Preview">C_\Sigma \approx C_3</span><script type="math/tex">C_\Sigma \approx C_3</script></span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">p_1 \approx \frac{C_3}{C_1'}</span><script type="math/tex">p_1 \approx \frac{C_3}{C_1'}</script></span>，<span class="arithmatex"><span class="MathJax_Preview">P_2 \approx \frac{C_3}{C_2'}</span><script type="math/tex">P_2 \approx \frac{C_3}{C_2'}</script></span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">p_1 ,p_2</span><script type="math/tex">p_1 ,p_2</script></span>可以同时减小，但受起振条件的限制，用作固定频率振荡器</p>
+<h4 id="siler">Siler</h4>
+<p>在Clapp基础上在L上并一个<span class="arithmatex"><span class="MathJax_Preview">C_4</span><script type="math/tex">C_4</script></span>，和<span class="arithmatex"><span class="MathJax_Preview">C_3</span><script type="math/tex">C_3</script></span>一个数量级
+用作变频振荡器</p>
+<h3 id="_34">晶体振荡电路</h3>
+<p>压电效应</p>
+<p>等效为<span class="arithmatex"><span class="MathJax_Preview">L_q ,C_q ,r_q ,C_0</span><script type="math/tex">L_q ,C_q ,r_q ,C_0</script></span>，其<span class="arithmatex"><span class="MathJax_Preview">Q_q</span><script type="math/tex">Q_q</script></span>很高</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">\omega_p - \omega_q</span><script type="math/tex">\omega_p - \omega_q</script></span>很小</p>
+<p>两种模式：<span class="arithmatex"><span class="MathJax_Preview">\omega = \omega_q</span><script type="math/tex">\omega = \omega_q</script></span>，短路线，<span class="arithmatex"><span class="MathJax_Preview">\omega_q &lt; \omega &lt; \omega_p</span><script type="math/tex">\omega_q < \omega < \omega_p</script></span>，电感</p>
+<h2 id="_35">振幅调制电路</h2>
+<h3 id="am">普通调幅波（AM）</h3>
+<div class="arithmatex">
+<div class="MathJax_Preview">u(t) = U_{cm}(1+m_a cos(\Omega t))cos(\omega_c t)</div>
+<script type="math/tex; mode=display">u(t) = U_{cm}(1+m_a cos(\Omega t))cos(\omega_c t)</script>
+</div>
+<p>式中<span class="arithmatex"><span class="MathJax_Preview">m_a = \frac{K_a U_{\Omega m}}{U_{cm}}</span><script type="math/tex">m_a = \frac{K_a U_{\Omega m}}{U_{cm}}</script></span>为调幅指数</p>
+<p>频谱：边频幅度为<span class="arithmatex"><span class="MathJax_Preview">\frac{1}{2} m_a U_{cm}</span><script type="math/tex">\frac{1}{2} m_a U_{cm}</script></span>，载频幅度为<span class="arithmatex"><span class="MathJax_Preview">U_{cm}</span><script type="math/tex">U_{cm}</script></span></p>
+<p>加在R两端功率：
+1. 载波功率<span class="arithmatex"><span class="MathJax_Preview">P_{OT}</span><script type="math/tex">P_{OT}</script></span>
+2. 边频功率<span class="arithmatex"><span class="MathJax_Preview">\frac{1}{4} m_a^2 P_{OT}</span><script type="math/tex">\frac{1}{4} m_a^2 P_{OT}</script></span></p>
+<h3 id="dsb">DSB波</h3>
+<p>AM波基础上去掉载波频段</p>
+<p>实质就是载波振荡信号直接乘以调制信号</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">u(t) = \frac{1}{2}U_{cm}U_{\Omega m}(\cdots)</div>
+<script type="math/tex; mode=display">u(t) = \frac{1}{2}U_{cm}U_{\Omega m}(\cdots)</script>
+</div>
+<p>注意下：载波相位在调制电压零点突变180°</p>
+<h3 id="ssb">SSB波</h3>
+<p>去掉DSB波的某一边频</p>
+<h3 id="_36">电路</h3>
+<p>分类：
+1. 低电频调制
+   重点是提高调制的线性
+2. 高电平调制
+   要兼顾输出功率，效率和调制线性</p>
+<p>组成：输入回路，非线性器件和带通滤波器</p>
+<h4 id="_37">低电平调幅电路</h4>
+<p>算出经过负载的电流，带通滤波取其上的电压</p>
+<p>开关函数含直流和频率的奇数分量，去掉直流分量，其偶数项为负</p>
+<ol>
+<li>
+<p>单二极管开关调幅电路：
+    <span class="arithmatex"><span class="MathJax_Preview">U_{cm} \gg U_{\Omega m}</span><script type="math/tex">U_{cm} \gg U_{\Omega m}</script></span>，<span class="arithmatex"><span class="MathJax_Preview">U_{cm}</span><script type="math/tex">U_{cm}</script></span>控制二极管的开关状态
+    只能实现AM波</p>
+</li>
+<li>
+<p>二极管平衡调幅电路
+    注意下匝数比，即负载值
+    计算先判断二极管在载波正负周期的工作状态，正负周期电流分开计算，此电路都是正周期导通
+    然后根据二极管导通标电流方向，按电流方向确定电压正负
+    可以DSB波</p>
+</li>
+<li>
+<p>二极管环形调幅电路
+    注意判断二极管导通反向，此外载波负半周期开关函数奇数项为负
+    DSB波，比起平衡调幅，进一步抑制了<span class="arithmatex"><span class="MathJax_Preview">\Omega</span><script type="math/tex">\Omega</script></span>分量，且幅度是其二倍</p>
+</li>
+<li>
+<p>模拟乘法器调幅电路（双差分对管振幅调制电路）
+    <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">i = I_0 th(\frac{qu_1}{2kT}) th(\frac{qu_2}{2kT})</span><script type="math/tex">i = I_0 th(\frac{qu_1}{2kT}) th(\frac{qu_2}{2kT})</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">i = I_0 th(\frac{qu_1}{2kT}) th(\frac{qu_2}{2kT})</span><script type="math/tex">i = I_0 th(\frac{qu_1}{2kT}) th(\frac{qu_2}{2kT})</script></span></script></span>
+    将恒流源分为两个后，接入负反馈电阻，变为：
+    <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">i = \frac{2 u_2}{R_y} th(\frac{qu_1}{2kT})</span><script type="math/tex">i = \frac{2 u_2}{R_y} th(\frac{qu_1}{2kT})</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">i = \frac{2 u_2}{R_y} th(\frac{qu_1}{2kT})</span><script type="math/tex">i = \frac{2 u_2}{R_y} th(\frac{qu_1}{2kT})</script></span></script></span>
+    式中<span class="arithmatex"><span class="MathJax_Preview">-I_0/2 \le u_2/R_y \le I_0/2</span><script type="math/tex">-I_0/2 \le u_2/R_y \le I_0/2</script></span></p>
+</li>
+</ol>
+<h4 id="_38">高电平调幅电路</h4>
+<p>只能调AM波</p>
+<h5 id="_39">集电极调幅电路：</h5>
+<p>丙类功放过压区具有调幅特性，<span class="arithmatex"><span class="MathJax_Preview">I_{c0} ,I_{c1m}</span><script type="math/tex">I_{c0} ,I_{c1m}</script></span>随<span class="arithmatex"><span class="MathJax_Preview">V_{cc}</span><script type="math/tex">V_{cc}</script></span>线性变化</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">V_{cc} = V_{CT}(1+m_a cos(\Omega t))</div>
+<script type="math/tex; mode=display">V_{cc} = V_{CT}(1+m_a cos(\Omega t))</script>
+</div>
+<p>调制信号一周平均状态下，</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">P_{= av} = P_{=} + P_{\omega} = (1+(\frac{m_a}{2})^2)P_{=T}</div>
+<script type="math/tex; mode=display">P_{= av} = P_{=} + P_{\omega} = (1+(\frac{m_a}{2})^2)P_{=T}</script>
+</div>
+<div class="arithmatex">
+<div class="MathJax_Preview">\eta_c = constant</div>
+<script type="math/tex; mode=display">\eta_c = constant</script>
+</div>
+<p>注意：选择晶体管是<span class="arithmatex"><span class="MathJax_Preview">P_{CM} &gt; P_{=av}</span><script type="math/tex">P_{CM} > P_{=av}</script></span>，调制信号源必须是功率源</p>
+<h5 id="_40">基极调幅电路：</h5>
+<p>欠压区，效率变化，输出功率都是直流电源提供，线性范围小</p>
+<h3 id="_41">单边带信号产生</h3>
+<p>滤波法和移向法</p>
+<h4 id="_42">滤波法</h4>
+<p>直接滤波困难，相对带宽很小，实际中降低每次的载波频率，增大相对带宽，进行多次调制</p>
+<h4 id="_43">移相法</h4>
+<div class="arithmatex">
+<div class="MathJax_Preview">cos()cos()-sin()sin()</div>
+<script type="math/tex; mode=display">cos()cos()-sin()sin()</script>
+</div>
+<p>要求准确移90°</p>
+<h2 id="_44">检波器</h2>
+<p>组成：输入回路，非线性器件，低通滤波</p>
+<p>分类：
+1. 包络检波，普通调幅波和高频等幅波
+2. 同步检波，双边带和单边带检波</p>
+<p>指标：电压传输系数，等效输入电阻，非线性失真系数</p>
+<h3 id="_45">二极管大信号检波电路</h3>
+<p>输入信号大于0.5V，调好参数，二极管充放电曲线和包络相匹配</p>
+<p>检波二极管导通角：<span class="arithmatex"><span class="MathJax_Preview">U_{BZ} = 0 ,\theta &lt; \pi/6</span><script type="math/tex">U_{BZ} = 0 ,\theta < \pi/6</script></span>下，<span class="arithmatex"><span class="MathJax_Preview">\theta \approx \sqrt[3]{\frac{3 \pi r_d}{R}}</span><script type="math/tex">\theta \approx \sqrt[3]{\frac{3 \pi r_d}{R}}</script></span></p>
+<p>给检波电路加固定偏压可满足<span class="arithmatex"><span class="MathJax_Preview">U_{BZ} = 0</span><script type="math/tex">U_{BZ} = 0</script></span>，<span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span>大，<span class="arithmatex"><span class="MathJax_Preview">r_d</span><script type="math/tex">r_d</script></span>小可满足<span class="arithmatex"><span class="MathJax_Preview">\theta &lt; \pi/6</span><script type="math/tex">\theta < \pi/6</script></span></p>
+<p>此时<span class="arithmatex"><span class="MathJax_Preview">u_o</span><script type="math/tex">u_o</script></span>为输入的高频振幅乘以<span class="arithmatex"><span class="MathJax_Preview">cos\theta</span><script type="math/tex">cos\theta</script></span>，对于AM波，再加一个隔值电容后，可取出原调制信号，等于高频等幅波的<span class="arithmatex"><span class="MathJax_Preview">K_d</span><script type="math/tex">K_d</script></span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">\theta</span><script type="math/tex">\theta</script></span>很小时，<span class="arithmatex"><span class="MathJax_Preview">R_{id} \approx \frac{1}{2} R</span><script type="math/tex">R_{id} \approx \frac{1}{2} R</script></span></p>
+<ol>
+<li>
+<p>频率失真
+    <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">\frac{1}{\omega_i C} \ll R ,\frac{1}{\Omega_{max} \gg R} ,\frac{1}{\Omega_{min} C_c} \ll R</span><script type="math/tex">\frac{1}{\omega_i C} \ll R ,\frac{1}{\Omega_{max} \gg R} ,\frac{1}{\Omega_{min} C_c} \ll R</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">\frac{1}{\omega_i C} \ll R ,\frac{1}{\Omega_{max} \gg R} ,\frac{1}{\Omega_{min} C_c} \ll R</span><script type="math/tex">\frac{1}{\omega_i C} \ll R ,\frac{1}{\Omega_{max} \gg R} ,\frac{1}{\Omega_{min} C_c} \ll R</script></span></script></span></p>
+</li>
+<li>
+<p>非线性失真小</p>
+</li>
+<li>
+<p>惰性失真
+    RC太大，放电跟不上包络
+    多频不产生条件：
+    <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">RC\Omega_{max} \le \frac{\sqrt{1-m_a}}{m_a}</span><script type="math/tex">RC\Omega_{max} \le \frac{\sqrt{1-m_a}}{m_a}</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">RC\Omega_{max} \le \frac{\sqrt{1-m_a}}{m_a}</span><script type="math/tex">RC\Omega_{max} \le \frac{\sqrt{1-m_a}}{m_a}</script></span></script></span></p>
+</li>
+<li>
+<p>负峰切割失真
+    不产生条件：
+    <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">U_{im}(1-m_a) \ge U_{im} \frac{R}{R_L + R}</span><script type="math/tex">U_{im}(1-m_a) \ge U_{im} \frac{R}{R_L + R}</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">U_{im}(1-m_a) \ge U_{im} \frac{R}{R_L + R}</span><script type="math/tex">U_{im}(1-m_a) \ge U_{im} \frac{R}{R_L + R}</script></span></script></span></p>
+</li>
+</ol>
+<p>交直流电阻差值越小，越不容易产生</p>
+<h3 id="_46">小信号检波</h3>
+<p>小于0.2V，在大信号检波基础上加以偏置，使二极管静态工作点位于曲线的弯曲部分</p>
+<h3 id="_47">同步检波器</h3>
+<p>用本地载频乘以调幅波，再通过低通滤波</p>
+<p>频率，相位不同步时，会失真</p>
+<h2 id="_48">角度调制电路</h2>
+<p>分类：
+1. 相位调制，瞬时相位随<span class="arithmatex"><span class="MathJax_Preview">u_\omega (t)</span><script type="math/tex">u_\omega (t)</script></span>线性变化
+2. 频率调制</p>
+<p>一般数学表达式：
+1. 调相波：
+    <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">U_m cos(\omega_c t+K_p u_\Omega(t))</span><script type="math/tex">U_m cos(\omega_c t+K_p u_\Omega(t))</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">U_m cos(\omega_c t+K_p u_\Omega(t))</span><script type="math/tex">U_m cos(\omega_c t+K_p u_\Omega(t))</script></span></script></span>
+2. 调频波：
+    <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">U_m cos(\omega_c t+k_f\int_0^t u_\Omega(t))</span><script type="math/tex">U_m cos(\omega_c t+k_f\int_0^t u_\Omega(t))</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">U_m cos(\omega_c t+k_f\int_0^t u_\Omega(t))</span><script type="math/tex">U_m cos(\omega_c t+k_f\int_0^t u_\Omega(t))</script></span></script></span></p>
+<p>调角波的调制指数定义为最大相移，</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">m_p = K_p U_{\Omega m} \qquad m_f = \frac{K_f U_{\Omega m}}{\Omega}</div>
+<script type="math/tex; mode=display">m_p = K_p U_{\Omega m} \qquad m_f = \frac{K_f U_{\Omega m}}{\Omega}</script>
+</div>
+<p>而最大频移等于调制指数与调制信号频率的乘积</p>
+<p>三个频率参数</p>
+<p>频谱：由载频为中心，无数边频组成
+中等质量通信系统，<span class="arithmatex"><span class="MathJax_Preview">B_{CR} = 2(m+1)F</span><script type="math/tex">B_{CR} = 2(m+1)F</script></span>，m为小数时，7舍8入
+调频波<span class="arithmatex"><span class="MathJax_Preview">B_{CR}</span><script type="math/tex">B_{CR}</script></span>基本不变，调相波<span class="arithmatex"><span class="MathJax_Preview">B_{CR}</span><script type="math/tex">B_{CR}</script></span>变化大</p>
+<h3 id="_49">调频电路</h3>
+<p>直接调制：用调制信号控制决定振荡器的频率的可变电抗的值</p>
+<p>间接调制：先通过积分电路，再通过相位调制</p>
+<h4 id="_50">变容二极管直接调频电路</h4>
+<p>只能加反向电压，和PN结结电容有一定关系</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">C_j = \frac{C_{j0}}{(1+\frac{u_r}{U_D})^\gamma} = \frac{C_{jQ}}{(1+m cos(\Omega t))^\gamma}</div>
+<script type="math/tex; mode=display">C_j = \frac{C_{j0}}{(1+\frac{u_r}{U_D})^\gamma} = \frac{C_{jQ}}{(1+m cos(\Omega t))^\gamma}</script>
+</div>
+<p>式中<span class="arithmatex"><span class="MathJax_Preview">m = U_{\Omega m}/(V_Q+U_D)</span><script type="math/tex">m = U_{\Omega m}/(V_Q+U_D)</script></span>，为电容调制度</p>
+<p>作为回路总电容时，实现线性调频的条件是<span class="arithmatex"><span class="MathJax_Preview">\gamma = 2</span><script type="math/tex">\gamma = 2</script></span>，此时</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">\omega_c = \omega_c + \frac{\omega_c}{U_D + V_Q} u_{\Omega m}(t)</div>
+<script type="math/tex; mode=display">\omega_c = \omega_c + \frac{\omega_c}{U_D + V_Q} u_{\Omega m}(t)</script>
+</div>
+<p>若<span class="arithmatex"><span class="MathJax_Preview">\gamma \neq 2</span><script type="math/tex">\gamma \neq 2</script></span>，则会产生中心频率偏移和线性失真</p>
+<p>特点：灵敏度高，频偏大，频率稳定度不好</p>
+<h4 id="_51">晶体振荡器直接调频</h4>
+<h3 id="_52">调相电路</h3>
+<h4 id="_53">可变移相法</h4>
+<p>变容二极管调相网络：实质和直接调频一样，都是移动了中心频率，只不过分析时使用了谐振回路的相频特性曲线</p>
+<p>若调制信号的隔直电容选大了，就变成积分电路，可实现间接调频</p>
+<h4 id="_54">可变时延法</h4>
+<h4 id="_55">矢量合成法</h4>
+<h2 id="_56">鉴频器和鉴相器</h2>
+<p>技术指标：
+1. 鉴相器：鉴相特性曲线，鉴相跨导，鉴相线性范围，非线性失真
+2. 鉴频器：同理</p>
+<h3 id="_57">鉴相器</h3>
+<p>分类：模拟电路型（乘积型），数字电路型（门电路）</p>
+<h4 id="_58">乘积型</h4>
+<p>模拟乘法器相乘，再由低通取出</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">u_1</span><script type="math/tex">u_1</script></span>需要解调信号，<span class="arithmatex"><span class="MathJax_Preview">u_2</span><script type="math/tex">u_2</script></span>要与<span class="arithmatex"><span class="MathJax_Preview">u_1</span><script type="math/tex">u_1</script></span>正交，分三种情况讨论：两个都是小信号或大信号以及<span class="arithmatex"><span class="MathJax_Preview">u_1</span><script type="math/tex">u_1</script></span>小信号，<span class="arithmatex"><span class="MathJax_Preview">u_2</span><script type="math/tex">u_2</script></span>大信号</p>
+<ol>
+<li>
+<p>鉴相特性：正弦形
+    范围<span class="arithmatex"><span class="MathJax_Preview">\phi_{emax} = \pm \frac{\pi}{6} rad</span><script type="math/tex">\phi_{emax} = \pm \frac{\pi}{6} rad</script></span></p>
+</li>
+<li>
+<p>三角波形
+    <span class="arithmatex"><span class="MathJax_Preview">\phi_{emax} = \pm \frac{\pi}{2} rad</span><script type="math/tex">\phi_{emax} = \pm \frac{\pi}{2} rad</script></span></p>
+</li>
+<li>
+<p>正弦形
+    <span class="arithmatex"><span class="MathJax_Preview">\phi_{emax} = \pm \frac{\pi}{6} rad</span><script type="math/tex">\phi_{emax} = \pm \frac{\pi}{6} rad</script></span></p>
+</li>
+</ol>
+<h3 id="_59">鉴频器</h3>
+<p>分类：调频-调幅调频变换型，相移乘法鉴频型，脉冲均值型</p>
+<h4 id="-">调频-调幅调频变换型</h4>
+<ol>
+<li>
+<p>双失谐回路鉴频器
+    利用两个失谐回路和两个检波器</p>
+</li>
+<li>
+<p>相位鉴频器
+    双耦合回路和两个检波器
+    注意：初级回路谐振频率与对称性有关，二级回路和中心频率有关
+    鉴频特性曲线由耦合因数<span class="arithmatex"><span class="MathJax_Preview">\eta = kQ_L</span><script type="math/tex">\eta = kQ_L</script></span>决定，<span class="arithmatex"><span class="MathJax_Preview">\eta</span><script type="math/tex">\eta</script></span>一定时，宽度由耦合系数<span class="arithmatex"><span class="MathJax_Preview">k = \frac{M}{\sqrt{L_1 L_2}}</span><script type="math/tex">k = \frac{M}{\sqrt{L_1 L_2}}</script></span>决定</p>
+</li>
+<li>
+<p>比例鉴频器
+    在相位鉴频器即基础上更改，牺牲输出电压的幅度来换取抑制寄生调幅的能力，原理是幅度变化时，<span class="arithmatex"><span class="MathJax_Preview">|U_{D1}| ,|U_{D2}|</span><script type="math/tex">|U_{D1}| ,|U_{D2}|</script></span>比值不变，<span class="arithmatex"><span class="MathJax_Preview">U_o</span><script type="math/tex">U_o</script></span>不变</p>
+</li>
+</ol>
+<h2 id="_60">混频器</h2>
+<h3 id="_61">干扰与失真</h3>
+<ol>
+<li>
+<p>信号与本振频率干扰（干扰哨声）
+    <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">pf_L - qf_s = f_I \pm F \qquad qf_s - pf_L = f_I \pm F</span><script type="math/tex">pf_L - qf_s = f_I \pm F \qquad qf_s - pf_L = f_I \pm F</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">pf_L - qf_s = f_I \pm F \qquad qf_s - pf_L = f_I \pm F</span><script type="math/tex">pf_L - qf_s = f_I \pm F \qquad qf_s - pf_L = f_I \pm F</script></span></script></span></p>
+</li>
+<li>
+<p>外来干扰和本振频率（副波道干扰）
+    <span class="arithmatex"><span class="MathJax_Preview"><span class="arithmatex"><span class="MathJax_Preview">f_n = \frac{p}{q}f_L \pm \frac{f_I}{q}</span><script type="math/tex">f_n = \frac{p}{q}f_L \pm \frac{f_I}{q}</script></span></span><script type="math/tex"><span class="arithmatex"><span class="MathJax_Preview">f_n = \frac{p}{q}f_L \pm \frac{f_I}{q}</span><script type="math/tex">f_n = \frac{p}{q}f_L \pm \frac{f_I}{q}</script></span></script></span>
+    <span class="arithmatex"><span class="MathJax_Preview">q = 1 ,p = 0</span><script type="math/tex">q = 1 ,p = 0</script></span>时称为中频干扰
+    <span class="arithmatex"><span class="MathJax_Preview">q = 1 ,p = 1</span><script type="math/tex">q = 1 ,p = 1</script></span>时称为镜像频率干扰，常用<span class="arithmatex"><span class="MathJax_Preview">f_n = 2f_I + f_s</span><script type="math/tex">f_n = 2f_I + f_s</script></span>计算</p>
+</li>
+</ol>
+<h2 id="_62">反馈控制电路与频率合成</h2>
+<p>组成：鉴相器，环路滤波器，压控振荡器</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">p\theta_e + K_dK_p(p)K_v sin(\theta_e) = p\theta_1</div>
+<script type="math/tex; mode=display">p\theta_e + K_dK_p(p)K_v sin(\theta_e) = p\theta_1</script>
+</div>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../EMC/" class="md-footer__link md-footer__link--prev" aria-label="Previous: EMC" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              EMC
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../Information%20Theory/" class="md-footer__link md-footer__link--next" aria-label="Next: 信息论" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              信息论
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e1a181d9.min.js"></script>
+      
+        <script src="../../mathjax-config.js"></script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+    
+  </body>
+</html>

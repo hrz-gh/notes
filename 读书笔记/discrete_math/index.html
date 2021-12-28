@@ -1,0 +1,3914 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.3">
+    
+    
+      
+        <title>离散数学 - hrz's notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.edf004c2.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="hrz&#39;s notes" class="md-header__button md-logo" aria-label="hrz's notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            hrz's notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              离散数学
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="hrz&#39;s notes" class="md-nav__button md-logo" aria-label="hrz's notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    hrz's notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        书单
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          数据结构与算法
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="数据结构与算法" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          数据结构与算法
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/BasicMathProblem/" class="md-nav__link">
+        公约数与公倍数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/SumOfXOR/" class="md-nav__link">
+        异或的应用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/code/" class="md-nav__link">
+        代码片段
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          编程语言
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="编程语言" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          编程语言
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/CorCLanguage/" class="md-nav__link">
+        C++
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/LatexSymbol/" class="md-nav__link">
+        Latex
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/TimerInCpp/" class="md-nav__link">
+        时间函数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/remainder/" class="md-nav__link">
+        余数的值
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          英语
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="英语" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          英语
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%8B%B1%E8%AF%AD/class/" class="md-nav__link">
+        类型模板
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%8B%B1%E8%AF%AD/writing/" class="md-nav__link">
+        写作句型
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          读书笔记
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="读书笔记" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          读书笔记
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CSAPP/" class="md-nav__link">
+        深入理解计算机系统
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../C_Primer/" class="md-nav__link">
+        C++ Primer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          离散数学
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        离散数学
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#methods-of-proving-theorems" class="md-nav__link">
+    Methods of Proving Theorems
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods of Proving Theorems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#direct-proofs" class="md-nav__link">
+    Direct Proofs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proof-by-contradiction" class="md-nav__link">
+    Proof by Contradiction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proof-by-contrposition" class="md-nav__link">
+    Proof by Contrposition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#propositional-logic" class="md-nav__link">
+    Propositional logic
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications-of-propositional-logic" class="md-nav__link">
+    Applications of propositional logic
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#propositional-equivalences" class="md-nav__link">
+    Propositional equivalences
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#predicates-and-qualifiers" class="md-nav__link">
+    Predicates and Qualifiers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nested-qualifiers" class="md-nav__link">
+    Nested Qualifiers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#normal-forms" class="md-nav__link">
+    Normal forms
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inference" class="md-nav__link">
+    Inference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-proofs" class="md-nav__link">
+    Introduction to Proofs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proof-methods-and-strategy" class="md-nav__link">
+    Proof Methods and Strategy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set" class="md-nav__link">
+    Set
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-operations" class="md-nav__link">
+    Set Operations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sequence" class="md-nav__link">
+    Sequence
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cardinality-of-sets" class="md-nav__link">
+    Cardinality of Sets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#counting-the-basics-of-counting" class="md-nav__link">
+    Counting The Basics of Counting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-pigeonhole-principle" class="md-nav__link">
+    The Pigeonhole Principle
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permutations-and-combinations" class="md-nav__link">
+    Permutations and Combinations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#binomial-coefficient" class="md-nav__link">
+    Binomial Coefficient
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generalized-permutations-and-combinations" class="md-nav__link">
+    Generalized Permutations and Combinations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generating-permutations-and-combinations" class="md-nav__link">
+    Generating Permutations and Combinations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications-of-recurrence-relations" class="md-nav__link">
+    Applications of Recurrence Relations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solving-linear-recurrence-relations" class="md-nav__link">
+    Solving Linear Recurrence Relations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generating-functions" class="md-nav__link">
+    Generating Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inclusion-exclusion" class="md-nav__link">
+    Inclusion-Exclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications-of-inclusion-exclusion" class="md-nav__link">
+    Applications of Inclusion-Exclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relations-their-properties-and-representations" class="md-nav__link">
+    Relations, Their Properties and Representations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#closures-of-relations" class="md-nav__link">
+    Closures of Relations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#equivalence-relations" class="md-nav__link">
+    Equivalence Relations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partial-ordering" class="md-nav__link">
+    Partial Ordering
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graphs-and-graph-models" class="md-nav__link">
+    Graphs and Graph Models
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-terminology-and-special-types-of-graphs" class="md-nav__link">
+    Graph Terminology and Special Types of Graphs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#representing-graphs-and-graph" class="md-nav__link">
+    Representing Graphs and Graph
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connectivity" class="md-nav__link">
+    Connectivity
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#euler-and-hamilton-paths" class="md-nav__link">
+    Euler and Hamilton Paths
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shortest-path-problems" class="md-nav__link">
+    Shortest-Path Problems
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#planar-graphs" class="md-nav__link">
+    Planar Graphs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-coloring" class="md-nav__link">
+    Graph Coloring
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../math_postgraduate/" class="md-nav__link">
+        张宇考研数学
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../network/" class="md-nav__link">
+        计算机网络
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../politics/" class="md-nav__link">
+        徐涛考研政治
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7" type="checkbox" id="__nav_5_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_7">
+          Ucore操作系统
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Ucore操作系统" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_7">
+          <span class="md-nav__icon md-icon"></span>
+          Ucore操作系统
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7_1" type="checkbox" id="__nav_5_7_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_7_1">
+          Appendix
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Appendix" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_7_1">
+          <span class="md-nav__icon md-icon"></span>
+          Appendix
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/appendix/gcc_inline_asm/" class="md-nav__link">
+        Gcc inline asm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/appendix/gdb/" class="md-nav__link">
+        Gdb
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/appendix/global_var/" class="md-nav__link">
+        Global var
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/appendix/interrupt/" class="md-nav__link">
+        原理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/appendix/struct/" class="md-nav__link">
+        Struct
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7_2" type="checkbox" id="__nav_5_7_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_7_2">
+          Lab1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lab1" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          Lab1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab1/1/" class="md-nav__link">
+        1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab1/2/" class="md-nav__link">
+        2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab1/3/" class="md-nav__link">
+        3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab1/4/" class="md-nav__link">
+        4
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab1/5/" class="md-nav__link">
+        5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab1/6/" class="md-nav__link">
+        6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab1/7/" class="md-nav__link">
+        7
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab1/data_struct/" class="md-nav__link">
+        Data struct
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab1/my_note/" class="md-nav__link">
+        My note
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7_3" type="checkbox" id="__nav_5_7_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_7_3">
+          Lab2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lab2" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          Lab2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab2/1/" class="md-nav__link">
+        1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab2/2/" class="md-nav__link">
+        2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab2/3/" class="md-nav__link">
+        3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab2/data_stuct/" class="md-nav__link">
+        Data stuct
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab2/my_note/" class="md-nav__link">
+        My note
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7_4" type="checkbox" id="__nav_5_7_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_7_4">
+          Lab3
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lab3" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_7_4">
+          <span class="md-nav__icon md-icon"></span>
+          Lab3
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab3/1/" class="md-nav__link">
+        1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab3/2/" class="md-nav__link">
+        2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab3/data_struct/" class="md-nav__link">
+        Data struct
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab3/my_note/" class="md-nav__link">
+        My note
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7_5" type="checkbox" id="__nav_5_7_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_7_5">
+          Lab4
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lab4" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_7_5">
+          <span class="md-nav__icon md-icon"></span>
+          Lab4
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab4/1/" class="md-nav__link">
+        1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab4/2/" class="md-nav__link">
+        2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab4/3/" class="md-nav__link">
+        3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab4/data_struct/" class="md-nav__link">
+        Data struct
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab4/my_note/" class="md-nav__link">
+        My note
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7_6" type="checkbox" id="__nav_5_7_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_7_6">
+          Lab5
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lab5" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_7_6">
+          <span class="md-nav__icon md-icon"></span>
+          Lab5
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab5/data_struct/" class="md-nav__link">
+        Data struct
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab5/lab5/" class="md-nav__link">
+        Lab5 Report
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab5/my_note/" class="md-nav__link">
+        My note
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7_7" type="checkbox" id="__nav_5_7_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_7_7">
+          Lab6
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lab6" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_7_7">
+          <span class="md-nav__icon md-icon"></span>
+          Lab6
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab6/1/" class="md-nav__link">
+        1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab6/2/" class="md-nav__link">
+        2
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7_8" type="checkbox" id="__nav_5_7_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_7_8">
+          Lab7
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lab7" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_7_8">
+          <span class="md-nav__icon md-icon"></span>
+          Lab7
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab7/1/" class="md-nav__link">
+        1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab7/2/" class="md-nav__link">
+        2
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7_9" type="checkbox" id="__nav_5_7_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_7_9">
+          Lab8
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lab8" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_7_9">
+          <span class="md-nav__icon md-icon"></span>
+          Lab8
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab8/lab8/" class="md-nav__link">
+        Lab8 Report
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab8/my_note/" class="md-nav__link">
+        笔记
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_8" type="checkbox" id="__nav_5_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_8">
+          数据结构与算法（C++版）
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="数据结构与算法（C++版）" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_8">
+          <span class="md-nav__icon md-icon"></span>
+          数据结构与算法（C++版）
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%88C%2B%2B%E7%89%88%EF%BC%89/dsa/" class="md-nav__link">
+        原理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%88C%2B%2B%E7%89%88%EF%BC%89/graph/" class="md-nav__link">
+        算法图解
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%88C%2B%2B%E7%89%88%EF%BC%89/info/" class="md-nav__link">
+        代码
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_9" type="checkbox" id="__nav_5_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_9">
+          计算机组成原理 软硬件接口
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="计算机组成原理 软硬件接口" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_9">
+          <span class="md-nav__icon md-icon"></span>
+          计算机组成原理 软硬件接口
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%20%E8%BD%AF%E7%A1%AC%E4%BB%B6%E6%8E%A5%E5%8F%A3/gen/" class="md-nav__link">
+        硬件基础
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%20%E8%BD%AF%E7%A1%AC%E4%BB%B6%E6%8E%A5%E5%8F%A3/mips_cpu/" class="md-nav__link">
+        MIPS CPU
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%20%E8%BD%AF%E7%A1%AC%E4%BB%B6%E6%8E%A5%E5%8F%A3/store/" class="md-nav__link">
+        存储器与IO
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          通信工程
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="通信工程" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          通信工程
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%80%9A%E4%BF%A1%E5%B7%A5%E7%A8%8B/Digital%20Signal%20Processing/" class="md-nav__link">
+        数字信号处理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%80%9A%E4%BF%A1%E5%B7%A5%E7%A8%8B/EMC/" class="md-nav__link">
+        EMC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%80%9A%E4%BF%A1%E5%B7%A5%E7%A8%8B/High%20Frency/" class="md-nav__link">
+        通信电子线路
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%80%9A%E4%BF%A1%E5%B7%A5%E7%A8%8B/Information%20Theory/" class="md-nav__link">
+        信息论
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5" type="checkbox" id="__nav_6_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_5">
+          Experiment
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Experiment" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_5">
+          <span class="md-nav__icon md-icon"></span>
+          Experiment
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%80%9A%E4%BF%A1%E5%B7%A5%E7%A8%8B/Experiment/QuickAlarm/" class="md-nav__link">
+        基于51的定时闹钟
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5_2" type="checkbox" id="__nav_6_5_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_5_2">
+          Digital Signal Processing Experiment
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Digital Signal Processing Experiment" data-md-level="3">
+        <label class="md-nav__title" for="__nav_6_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Digital Signal Processing Experiment
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%80%9A%E4%BF%A1%E5%B7%A5%E7%A8%8B/Experiment/Digital%20Signal%20Processing%20Experiment/DFT/" class="md-nav__link">
+        离散傅里叶变换
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%80%9A%E4%BF%A1%E5%B7%A5%E7%A8%8B/Experiment/Digital%20Signal%20Processing%20Experiment/FrenquencySpectrumAnalyzer/" class="md-nav__link">
+        音频频谱分析仪设计与实现
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%80%9A%E4%BF%A1%E5%B7%A5%E7%A8%8B/Experiment/Digital%20Signal%20Processing%20Experiment/IIR%26FIR/" class="md-nav__link">
+        离散时间滤波器设计
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%80%9A%E4%BF%A1%E5%B7%A5%E7%A8%8B/Experiment/Digital%20Signal%20Processing%20Experiment/Sample/" class="md-nav__link">
+        抽样
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%80%9A%E4%BF%A1%E5%B7%A5%E7%A8%8B/Experiment/Digital%20Signal%20Processing%20Experiment/SpectrumAnalysis/" class="md-nav__link">
+        谱分析
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          配置
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="配置" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          配置
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%85%8D%E7%BD%AE/Linux%20latex/" class="md-nav__link">
+        Linux latex 配置
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%85%8D%E7%BD%AE/LinuxIcon/" class="md-nav__link">
+        Linux 日常
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E9%85%8D%E7%BD%AE/Windows10%20Config/" class="md-nav__link">
+        Windows10 Config
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#methods-of-proving-theorems" class="md-nav__link">
+    Methods of Proving Theorems
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods of Proving Theorems">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#direct-proofs" class="md-nav__link">
+    Direct Proofs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proof-by-contradiction" class="md-nav__link">
+    Proof by Contradiction
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proof-by-contrposition" class="md-nav__link">
+    Proof by Contrposition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#propositional-logic" class="md-nav__link">
+    Propositional logic
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications-of-propositional-logic" class="md-nav__link">
+    Applications of propositional logic
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#propositional-equivalences" class="md-nav__link">
+    Propositional equivalences
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#predicates-and-qualifiers" class="md-nav__link">
+    Predicates and Qualifiers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nested-qualifiers" class="md-nav__link">
+    Nested Qualifiers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#normal-forms" class="md-nav__link">
+    Normal forms
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inference" class="md-nav__link">
+    Inference
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-proofs" class="md-nav__link">
+    Introduction to Proofs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proof-methods-and-strategy" class="md-nav__link">
+    Proof Methods and Strategy
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set" class="md-nav__link">
+    Set
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-operations" class="md-nav__link">
+    Set Operations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#function" class="md-nav__link">
+    Function
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sequence" class="md-nav__link">
+    Sequence
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cardinality-of-sets" class="md-nav__link">
+    Cardinality of Sets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#counting-the-basics-of-counting" class="md-nav__link">
+    Counting The Basics of Counting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-pigeonhole-principle" class="md-nav__link">
+    The Pigeonhole Principle
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#permutations-and-combinations" class="md-nav__link">
+    Permutations and Combinations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#binomial-coefficient" class="md-nav__link">
+    Binomial Coefficient
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generalized-permutations-and-combinations" class="md-nav__link">
+    Generalized Permutations and Combinations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generating-permutations-and-combinations" class="md-nav__link">
+    Generating Permutations and Combinations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications-of-recurrence-relations" class="md-nav__link">
+    Applications of Recurrence Relations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solving-linear-recurrence-relations" class="md-nav__link">
+    Solving Linear Recurrence Relations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generating-functions" class="md-nav__link">
+    Generating Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inclusion-exclusion" class="md-nav__link">
+    Inclusion-Exclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#applications-of-inclusion-exclusion" class="md-nav__link">
+    Applications of Inclusion-Exclusion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relations-their-properties-and-representations" class="md-nav__link">
+    Relations, Their Properties and Representations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#closures-of-relations" class="md-nav__link">
+    Closures of Relations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#equivalence-relations" class="md-nav__link">
+    Equivalence Relations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#partial-ordering" class="md-nav__link">
+    Partial Ordering
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graphs-and-graph-models" class="md-nav__link">
+    Graphs and Graph Models
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-terminology-and-special-types-of-graphs" class="md-nav__link">
+    Graph Terminology and Special Types of Graphs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#representing-graphs-and-graph" class="md-nav__link">
+    Representing Graphs and Graph
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connectivity" class="md-nav__link">
+    Connectivity
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#euler-and-hamilton-paths" class="md-nav__link">
+    Euler and Hamilton Paths
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shortest-path-problems" class="md-nav__link">
+    Shortest-Path Problems
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#planar-graphs" class="md-nav__link">
+    Planar Graphs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graph-coloring" class="md-nav__link">
+    Graph Coloring
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+<h1 id="_1">离散数学</h1>
+<h2 id="methods-of-proving-theorems">Methods of Proving Theorems</h2>
+<p>If we want to prove <code>$q$</code> is true ,there are three methods:</p>
+<h3 id="direct-proofs">Direct Proofs</h3>
+<pre><code class="language-math">p\land (p\to q) \text{\ is true}
+</code></pre>
+<h3 id="proof-by-contradiction">Proof by Contradiction</h3>
+<pre><code class="language-math">\lnot q\to (\lnot r\land r)\text{\ is true}
+</code></pre>
+<h3 id="proof-by-contrposition">Proof by Contrposition</h3>
+<pre><code class="language-math">p\land (\lnot q\to \lnot p)\text{\ is true}
+</code></pre>
+<p>To be honest ,this is a specific case base on <strong>contradiction</strong> ,which <strong>p</strong> is subsititude for <strong>r</strong> ,generally ,<strong>p</strong> is told in question stem ,and <strong>r</strong> is not.   </p>
+<h2 id="propositional-logic">Propositional logic</h2>
+<p>Proposition: A declarative sentence that is either true or false, but not both. </p>
+<p>Statements that can not be decided is not a proposition. </p>
+<p>Propositional/Statement variable: p, q, r, s </p>
+<p>Truth value: T, F</p>
+<p>Propositional Calculus/Logic: The area of logic that deals with propositions. </p>
+<p>Compound proposition: Proposition formed from existing propositions using operators. </p>
+<p>Operator: </p>
+<ul>
+<li>
+<p>Not
+  ¬p
+  e.g. It is not the case that …</p>
+</li>
+<li>
+<p>Conjunction/And
+  p ∧ q
+  e.g. … and/but …</p>
+</li>
+<li>
+<p>Disjunction/Or
+  p ∨ q
+  e.g. … or …</p>
+</li>
+<li>
+<p>Exclusive or
+  p ⊕ q</p>
+</li>
+<li>
+<p>Conditional Statement / Implication
+  p → q</p>
+</li>
+<li>if p, then q</li>
+<li>p only if q</li>
+<li>p implies q</li>
+<li>p is a sufficient condition for q</li>
+<li>q is a necessary condition for p</li>
+<li>q follows from / if / when / whenever p</li>
+<li>q unless ¬p
+    False only when p is true, but q is false; when p is false, p → q is defined to be true. </li>
+<li>Converse
+    p → q to q → p</li>
+<li>Inverse
+    p → q to ¬p → ¬q</li>
+<li>
+<p>Contrapositive
+    Converse and inverse
+    p → q to ¬q → ¬p</p>
+</li>
+<li>
+<p>Biconditional statement
+  p ↔ q</p>
+</li>
+<li>p if and only if q</li>
+<li>p is necessary and sufficient for q</li>
+<li>if p then q, and conversely</li>
+<li>p iff q
+    p ↔ q == (p → q) ∧ (q → p), only true when p and q have the same value</li>
+</ul>
+<p>Operator precedence: (), ¬, ∧ ∨, →, ↔</p>
+<p>Bit: 1 for T, 0 for F.</p>
+<p>Bit string: a sequence of zero or more bits.</p>
+<p>Bit operation: Bitwise AND, Bitwise OR, Bitwise XOR</p>
+<h2 id="applications-of-propositional-logic">Applications of propositional logic</h2>
+<p>Translating English sentences: to logical proposition. </p>
+<p>Consistent system specification: no conflicting requirements; a set of value to satisfy all the statements translated; does not necessarily has a real usage.</p>
+<h2 id="propositional-equivalences">Propositional equivalences</h2>
+<p>Classification of compound proposition:</p>
+<ul>
+<li>
+<p>Tautology
+  Always true</p>
+</li>
+<li>
+<p>Contradiction
+  Always false</p>
+</li>
+<li>
+<p>Contingency
+  Neither a tautology nor a contradiction</p>
+</li>
+</ul>
+<p>Logical equivalence: Compound propositions that have the same truth values in all possible</p>
+<p>cases: 
+p ↔ q is a tautology
+p ≡ q, p ⇔ q
+Logical Equivalences:</p>
+<table>
+<thead>
+<tr>
+<th>Equivalence</th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>p ∧ T ≡ p</td>
+<td>Identity laws</td>
+</tr>
+<tr>
+<td>p ∨ F ≡ p</td>
+<td></td>
+</tr>
+<tr>
+<td>p ∨ T ≡ T</td>
+<td>Domination laws</td>
+</tr>
+<tr>
+<td>p ∧ F ≡ F</td>
+<td></td>
+</tr>
+<tr>
+<td>p ∨ p ≡ p</td>
+<td>Idempotent laws</td>
+</tr>
+<tr>
+<td>p ∧ p ≡ p</td>
+<td></td>
+</tr>
+<tr>
+<td>¬(¬p) ≡ p</td>
+<td>Double negation law</td>
+</tr>
+<tr>
+<td>p ∨ q ≡ q ∨ p</td>
+<td>Commutative laws</td>
+</tr>
+<tr>
+<td>p ∧ q ≡ q ∧ p</td>
+<td></td>
+</tr>
+<tr>
+<td>(p ∨ q) ∨ r ≡ p ∨ (q ∨ r)</td>
+<td>Associative laws</td>
+</tr>
+<tr>
+<td>(p ∧ q) ∧ r ≡ p ∧ (q ∧ r)</td>
+<td></td>
+</tr>
+<tr>
+<td>p ∨ (q ∧ r) ≡ (p ∨ q) ∧ (p ∨ r)</td>
+<td>Distributive laws</td>
+</tr>
+<tr>
+<td>p ∧ (q ∨ r) ≡ (p ∧ q) ∨ (p ∧ r)</td>
+<td></td>
+</tr>
+<tr>
+<td>¬(p ∧ q) ≡ ¬p ∨ ¬q</td>
+<td>De Morgan’s laws</td>
+</tr>
+<tr>
+<td>¬(p ∨ q) ≡ ¬p ∧ ¬q</td>
+<td></td>
+</tr>
+<tr>
+<td>p ∨ (p ∧ q) ≡ p</td>
+<td>Absorption laws</td>
+</tr>
+<tr>
+<td>p ∧ (p ∨ q) ≡ p</td>
+<td></td>
+</tr>
+<tr>
+<td>p ∨ ¬p ≡ T</td>
+<td>Negation laws</td>
+</tr>
+<tr>
+<td>p ∧ ¬p ≡ F</td>
+<td></td>
+</tr>
+<tr>
+<td>p → q ≡ ¬p ∨ q</td>
+<td></td>
+</tr>
+<tr>
+<td>p ↔ q ≡ (p ∧ q) ∨ (¬p ∧</td>
+<td></td>
+</tr>
+<tr>
+<td>¬q)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Mine: ¬(p → q) ≡ p ∧ ¬q Mine: p ∨ (¬p ∧ q) ≡ p ∨ q See Section 3.1 No.30</p>
+<p>Prove Logical Equivalence: Truth table or developing a series of logical equivalences.</p>
+<p>Prove Not Logically Equivalent: (Simplify first) and find a counterexample.</p>
+<p>Propositional Satisfiability: An assignment of truth values that makes it true.</p>
+<p>Truth table, or whether its negation is a tautology. (or say whether itself is a contradiction?)</p>
+<h2 id="predicates-and-qualifiers">Predicates and Qualifiers</h2>
+<p>Predicate: Statements involving variables, the variables are called subjects, the other is called a predicate.</p>
+<p>The statement of P(x) is also called the value of Propositional function P at x.</p>
+<p>Precondition: Conditions for valid input.</p>
+<p>Postcondition: Conditions for correct output.</p>
+<p>Qualification: Express the extent to which a predicate is true over a range of elements.</p>
+<p>((Domain / universe) of discourse) / domain: A predicate is true for a variable in a particular domain.</p>
+<p>Predicate calculus: The area of logic that deals with predicates and quantifiers.</p>
+<p>Universal qualification: For every element.</p>
+<p>∀x P(x): For all / every x P (x).</p>
+<p>An element for which P(x) is false is called a counterexample of ∀x P(x).</p>
+<p>Existential qualification: For one or more element.
+∃x P(x): There exists an element x in the domain such that P(x).</p>
+<p>Uniqueness qualification: ∃!x P(x) or ∃_1 x P(x)
+There exists a unique x such that P (x) or There is one and only one x such that P (x).</p>
+<p>Abbreviated qualifier notation: Use condition for domain.</p>
+<p>Or use ∀x P(x) → Q(x) for using P(x) as condition for domain.</p>
+<p>Quantifiers (∀ and ∃) have higher precedence than all logical operators from propositional calculus. i.e. They absorb less.</p>
+<p>Occurrence of variable is bound: Quantifier is used on the variable.</p>
+<p>All the variables that occur in a propositional function must be bound or set equal to a particular value to turn it into a proposition.</p>
+<p>Scope of quantifier: The part of a logical expression to which a quantifier is applied.</p>
+<p>The same letter is often used to represent variables bound by different quantifiers with scopes that do not overlap.</p>
+<p>Statements involving predicates and quantifiers are logically equivalent: If and only if they have the same truth value no matter which predicates are substituted into these statements and which domain of discourse is used for the variables in these propositional functions. </p>
+<p>S ≡ T
+∀x (P(x) ∧ Q(x)) ≡ ∀x P(x) ∧ ∀x Q(x)
+∃x (P(x) ∨ Q(x)) ≡ ∃x P(x) ∨ ∃x Q(x)</p>
+<p>De Morgan’s laws for quantifiers:
+¬∀x P(x) ≡ ∃x ¬P(x)
+¬∃x Q(x) ≡ ∀x ¬Q(x)</p>
+<p>Translating from English into Logical Expression: …
+Using Quantifiers in System Specifications: …</p>
+<h2 id="nested-qualifiers">Nested Qualifiers</h2>
+<p>Nested quantifiers: One quantifier is within the scope of another.</p>
+<p>Understanding Statements Involving Nested</p>
+<p>Quantifiers: …</p>
+<p>The order of the quantifiers is important, unless all the quantifiers are universal quantifiers or all are existential quantifiers.</p>
+<table>
+<thead>
+<tr>
+<th>Statement</th>
+<th>Condition for true</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>∀x∀y P(x, y)</td>
+<td>P (x, y) is true for every pair x, y.</td>
+</tr>
+<tr>
+<td>∀y∀x P(x, y)</td>
+<td></td>
+</tr>
+<tr>
+<td>∀x∃y P(x, y)</td>
+<td>For every x there is a y for which P (x, y) is true.</td>
+</tr>
+<tr>
+<td>∃x∀y P(x, y)</td>
+<td>There is an x for which P (x, y) is true for every y.</td>
+</tr>
+<tr>
+<td>∃x∃y P(x, y)</td>
+<td>There is a pair x, y for which P (x, y) is true.</td>
+</tr>
+<tr>
+<td>∃y∃x P (x, y)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Translating: …</p>
+<p>Negation: Recursively…</p>
+<h2 id="normal-forms">Normal forms</h2>
+<p>(Disjunctive / conjunctive) clause: Disjunctions / Conjunctions with literals (optionally negated) as its disjuncts / conjuncts.</p>
+<p>Disjunctive / Conjunctive normal form (DNF / CNF): A disjunction / conjunction with conjunctive / disjunctive clauses as its disjuncts / conjuncts.</p>
+<p>Full disjunctive / conjuctive normal form: Each of its variables appears exactly once in every clause. Obtained by adding ∧ (¬P(x) ∨ P(x)) to its conjuction disjuncts / ∨ (¬P(x) ∧ P(x)) to its disjunction conjuncts.</p>
+<p>Prenex normal form: Qualifier…Predicate_without_quaulifier</p>
+<h2 id="inference">Inference</h2>
+<p>Argument: a sequence of propositions.</p>
+<p>Premise: All but the final proposition in the argument.</p>
+<p>Conclusion: The final proposition in the argument.</p>
+<p>Valid argument: An argument is valid if the truth of all its premises implies that the conclusion is true.</p>
+<p>Fallacy: Common forms of incorrect reasoning which lead to invalid arguments.</p>
+<p>Argument form: A sequence of compound propositions involving propositional variables.</p>
+<p>Valid argument form: An argument form is valid no matter which particular propositions are substituted for the propositional variables in its premises, the conclusion is true if the premises are all true.</p>
+<p>The key to showing that an argument in propositional logic is valid is to show that its argument form is valid.</p>
+<p>Using truth table to show that an argument form is valid is tedious.</p>
+<p>Modus ponens (Mode that affirms) / the law of detachment: (p ∧ (p → q)) → q</p>
+<p>Argument can be valid, but if any of its premise is false, its conclusion is false.</p>
+<table>
+<thead>
+<tr>
+<th>Tautology</th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(p ∧ (p → q)) → q</td>
+<td>Modus ponens</td>
+</tr>
+<tr>
+<td>(¬q ∧ (p → q)) → ¬p</td>
+<td>Modus tollens</td>
+</tr>
+<tr>
+<td>((p → q) ∧ (q → r)) → (p → r)</td>
+<td>Hypothetical syllogism</td>
+</tr>
+<tr>
+<td>((p ∨ q) ∧ ¬p) → q</td>
+<td>Disjunctive syllogism</td>
+</tr>
+<tr>
+<td>p → (p ∨ q)</td>
+<td>Addition</td>
+</tr>
+<tr>
+<td>(p ∧ q) → p</td>
+<td>Simplification</td>
+</tr>
+<tr>
+<td>((p) ∧ (q)) → (p ∧ q)</td>
+<td>Conjunction</td>
+</tr>
+<tr>
+<td>((p ∨ q) ∧ (¬p ∨ r)) → (q ∨ r)</td>
+<td>Resolution</td>
+</tr>
+</tbody>
+</table>
+<p>p ∧ q → (r → s) ≡ p ∧ q ∧ r → s, r is additional premise.
+Resolution is commonly used: ((p ∨ q) ∧ (¬p ∨ r)) → (q ∨ r)
+Also rewrite premises into separate clauses can help.
+Fallacy 
+Affirming the conclusion
+((p → q) ∧ q) → p is not a tautology.
+Denying the hypothesis
+((p → q) ∧ ¬p) → ¬q is not tautology.
+Begging the question (Circular reasoning)
+one or more steps of a proof are based on the truth of the statement
+being proved.
+Rules of inference for quantified statements</p>
+<table>
+<thead>
+<tr>
+<th>Rule of Inference</th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>∀x P(x) ∴ P(c)</td>
+<td>Universal instantiation</td>
+</tr>
+<tr>
+<td>P(c) for an arbitrary c ∴ ∀x P(x)</td>
+<td>Universal generalization</td>
+</tr>
+<tr>
+<td>∃x P(x) ∴ P(c) for some element c</td>
+<td>Existential instantiation</td>
+</tr>
+<tr>
+<td>P(c) for some element c ∴ ∃x P(x)</td>
+<td>Existential generalization</td>
+</tr>
+</tbody>
+</table>
+<p>Universal modus ponens: ∀x (P(x) → Q(x)), P(a), ∴ Q(a)
+Universal modus tollens: ∀x (P(x) → Q(x)), ¬Q(a), ∴ ¬P(a)</p>
+<h2 id="introduction-to-proofs">Introduction to Proofs</h2>
+<p>Theorem / Fact / Result (定理): A statement that can be shown to be true.</p>
+<p>Propositions: Less important theorems.</p>
+<p>Axiom / Postulate (公理): Statements we assume to be true.</p>
+<p>Lemma (引理): A less important theorem that is helpful in the proof of other results. (plural lemmas or lemmata)</p>
+<p>Corollary (推论): Theorem that can be established directly from a theorem that has been proved.</p>
+<p>Conjecture (猜想): Statement that is being proposed to be a true statement.</p>
+<p>Direct Proof: Direct proof of a conditional statement p → q is constructed when the first step is the assumption that p is true; subsequent steps are constructed using rules of inference, with the final
+step showing that q must also be true.</p>
+<p>Indirect Proofs: Proofs that do not start with the premises and end with the conclusion.</p>
+<p>Proof by Contraposition (证明逆否命题): We take ¬q as a premise, and using axioms, definitions, and previously proven theorems, together with rules of inference, we show that ¬p must follow.</p>
+<p>Vacuous Proofs: If we can show that p is false, then we have a proof of the conditional statement p → q.</p>
+<p>Trivial Proof: By showing that q is true, it follows that p → q must also be true.</p>
+<p>Proofs by Contradiction (反证): We can prove that p is true if we can show that ¬p → (r ∧ ¬r) is true for some proposition r. i.e. r is premise and ¬r is proved if ¬p.</p>
+<p>To rewrite a proof by contraposition of p → q as a proof by contradiction, we suppose that both p and ¬q are true. Then, we use the steps from the proof of ¬q → ¬p to show that ¬p is true.</p>
+<p>Proofs of Equivalence: (p ↔ q) ↔ (p → q) ∧ (q → p). (if and only if)(p_1 ↔ p_2 ↔ ··· ↔ p_n) ↔ (p_1 → p_2) ∧ (p_2 → p_3) ∧ ··· ∧ (p_n → p_1).</p>
+<p>Counterexamples: To show that a statement of the form ∀x P(x) is false, we only need to find a counterexample.</p>
+<p>Mistakes in proofs: Division by zero, Affirming the conclusion, Denying the hypothesis, Begging the question.</p>
+<h2 id="proof-methods-and-strategy">Proof Methods and Strategy</h2>
+<p>Exhaustive Proof (Proofs by exhaustion): [(p_1 ∨ p_2 ∨ · · · ∨ p_n) → q] ↔ [(p_1 → q) ∧ (p_2 → q) ∧ · · · ∧ (p_n → q)]</p>
+<p>Eliminate cases when using exhaustive proof.</p>
+<p>Without loss of generality (WLOG): Other cases can be proved with the same method as this case.</p>
+<p>Exhaustive proof can be invalid if not all the cases are covered.</p>
+<p>Existence proof: A proof of a proposition of the form ∃x P(x).</p>
+<p>Constructive: Given by finding a witness.</p>
+<p>Nonconstructive: Some other way, e.g. negation leads to contradiction.</p>
+<p>Uniqueness Proof: Assert that there is exactly one element with this property. ∃x(P(x) ∧ ∀y(y = x → ¬P(y))).</p>
+<p>Forward and backward reasoning: …</p>
+<p>Adapting existing proofs: …</p>
+<p>Look for counterexamples: …</p>
+<p>Tiling: Color the board with n colors. If top-right and bottom-left square is removed, the number of squares each color is unequal, but eachdomino / polymino must cover exactly one square of each color, so tiling is impossible.</p>
+<h2 id="set">Set</h2>
+<p>Set: A set is an unordered collection of objects. a ∈ A, a ∉ A. </p>
+<p>Roster method: List all the members of a set. Can use … when the general pattern is obvious. </p>
+<p>Set builder pattern: {x ∈ set | predicate(x)} or {x | predicate(x), x ∈ set} </p>
+<p>Name | Description ℕ | the set of natural numbers ℤ | the set of integers ℤ | the set of positive integers ℚ | the set of rational numbers ℝ | the set of real numbers <span class="arithmatex"><span class="MathJax_Preview">ℝ^+</span><script type="math/tex">ℝ^+</script></span> | the set of positive real numbers ℂ | the set of complex numbers </p>
+<p>Interval | Set a, b | {x | a ≤ x ≤ b} [a, b) | {x | a ≤ x &lt; b} (a, b] | {x | a &lt; x ≤ b} (a, b) (Open) | {x | a &lt; x &lt; b} </p>
+<p>Equal: Two sets are equal if and only if they have the same elements. ∀x(x ∈ A ↔ x ∈ B). A = B. </p>
+<p>The order and repetition of elements does not matter: {5, 3, 3, 1} = {1, 3, 5} </p>
+<p>Empty/null set: ∅ </p>
+<p>Singleton set: Set with a single element. </p>
+<p>∅ is not {∅}. </p>
+<p>Venn diagram: Rectangle for universal set, circle for set, dot for element.</p>
+<p>Subset: The set A is a subset of B if and only if every element of A is also an element of B. If and only if ∀x(x ∈ A → x ∈ B). A ⊆ B.</p>
+<p>Showing that A is a Subset of B: To show that A ⊆ B, show that if x belongs to A then x also belongs to B.</p>
+<p>Showing that A is Not a Subset of B: To show that A <span class="arithmatex"><span class="MathJax_Preview">\not\subseteq</span><script type="math/tex">\not\subseteq</script></span> B, find a single x ∈ A such that x ∉ B.</p>
+<p>For every set S, ∅ ⊆ S and S ⊆ S.</p>
+<p>Proper subset: A ⊆ B and A ≠ B. A ⊂ B.</p>
+<p>Showing Two Sets are Equal: To show that two sets A and B are equal, show that A ⊆ B and B ⊆ A.
+Size of a set: If there are exactly n distinct elements in S where n is a nonnegative integer, then S is a finite set and that n is the cardinality of S, written as |S|.</p>
+<p>Infinite set: A set is said to be infinite if it is not finite.</p>
+<p>Power set: Given a set S, the power set of S is the set of all subsets of the set S. <span class="arithmatex"><span class="MathJax_Preview">\mathcal{P}(S)</span><script type="math/tex">\mathcal{P}(S)</script></span>.</p>
+<p>e.g. P(A) ∈ P(B) ⇒ P(A) ⊆ B ⇒ A ∈ B</p>
+<p>We can reconstruct the original set from the union of all element sets in its power set. So power set uniquely identifies a set.</p>
+<p>∅ cannot be a power set.</p>
+<p>Ordered n-tuple: The ordered collection that has $a_1 $ as its first element, <span class="arithmatex"><span class="MathJax_Preview">a_2</span><script type="math/tex">a_2</script></span> as its second element, … , and <span class="arithmatex"><span class="MathJax_Preview">a_n</span><script type="math/tex">a_n</script></span> as its nth element. (<span class="arithmatex"><span class="MathJax_Preview">a_1</span><script type="math/tex">a_1</script></span>, <span class="arithmatex"><span class="MathJax_Preview">a_2</span><script type="math/tex">a_2</script></span>, … ,<span class="arithmatex"><span class="MathJax_Preview">a_n</span><script type="math/tex">a_n</script></span>).</p>
+<p>Cartesian Product: A × B = {(a, b) | a ∈ A ∧ b ∈ B}.|A × B| = |A||B|</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">A_1 × A_2 × … × A_n</span><script type="math/tex">A_1 × A_2 × … × A_n</script></span> = {(<span class="arithmatex"><span class="MathJax_Preview">a_1, a_2, … , a_n</span><script type="math/tex">a_1, a_2, … , a_n</script></span>) | <span class="arithmatex"><span class="MathJax_Preview">a_i ∈ A_i</span><script type="math/tex">a_i ∈ A_i</script></span> for i = 1, 2, … , n}.</p>
+<p>Relation: A subset R of the Cartesian product A × B is called a relation.</p>
+<p>Using Set Notation with Quantifiers: ∀x∈ S(P (x)) is shorthand for ∀x(x ∈ S → P (x)).</p>
+<p>Truth set: The truth set of P to be the set of elements x in D for which P(x) is true.</p>
+<h2 id="set-operations">Set Operations</h2>
+<p>Union: The union of the sets A and B, denoted by A ∪ B, is the set that contains those elements that are either in A or in B, or in both. </p>
+<p>A ∪ B = {x | x ∈ A ∨ x ∈ B}.</p>
+<p>Intersection: The intersection of the sets A and B, denoted by A ∩ B, is the set containing those elements in both A and B. </p>
+<p>A ∩ B = {x | x ∈ A ∧ x ∈ B}.</p>
+<p>Disjoint: Two sets are called disjoint if their intersection is the empty set.</p>
+<p>Difference: The difference of A and B, denoted by A − B (or A \ B), is the set containing those elements that are in A but not in B. The difference of A and B is also called the complement of B with respect to A. </p>
+<p>A − B = {x | x ∈ A ∧ x ∈ / B}.</p>
+<p>Complement: Let U be the universal set. The complement of the set A, denoted by <span class="arithmatex"><span class="MathJax_Preview">\overline{A}</span><script type="math/tex">\overline{A}</script></span>, is the complement of A with respect to U.
+Therefore, the complement of the set A is U − A. A − B = A ∩ <span class="arithmatex"><span class="MathJax_Preview">\overline{B}</span><script type="math/tex">\overline{B}</script></span>.</p>
+<p>Set Identities:</p>
+<table>
+<thead>
+<tr>
+<th>Identity</th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A ∩ U = A</td>
+<td>Identity laws</td>
+</tr>
+<tr>
+<td>A ∪∅= A</td>
+<td></td>
+</tr>
+<tr>
+<td>A ∪ U = U</td>
+<td>Domination laws</td>
+</tr>
+<tr>
+<td>A ∩∅=∅</td>
+<td></td>
+</tr>
+<tr>
+<td>A ∪ A = A</td>
+<td>Idempotent laws</td>
+</tr>
+<tr>
+<td>A ∩ A = A</td>
+<td></td>
+</tr>
+<tr>
+<td><span class="arithmatex"><span class="MathJax_Preview">\overline{(\overline{A})} = A</span><script type="math/tex">\overline{(\overline{A})} = A</script></span></td>
+<td>Complementation law</td>
+</tr>
+<tr>
+<td>A ∪ B = B ∪ A</td>
+<td>Commutative laws</td>
+</tr>
+<tr>
+<td>A ∩ B = B ∩ A</td>
+<td></td>
+</tr>
+<tr>
+<td>A ∪ (B ∪ C) = (A ∪ B) ∪ C</td>
+<td>Associative laws</td>
+</tr>
+<tr>
+<td>A ∩ (B ∩ C) = (A ∩ B) ∩ C</td>
+<td></td>
+</tr>
+<tr>
+<td>A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)</td>
+<td>Distributive laws</td>
+</tr>
+<tr>
+<td>A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C)</td>
+<td></td>
+</tr>
+<tr>
+<td><span class="arithmatex"><span class="MathJax_Preview">\overline{A ∩ B} = \overline{A} ∪ \overline{B}</span><script type="math/tex">\overline{A ∩ B} = \overline{A} ∪ \overline{B}</script></span></td>
+<td>De Morgan’s laws</td>
+</tr>
+<tr>
+<td>$\overline{A ∪ B} = $<span class="arithmatex"><span class="MathJax_Preview">\overline{A}∩\overline{B}</span><script type="math/tex">\overline{A}∩\overline{B}</script></span></td>
+<td></td>
+</tr>
+<tr>
+<td>A ∪ (A ∩ B) = A</td>
+<td>Absorption laws</td>
+</tr>
+<tr>
+<td>A ∩ (A ∪ B) = A</td>
+<td></td>
+</tr>
+<tr>
+<td>A ∩ <span class="arithmatex"><span class="MathJax_Preview">\overline{A}</span><script type="math/tex">\overline{A}</script></span> =∅</td>
+<td>Complement laws</td>
+</tr>
+<tr>
+<td>A ∪ <span class="arithmatex"><span class="MathJax_Preview">\overline{A}</span><script type="math/tex">\overline{A}</script></span> = U</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Prove set identity: Use set builder pattern and definition.</p>
+<p>Membership table: Set identities can also be proved using membership tables. We consider each combination of sets that an element can belong to and verify that elements in the same combinations of sets belong to both the sets in the identity. To indicate that an element is in a set, a 1 is used; to indicate that an element is not in a set, a 0 is used.</p>
+<p>Generalized Unions and Intersections: Because unions and intersections of sets satisfy associative laws, the sets A ∪ B ∪ C and A ∩ B ∩ C are well defined.</p>
+<p>The union of a collection of sets: The set that contains those elements that are members of at least one set in the collection. </p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\bigcup_{i=1}^{n}{A_i}
+</div>
+<script type="math/tex; mode=display">
+\bigcup_{i=1}^{n}{A_i}
+</script>
+</div>
+<p>The intersection of a collection of sets is the set that contains those elements that are members of all the sets in the collection. </p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\bigcap_{i=1}^{n}{A_i}
+</div>
+<script type="math/tex; mode=display">
+\bigcap_{i=1}^{n}{A_i}
+</script>
+</div>
+<p>Computer Representation of Sets: One of the methods is to use bit strings.</p>
+<h2 id="function">Function</h2>
+<p>Function/Mapping/Transformation: Let A and B be nonempty sets. </p>
+<p>A function f from A to B is an assignment of exactly one element of B to each element of A. f : A → B. f(a) = b.</p>
+<p>If f is a function from A to B, we say that A is the domain of f and B is the codomain of f. </p>
+<p>If f (a) = b, we say that b is the image of a and a is a preimage of b. The range, or image, of f is the set of all images of elements of A. Also, if f is a function from A to B, we say that f maps A to B.</p>
+<p>Two functions are equal: When they have the same domain, have the same codomain, and map each element of their common domain to the same element in their common codomain.</p>
+<p>Let <span class="arithmatex"><span class="MathJax_Preview">f_1</span><script type="math/tex">f_1</script></span> and <span class="arithmatex"><span class="MathJax_Preview">f_2</span><script type="math/tex">f_2</script></span> be functions from A to <span class="arithmatex"><span class="MathJax_Preview">\mathbb{R}</span><script type="math/tex">\mathbb{R}</script></span>, then $f_1 + f_2 $ and <span class="arithmatex"><span class="MathJax_Preview">f_1 f_2</span><script type="math/tex">f_1 f_2</script></span> are also functions from A to <span class="arithmatex"><span class="MathJax_Preview">\mathbb{R}</span><script type="math/tex">\mathbb{R}</script></span> defined for all x ∈ A by : </p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+(f_1 + f_2)(x) = f_1(x) + f_2(x) \\
+(f_1f_2)(x) = f_1(x)f_2(x)
+</div>
+<script type="math/tex; mode=display">
+(f_1 + f_2)(x) = f_1(x) + f_2(x) \\
+(f_1f_2)(x) = f_1(x)f_2(x)
+</script>
+</div>
+<p>The image of S under the function f: f (S) = {t | ∃s ∈ S (t = f (s))} = {f (s)| s ∈ S}.</p>
+<p>One-to-one/injection (单射): if and only if f (a) = f (b) implies that a = b for all a and b in the domain of f. A function is said to be injective if it is one-to-one. </p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\forall a\forall b(f(a) = f(b) \rightarrow a = b)
+</div>
+<script type="math/tex; mode=display">
+\forall a\forall b(f(a) = f(b) \rightarrow a = b)
+</script>
+</div>
+<p>Increasing if f (x) ≤ f (y), and strictly increasing: if f (x) &lt;f (y), whenever x &lt; y and x and y are in the domain of f.</p>
+<p>Decreasing if f (x) ≥ f (y), and strictly decreasing if f (x) &gt; f (y), whenever x &lt; y and x and y are in the domain of f.</p>
+<p>Onto/surjection (满射): if and only if for every element b ∈ B there is an element a ∈ A with f (a) = b. A function f is called surjective if it is onto.</p>
+<p>One-to-one correspondence / bijection (双射): if it is both one-to-one and onto. We also say that such a function is bijective.</p>
+<p>To show that f is injective: Show that if f (x) = f (y) for arbitrary x, y ∈ A with x ≠ y, then x = y.</p>
+<p>To show that f is not injective: Find particular elements x, y ∈ A such that x ≠ y and f (x) = f (y).</p>
+<p>To show that f is surjective: Consider an arbitrary element y ∈ B and find an element x ∈ A such that f (x) = y.</p>
+<p>To show that f is not surjective: Find a particular y ∈ B such that f (x) ≠ y for all x ∈ A.</p>
+<p>Inverse function: Let f be a one-to-one correspondence from the set A to the set B. The inverse function of f is the function that assigns to an element b belonging to B the unique element a in A such that f(a) = b. The inverse function of f is denoted by <span class="arithmatex"><span class="MathJax_Preview">f^{−1}</span><script type="math/tex">f^{−1}</script></span>. Hence, <span class="arithmatex"><span class="MathJax_Preview">f^{−1}(b) = a</span><script type="math/tex">f^{−1}(b) = a</script></span> when f(a) = b.</p>
+<p>Composition of functions: Let g be a function from the set A to the set B and let f be a function from the set B to the set C. The composition of the functions f and g, denoted for all a ∈ A by f ◦ g, is defined by</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+(f ◦ g)(a) = f(g(a))
+</div>
+<script type="math/tex; mode=display">
+(f ◦ g)(a) = f(g(a))
+</script>
+</div>
+<p>The graphs of functions: …
+Some important functions: Floor(x): [x]</p>
+<h2 id="sequence">Sequence</h2>
+<p>Sequence: A function from a subset of the set of integers (usually either the set {0, 1, 2, …} or the set {1, 2, 3, …}) to a set S. We use the notation <span class="arithmatex"><span class="MathJax_Preview">a_n</span><script type="math/tex">a_n</script></span> to denote the image of the integer n. We call <span class="arithmatex"><span class="MathJax_Preview">a_n</span><script type="math/tex">a_n</script></span> a term of the sequence.</p>
+<p>Geometric progression: <span class="arithmatex"><span class="MathJax_Preview">a, ar, ar^2,… , ar^n</span><script type="math/tex">a, ar, ar^2,… , ar^n</script></span>, … where a is initial term, r is common ratio.</p>
+<p>Arithmetic progression: a, a + d, a + 2d, … , a + nd, … where a is initial term, d is common difference.</p>
+<p>String: Finite sequence, where length is the number of terms in the string.</p>
+<p>Empty string: λ.</p>
+<p>Recurrence relation: An equation that expresses <span class="arithmatex"><span class="MathJax_Preview">a_n</span><script type="math/tex">a_n</script></span> in terms of one or more of the previous terms of the sequence.</p>
+<p>Initial condition: Specify the terms that precede the first term where the recurrence relation takes effect.</p>
+<p>Fibonacci sequence: <span class="arithmatex"><span class="MathJax_Preview">f_0, f_1, f_2</span><script type="math/tex">f_0, f_1, f_2</script></span>,… , is defined by the initial conditions <span class="arithmatex"><span class="MathJax_Preview">f_0 = 0, f_1 = 1</span><script type="math/tex">f_0 = 0, f_1 = 1</script></span>, and the recurrence relation <span class="arithmatex"><span class="MathJax_Preview">f_n = f_{n−1} + f{n−2}</span><script type="math/tex">f_n = f_{n−1} + f{n−2}</script></span>.</p>
+<p>Closed formula: We say that we have solved the recurrence relation together with the initial conditions when we find an explicit formula, called a closed formula, for the terms of the sequence.</p>
+<p>Finding closed formula: Iteration, forward substitution or backward substitution.</p>
+<p>Lucas sequence: Fibonacci sequence with different initial condition.</p>
+<p>Summation notation: </p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\sum_{i=m}^n{f(i)}
+</div>
+<script type="math/tex; mode=display">
+\sum_{i=m}^n{f(i)}
+</script>
+</div>
+<p>where i is index of summation, m is lower limit, n is upper limit.</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\sum_{i=0}^n(ar^i)=\frac{ar^{n+1}-a}{r-1},r{\neq}1 \\
+\sum_{i=0}^ni=\frac{n(n+1)}{2} \\
+\sum_{i=0}^ni^2=\frac{n(n+1)(2n+1)}{6} \\
+\sum_{i=0}^ni^3=\frac{n^2(n+1)^2}{4} \\
+\sum_{i=0}^{\infty}x^i,|x|&lt;1=\frac{1}{1-x} \\
+\sum_{i=0}^{\infty}ix^{i-1},|x|&lt;1=\frac{1}{(1-x)^2}
+</div>
+<script type="math/tex; mode=display">
+\sum_{i=0}^n(ar^i)=\frac{ar^{n+1}-a}{r-1},r{\neq}1 \\
+\sum_{i=0}^ni=\frac{n(n+1)}{2} \\
+\sum_{i=0}^ni^2=\frac{n(n+1)(2n+1)}{6} \\
+\sum_{i=0}^ni^3=\frac{n^2(n+1)^2}{4} \\
+\sum_{i=0}^{\infty}x^i,|x|<1=\frac{1}{1-x} \\
+\sum_{i=0}^{\infty}ix^{i-1},|x|<1=\frac{1}{(1-x)^2}
+</script>
+</div>
+<h2 id="cardinality-of-sets">Cardinality of Sets</h2>
+<p>Same cardinality: If and only if there is a one-to-one correspondence from A to B. |A| = |B|</p>
+<p>Less cardinality: If there is a one-to-one function from A to B, the cardinality of A is less than or the same as the cardinality of B. |A| ≤ |B|. When |A| ≤ |B| and A and B have different cardinality, we say that the cardinality of A is less than the cardinality of B. |A| &lt; |B|.</p>
+<p>Countable set: A set that is either finite or has the same cardinality as the set of positive integers is called countable.</p>
+<p>Uncountable set: A set that is not countable is called uncountable. When an infinite set S is countable, we denote the cardinality of S by <span class="arithmatex"><span class="MathJax_Preview">\aleph_0</span><script type="math/tex">\aleph_0</script></span>(where א is aleph). |S| = <span class="arithmatex"><span class="MathJax_Preview">\aleph_0</span><script type="math/tex">\aleph_0</script></span>. S has cardinality “aleph null”.</p>
+<p>Prove by showing one-to-one correspondence, or can be listed.</p>
+<p>ℤ is countable: f(n) = n / 2, when n is even; -(n - 1) / 2, when n is odd.</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">ℚ^+</span><script type="math/tex">ℚ^+</script></span> is countable: Use Cantor Diagonalization Argument for listing.</p>
+<p>ℝ is uncountable: <span class="arithmatex"><span class="MathJax_Preview">0.d_i, d_i = 0</span><script type="math/tex">0.d_i, d_i = 0</script></span>, if <span class="arithmatex"><span class="MathJax_Preview">d_{ii} \neq 0</span><script type="math/tex">d_{ii} \neq 0</script></span>; 1, if <span class="arithmatex"><span class="MathJax_Preview">d_{ii} = 0</span><script type="math/tex">d_{ii} = 0</script></span> cannot be listed.</p>
+<p>If A and B are countable sets, then A ∪ B is also countable.</p>
+<p>Schröder-Bernstein Theorem: If A and B are sets with |A| ≤ |B| and |B| ≤ |A|, then |A| = |B|. In other words, if there are one-to-one functions f from A to B and g from B to A, then there is a one-to-one correspondence between A and B.</p>
+<p>Can use two different functions to prove same cardinality, according to Schröder-Bernstein Theorem.</p>
+<p>Computable / uncomputable function: If there is a computer program in some programming language that finds the values of this function. If a function is not computable we say it is uncomputable. </p>
+<p>Proof for existence of uncomputable function: Programs are countable (Binary can be listed), but functions are not, e.g. ℤ -&gt; ℤ is not. </p>
+<p>The continuum hypothesis: (We have |<span class="arithmatex"><span class="MathJax_Preview">P(ℤ^+)</span><script type="math/tex">P(ℤ^+)</script></span>| = <span class="arithmatex"><span class="MathJax_Preview">2^{\aleph_0}</span><script type="math/tex">2^{\aleph_0}</script></span> = |ℝ| = c.) There is no cardinality such that it is greater than <span class="arithmatex"><span class="MathJax_Preview">\aleph_0</span><script type="math/tex">\aleph_0</script></span> and less than c, or say, c = <span class="arithmatex"><span class="MathJax_Preview">\aleph_1</span><script type="math/tex">\aleph_1</script></span> in sequence <span class="arithmatex"><span class="MathJax_Preview">\aleph_0, \aleph_1, \aleph_2</span><script type="math/tex">\aleph_0, \aleph_1, \aleph_2</script></span>, .... </p>
+<p>Proving power set related cardinality: Use bit string for element sets of power set. (0, 1) and decimal representation rocks for proof. |(0, 1)| = |ℝ|, can be proved with Schröder-Bernstein Theorem.</p>
+<h2 id="counting-the-basics-of-counting">Counting The Basics of Counting</h2>
+<p>The product rule: Suppose that a procedure can be broken down into a sequence of two tasks. If there are <span class="arithmatex"><span class="MathJax_Preview">n_1</span><script type="math/tex">n_1</script></span> ways to do the first task and for each of these ways of doing the first task, there are <span class="arithmatex"><span class="MathJax_Preview">n_2</span><script type="math/tex">n_2</script></span> ways to do the second task, then there are <span class="arithmatex"><span class="MathJax_Preview">n_1{\cdot}n_2</span><script type="math/tex">n_1{\cdot}n_2</script></span> ways to do the procedure. </p>
+<p>The sum rule: If a task can be done either in one of <span class="arithmatex"><span class="MathJax_Preview">n_1</span><script type="math/tex">n_1</script></span> ways or in one of <span class="arithmatex"><span class="MathJax_Preview">n_2</span><script type="math/tex">n_2</script></span> ways, where none of the set of <span class="arithmatex"><span class="MathJax_Preview">n_1</span><script type="math/tex">n_1</script></span> ways is the same as any of the set of <span class="arithmatex"><span class="MathJax_Preview">n_2</span><script type="math/tex">n_2</script></span> ways, then there are <span class="arithmatex"><span class="MathJax_Preview">n_1 + n_2</span><script type="math/tex">n_1 + n_2</script></span> ways to do the task. </p>
+<p>The subtraction rule: If a task can be done in either <span class="arithmatex"><span class="MathJax_Preview">n_1</span><script type="math/tex">n_1</script></span> ways or <span class="arithmatex"><span class="MathJax_Preview">n_2</span><script type="math/tex">n_2</script></span> ways, then the number of ways to do the task is <span class="arithmatex"><span class="MathJax_Preview">n_1 + n_2</span><script type="math/tex">n_1 + n_2</script></span> minus the number of ways to do the task that are common to the two different ways. </p>
+<p>The division rule: There are n/d ways to do a task if it can be done using a procedure that can be carried out in n ways, and for every way w, exactly d of the n ways correspond to way w.</p>
+<p>Counting problems can be solved using tree diagrams.</p>
+<h2 id="the-pigeonhole-principle">The Pigeonhole Principle</h2>
+<p>The pigeonhole principle: If <span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> is a positive integer and <span class="arithmatex"><span class="MathJax_Preview">k + 1</span><script type="math/tex">k + 1</script></span>​ or more objects are placed into <span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> boxes, then there is at least one box containing two or more of the objects.</p>
+<p>Corollary 1: A function f from a set with k + 1 or more elements to a set with k elements is not one-to-one.</p>
+<p>The generalized pigeonhole principle: If <span class="arithmatex"><span class="MathJax_Preview">N</span><script type="math/tex">N</script></span> objects are placed into <span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span>​ boxes, then there is at least one box containing at least <span class="arithmatex"><span class="MathJax_Preview">⌈N/k⌉</span><script type="math/tex">⌈N/k⌉</script></span> objects.</p>
+<p>Reverse minimum: (m - 1) * k + 1</p>
+<p>Elegant applications: …</p>
+<p>Subsequence: Picking elements while the original order is preserved.</p>
+<p>Theorem: Every sequence of <span class="arithmatex"><span class="MathJax_Preview">n^2+1</span><script type="math/tex">n^2+1</script></span> distinct real numbers contains a subsequence of length n+1 that is either strictly increasing or strictly decreasing.</p>
+<p>The Ramsey number R(m, n), where m and n are positive integers greater than or equal to 2, denotes the minimum number of people at a party such that there are either m mutual friends or n mutual enemies, assuming that every pair of people at the party are friends or enemies.</p>
+<h2 id="permutations-and-combinations">Permutations and Combinations</h2>
+<p>If n is a positive integer and r is an integer with 1 ≤ r ≤ n, then there are P(n, r) = n(n − 1)(n − 2) … (n − r + 1) = n! / (n - r)! r-permutations of a set with n distinct elements.</p>
+<p>P (n, 0) = 1</p>
+<p>The number of r-combinations of a set with n elements, where n is a nonnegative integer and r is an integer with 0 ≤ r ≤ n, equals C(n, r) = n! / (r!(n − r)!).</p>
+<p>Binomial coefficient: <span class="arithmatex"><span class="MathJax_Preview">(n, r)^T</span><script type="math/tex">(n, r)^T</script></span> = C(n, r).</p>
+<p>P (n, r) = C(n, r) · P (r, r).</p>
+<p>C(n, r) = C(n, n − r).</p>
+<p>A combinatorial proof of an identity is a proof that uses counting arguments to prove that both sides of the identity count the same objects but in different ways, or a proof that is based on showing that there is a bijection between the sets of objects counted by the two sides of the identity. These two types of proofs are called double counting
+proofs and bijective proofs, respectively.</p>
+<h2 id="binomial-coefficient">Binomial Coefficient</h2>
+<p>The binomial theorem: </p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+(x+y)^n=\sum_{j=0}^{n}\binom{n}{j}x^{n-j}y^j\\
+\sum_{k=0}^{n}\binom{n}{k}=(1+1)^n=2^n\\
+\sum_{k=0}^{n}(-1)^k\binom{n}{k}=(-1+1)^n=0\\
+\sum_{k=0}^{n}2^k\binom{n}{k}=(2+1)^n=3^n
+</div>
+<script type="math/tex; mode=display">
+(x+y)^n=\sum_{j=0}^{n}\binom{n}{j}x^{n-j}y^j\\
+\sum_{k=0}^{n}\binom{n}{k}=(1+1)^n=2^n\\
+\sum_{k=0}^{n}(-1)^k\binom{n}{k}=(-1+1)^n=0\\
+\sum_{k=0}^{n}2^k\binom{n}{k}=(2+1)^n=3^n
+</script>
+</div>
+<p>Pascal’s identity: </p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\binom{n+1}{k}=\binom{n}{k-1}+\binom{n}{k}
+</div>
+<script type="math/tex; mode=display">
+\binom{n+1}{k}=\binom{n}{k-1}+\binom{n}{k}
+</script>
+</div>
+<p>So Pascal’s triangle.</p>
+<p>Vandermonde’s identity: </p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\binom{m+n}{r}=\sum_{k=0}^{r}\binom{m}{r-k}\binom{n}{k}\\
+\binom{2n}{n}=\sum_{k=0}^{n}\binom{n}{n-k}\binom{n}{k}=\sum_{k=0}^{n}\binom{n}{k}^2\\
+\binom{n+1}{r+1}=\sum_{j=r}^{n}\binom{j}{r}
+</div>
+<script type="math/tex; mode=display">
+\binom{m+n}{r}=\sum_{k=0}^{r}\binom{m}{r-k}\binom{n}{k}\\
+\binom{2n}{n}=\sum_{k=0}^{n}\binom{n}{n-k}\binom{n}{k}=\sum_{k=0}^{n}\binom{n}{k}^2\\
+\binom{n+1}{r+1}=\sum_{j=r}^{n}\binom{j}{r}
+</script>
+</div>
+<p>Prove by combinatorial argument: Use choosing subset, use bit string.</p>
+<h2 id="generalized-permutations-and-combinations">Generalized Permutations and Combinations</h2>
+<p>The number of r-permutations of a set of n objects with repetition allowed is <span class="arithmatex"><span class="MathJax_Preview">n^r</span><script type="math/tex">n^r</script></span>.</p>
+<p>There are C(n + r − 1, r) = C(n + r − 1, n − 1) r-combinations from a set with n elements when repetition of elements is allowed.</p>
+<p>Proved by stars and bars.</p>
+<p>Method: Stars and bars abstraction.</p>
+<p>P426 Counting solutions to equation: Notice non-negative or positive integer, the latter implies <span class="arithmatex"><span class="MathJax_Preview">x_i \ge 1</span><script type="math/tex">x_i \ge 1</script></span>.</p>
+<p>P427 Nested loop</p>
+<p>P427 Word letter reordering: The number of different permutations of n objects, where there are <span class="arithmatex"><span class="MathJax_Preview">n_1</span><script type="math/tex">n_1</script></span> indistinguishable objects of type 1, <span class="arithmatex"><span class="MathJax_Preview">n_2</span><script type="math/tex">n_2</script></span> indistinguishable objects of type 2, … , and <span class="arithmatex"><span class="MathJax_Preview">n_k</span><script type="math/tex">n_k</script></span> indistinguishable objects of type k, is </p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\frac{n!}{n_1!n_2! ··· n_k!}
+</div>
+<script type="math/tex; mode=display">
+\frac{n!}{n_1!n_2! ··· n_k!}
+</script>
+</div>
+<p>Distinguishable objects and distinguishable boxes: The number of ways to distribute n distinguishable objects into k distinguishable boxes so that <span class="arithmatex"><span class="MathJax_Preview">n_i</span><script type="math/tex">n_i</script></span> objects are placed into box i, i = 1, 2, … , k, equals </p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\frac{n!}{n_1!n_2!···n_k!}
+</div>
+<script type="math/tex; mode=display">
+\frac{n!}{n_1!n_2!···n_k!}
+</script>
+</div>
+<p>Indistinguishable objects and distinguishable boxes: The number of ways to distribute n indistinguishable objects into k distinguishable boxes so that n_i objects are placed into box i, i = 1, 2, … , k, equals the n-combination from a set with k elements when repetition is allowed, according to its proof, C(k + n - 1, n).</p>
+<p>Distinguishable objects and indistinguishable boxes:
+Can enumerate by n into m, … , but no simple closed formula.</p>
+<p>Stirling numbers of the second kind: S(n, j) denote the number of ways to distribute n distinguishable objects into j indistinguishable boxes so that no box is empty.</p>
+<p>Then the number of ways to distribute n distinguishable objects into k indistinguishable boxes equals<span class="arithmatex"><span class="MathJax_Preview">\sum_{j=1}^{k}S(n,j)</span><script type="math/tex">\sum_{j=1}^{k}S(n,j)</script></span>.</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+S(n,j)=\frac{1}{j!}\sum_{i=0}{j-1}(-1)^i\binom{j}{i}(j-i)^n
+</div>
+<script type="math/tex; mode=display">
+S(n,j)=\frac{1}{j!}\sum_{i=0}{j-1}(-1)^i\binom{j}{i}(j-i)^n
+</script>
+</div>
+<p>Indistinguishable objects and indistinguishable boxes: List partition by decreasing order.</p>
+<p>If <span class="arithmatex"><span class="MathJax_Preview">p_k(n)</span><script type="math/tex">p_k(n)</script></span> is the number of partitions of n into at most k positive integers, then there are <span class="arithmatex"><span class="MathJax_Preview">p_k(n)</span><script type="math/tex">p_k(n)</script></span> ways to distribute n indistinguishable objects into k indistinguishable boxes.</p>
+<h2 id="generating-permutations-and-combinations">Generating Permutations and Combinations</h2>
+<p>Generating permutations: Lexicographic.</p>
+<p>Next permutation: Find last pair such that <span class="arithmatex"><span class="MathJax_Preview">a_j &lt; a_{j+1}</span><script type="math/tex">a_j < a_{j+1}</script></span>, swap minimum of <span class="arithmatex"><span class="MathJax_Preview">a_{j+1}, …, a_n</span><script type="math/tex">a_{j+1}, …, a_n</script></span> that is greater than <span class="arithmatex"><span class="MathJax_Preview">a_j</span><script type="math/tex">a_j</script></span> with <span class="arithmatex"><span class="MathJax_Preview">a_j</span><script type="math/tex">a_j</script></span>, and list remaining in increasing order.</p>
+<p>Generating subsets: Use bit string. </p>
+<p>Generating r-combinations: Lexicographic. </p>
+<p>Next permutation of {1, 2, … , n}: Find last <span class="arithmatex"><span class="MathJax_Preview">a_i</span><script type="math/tex">a_i</script></span> such that <span class="arithmatex"><span class="MathJax_Preview">a_i{\ne}</span><script type="math/tex">a_i{\ne}</script></span>n-r+i, replace <span class="arithmatex"><span class="MathJax_Preview">a_i</span><script type="math/tex">a_i</script></span> with <span class="arithmatex"><span class="MathJax_Preview">a_i+1</span><script type="math/tex">a_i+1</script></span>, <span class="arithmatex"><span class="MathJax_Preview">a_j</span><script type="math/tex">a_j</script></span> with <span class="arithmatex"><span class="MathJax_Preview">a_i+j-i+1</span><script type="math/tex">a_i+j-i+1</script></span> (increasing from <span class="arithmatex"><span class="MathJax_Preview">a_i+1</span><script type="math/tex">a_i+1</script></span>). (This is natural.)</p>
+<h2 id="applications-of-recurrence-relations">Applications of Recurrence Relations</h2>
+<p>Recurrence relation: A rule for determining subsequent terms from those that precede them.</p>
+<p>Solution of a recurrence relation: A sequence is called a solution of a recurrence relation if its terms satisfy the recurrence relation. </p>
+<p>Rabbits: <span class="arithmatex"><span class="MathJax_Preview">f_n = f_{n-1} + f_{n-2}</span><script type="math/tex">f_n = f_{n-1} + f_{n-2}</script></span>.</p>
+<p>Hanoi: <span class="arithmatex"><span class="MathJax_Preview">H_n=2H_{n-1}+1, H_1=1</span><script type="math/tex">H_n=2H_{n-1}+1, H_1=1</script></span>.</p>
+<p>Bit string without two consecutive zeros: <span class="arithmatex"><span class="MathJax_Preview">a_n = a_{n-1} + a_{n-2}</span><script type="math/tex">a_n = a_{n-1} + a_{n-2}</script></span>.</p>
+<p>Dynamic programming.</p>
+<h2 id="solving-linear-recurrence-relations">Solving Linear Recurrence Relations</h2>
+<p>Linear homogeneous recurrence relation of degree <span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> with constant coefficients: A recurrence relation of the form</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+a_n=c_1a_{n-1}+c_2a_{n-2}+···+c_ka_{n-k},
+</div>
+<script type="math/tex; mode=display">
+a_n=c_1a_{n-1}+c_2a_{n-2}+···+c_ka_{n-k},
+</script>
+</div>
+<p>where <span class="arithmatex"><span class="MathJax_Preview">c_1, c_2, …, c_k</span><script type="math/tex">c_1, c_2, …, c_k</script></span> are real numbers, and <span class="arithmatex"><span class="MathJax_Preview">c_k \neq 0</span><script type="math/tex">c_k \neq 0</script></span>.</p>
+<p>Characteristic equation: Suppose <span class="arithmatex"><span class="MathJax_Preview">a_n=r^n</span><script type="math/tex">a_n=r^n</script></span>, then </p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+r^k-c_1r^{k-1}-c_2r^{k-2}-...-c_{k-1}r-c_k=0
+</div>
+<script type="math/tex; mode=display">
+r^k-c_1r^{k-1}-c_2r^{k-2}-...-c_{k-1}r-c_k=0
+</script>
+</div>
+<p>is the characteristic equation. The solutions are
+called characteristic roots.</p>
+<p>Theorem 1: Let <span class="arithmatex"><span class="MathJax_Preview">c_1</span><script type="math/tex">c_1</script></span> and <span class="arithmatex"><span class="MathJax_Preview">c_2</span><script type="math/tex">c_2</script></span> be real numbers. Suppose that <span class="arithmatex"><span class="MathJax_Preview">r^2-c_1r-c_2=0</span><script type="math/tex">r^2-c_1r-c_2=0</script></span> has two distinct roots <span class="arithmatex"><span class="MathJax_Preview">r_1</span><script type="math/tex">r_1</script></span> and <span class="arithmatex"><span class="MathJax_Preview">r_2</span><script type="math/tex">r_2</script></span>. Then the sequence <span class="arithmatex"><span class="MathJax_Preview">\{a_n\}</span><script type="math/tex">\{a_n\}</script></span> is a solution of the recurrence relation <span class="arithmatex"><span class="MathJax_Preview">a_n=c_1a_{n-1}+c_2a_{n-2}</span><script type="math/tex">a_n=c_1a_{n-1}+c_2a_{n-2}</script></span> if and only if <span class="arithmatex"><span class="MathJax_Preview">a_n=α_1r_1^n+α_2r_2^n</span><script type="math/tex">a_n=α_1r_1^n+α_2r_2^n</script></span> for <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> = 0, 1, 2, …, where <span class="arithmatex"><span class="MathJax_Preview">α_1</span><script type="math/tex">α_1</script></span> and <span class="arithmatex"><span class="MathJax_Preview">α_2</span><script type="math/tex">α_2</script></span> are constants.</p>
+<p>Theorem 2: Let <span class="arithmatex"><span class="MathJax_Preview">c_1</span><script type="math/tex">c_1</script></span> and <span class="arithmatex"><span class="MathJax_Preview">c_2</span><script type="math/tex">c_2</script></span> be real numbers with <span class="arithmatex"><span class="MathJax_Preview">c_2 \neq 0</span><script type="math/tex">c_2 \neq 0</script></span>. Suppose that <span class="arithmatex"><span class="MathJax_Preview">r^2-c_1r-c_2=0</span><script type="math/tex">r^2-c_1r-c_2=0</script></span> has only one root <span class="arithmatex"><span class="MathJax_Preview">r_0</span><script type="math/tex">r_0</script></span>. A sequence <span class="arithmatex"><span class="MathJax_Preview">\{a_n\}</span><script type="math/tex">\{a_n\}</script></span> is a solution of the recurrence relation <span class="arithmatex"><span class="MathJax_Preview">a_n=c_1a_{n-1}+c_2a_{n-2}</span><script type="math/tex">a_n=c_1a_{n-1}+c_2a_{n-2}</script></span> if and only if <span class="arithmatex"><span class="MathJax_Preview">a_n=α_1r_0^n+α_2nr_0^n</span><script type="math/tex">a_n=α_1r_0^n+α_2nr_0^n</script></span>, for <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> = 0, 1, 2, …, where <span class="arithmatex"><span class="MathJax_Preview">α_1</span><script type="math/tex">α_1</script></span> and <span class="arithmatex"><span class="MathJax_Preview">α_2</span><script type="math/tex">α_2</script></span> are constants.</p>
+<p>Theorem 3: Let <span class="arithmatex"><span class="MathJax_Preview">c_1, c_2, ..., c_k</span><script type="math/tex">c_1, c_2, ..., c_k</script></span> be real numbers. Suppose that the characteristic equation <span class="arithmatex"><span class="MathJax_Preview">r^k-c_1r^{k-1}-...-c_k=0</span><script type="math/tex">r^k-c_1r^{k-1}-...-c_k=0</script></span> has <span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> distinct roots <span class="arithmatex"><span class="MathJax_Preview">r_1, r_2, ..., r_k</span><script type="math/tex">r_1, r_2, ..., r_k</script></span>. Then a sequence <span class="arithmatex"><span class="MathJax_Preview">\{a_n\}</span><script type="math/tex">\{a_n\}</script></span> is a solution of the recurrence relation</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+a^n=c_1a^{n-1}+c_2a^{n-2}+...+c_ka^{n-k}
+</div>
+<script type="math/tex; mode=display">
+a^n=c_1a^{n-1}+c_2a^{n-2}+...+c_ka^{n-k}
+</script>
+</div>
+<p>if and only if </p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+a^n = α_1r_1^n+α_2r_2^n+···+α_kr_k^n
+</div>
+<script type="math/tex; mode=display">
+a^n = α_1r_1^n+α_2r_2^n+···+α_kr_k^n
+</script>
+</div>
+<p>for <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> = 0, 1, 2, …, where <span class="arithmatex"><span class="MathJax_Preview">α_1, α_2, ..., α_k</span><script type="math/tex">α_1, α_2, ..., α_k</script></span> are constants.</p>
+<p>Theorem 4: Let <span class="arithmatex"><span class="MathJax_Preview">c_1, c_2, …, c_k</span><script type="math/tex">c_1, c_2, …, c_k</script></span> be real numbers. Suppose that the characteristic equation </p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+r^k - c_1r^k-1 - ··· - c_k = 0
+</div>
+<script type="math/tex; mode=display">
+r^k - c_1r^k-1 - ··· - c_k = 0
+</script>
+</div>
+<p>has <span class="arithmatex"><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span> distinct roots <span class="arithmatex"><span class="MathJax_Preview">r_1, r_2, …, r_t</span><script type="math/tex">r_1, r_2, …, r_t</script></span> with multiplicities <span class="arithmatex"><span class="MathJax_Preview">m_1, m_2, …, m_t</span><script type="math/tex">m_1, m_2, …, m_t</script></span>, respectively, so that <span class="arithmatex"><span class="MathJax_Preview">m_i\geq1</span><script type="math/tex">m_i\geq1</script></span> for <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> = 1, 2, …, t and <span class="arithmatex"><span class="MathJax_Preview">m_1+m_2+···+m_t=k</span><script type="math/tex">m_1+m_2+···+m_t=k</script></span>. Then a sequence <span class="arithmatex"><span class="MathJax_Preview">\{a_n\}</span><script type="math/tex">\{a_n\}</script></span> is a solution of the recurrence relation </p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+a_n=c_1a_{n-1}+c_2a_{n-2}+···+c_ka_{n-k}
+</div>
+<script type="math/tex; mode=display">
+a_n=c_1a_{n-1}+c_2a_{n-2}+···+c_ka_{n-k}
+</script>
+</div>
+<p>if and only if </p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+a_n=(α_{1, 0}+α_{1, 1}n+···+α_{1, m_1-1}n^{m_1-1})r_1^n\\
++(α_{2, 0}+α_{2, 1}n+···+α_{2, m_2-1}n^{m_2-1})r_2^n\\
++···+(α_{t, 0}+α_{t, 1}^n+···+α_{t, m_t-1}n^{m_t-1})r_t^n
+</div>
+<script type="math/tex; mode=display">
+a_n=(α_{1, 0}+α_{1, 1}n+···+α_{1, m_1-1}n^{m_1-1})r_1^n\\
++(α_{2, 0}+α_{2, 1}n+···+α_{2, m_2-1}n^{m_2-1})r_2^n\\
++···+(α_{t, 0}+α_{t, 1}^n+···+α_{t, m_t-1}n^{m_t-1})r_t^n
+</script>
+</div>
+<p>for <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> = 0,
+1, 2, …, where <span class="arithmatex"><span class="MathJax_Preview">α_{i, j}</span><script type="math/tex">α_{i, j}</script></span> are constants for <span class="arithmatex"><span class="MathJax_Preview">1\leq{i}\leq{t}</span><script type="math/tex">1\leq{i}\leq{t}</script></span> and <span class="arithmatex"><span class="MathJax_Preview">0\leq{j}\leq{m}_i-1</span><script type="math/tex">0\leq{j}\leq{m}_i-1</script></span>.</p>
+<p>Theorem 5: If <span class="arithmatex"><span class="MathJax_Preview">\{a_n^{(p)}\}</span><script type="math/tex">\{a_n^{(p)}\}</script></span> is a particular solution of the
+nonhomogeneous linear recurrence relation with constant coefficients </p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+a_n=c_1a_{n-1}+c_2a_{n-2}+...+c_ka_{n-k}+F(n),
+</div>
+<script type="math/tex; mode=display">
+a_n=c_1a_{n-1}+c_2a_{n-2}+...+c_ka_{n-k}+F(n),
+</script>
+</div>
+<p>then every solution is of the form <span class="arithmatex"><span class="MathJax_Preview">\{a_n^{(p)}+a_n^{(h)}\}</span><script type="math/tex">\{a_n^{(p)}+a_n^{(h)}\}</script></span>, where <span class="arithmatex"><span class="MathJax_Preview">\{a_n^{(h)}\}</span><script type="math/tex">\{a_n^{(h)}\}</script></span> is a solution of the associated homogeneous recurrence relation </p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+a_n=c_1a_{n-1}+c_2a_{n-2}+...+c_ka_{n-k}.
+</div>
+<script type="math/tex; mode=display">
+a_n=c_1a_{n-1}+c_2a_{n-2}+...+c_ka_{n-k}.
+</script>
+</div>
+<p>Theorem 6: If </p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+F(n)=(b_tn^t+b_{t-1}n^{t-1}+...+b_1n+b_0)s^n,
+</div>
+<script type="math/tex; mode=display">
+F(n)=(b_tn^t+b_{t-1}n^{t-1}+...+b_1n+b_0)s^n,
+</script>
+</div>
+<p>when <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span> is not a root of the characteristic equation of the associated linear homogeneous recurrence relation, there is a particular solution of the form </p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+(p_tn^t+p_{t-1}n^{t-1}+...+p_1n+p_0)s^n
+</div>
+<script type="math/tex; mode=display">
+(p_tn^t+p_{t-1}n^{t-1}+...+p_1n+p_0)s^n
+</script>
+</div>
+<p>When <span class="arithmatex"><span class="MathJax_Preview">s</span><script type="math/tex">s</script></span> is a root of this characteristic equation and its multiplicity is <span class="arithmatex"><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span>, there is a particular solution of the form </p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+n^m(p_tn^t+p_{t-1}n^{t-1}+...+p_1n+p_0)s^n.
+</div>
+<script type="math/tex; mode=display">
+n^m(p_tn^t+p_{t-1}n^{t-1}+...+p_1n+p_0)s^n.
+</script>
+</div>
+<h2 id="generating-functions">Generating Functions</h2>
+<p>The (ordinary) generating function for the sequence <span class="arithmatex"><span class="MathJax_Preview">a_0,a_1,...,a_k</span><script type="math/tex">a_0,a_1,...,a_k</script></span>,... of real numbers is the infinite series</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+G(x)=a_0+a_1x+...+a_kx^k+...=\sum_{k=0}^\infty{a}_kx^k.
+</div>
+<script type="math/tex; mode=display">
+G(x)=a_0+a_1x+...+a_kx^k+...=\sum_{k=0}^\infty{a}_kx^k.
+</script>
+</div>
+<p>We can define generating functions for finite sequences of real numbers by setting <span class="arithmatex"><span class="MathJax_Preview">a_{n+1}=a_{n+2}=...=0</span><script type="math/tex">a_{n+1}=a_{n+2}=...=0</script></span></p>
+<p><span class="arithmatex"><span class="MathJax_Preview">f(x)=\frac{1}{1-x}</span><script type="math/tex">f(x)=\frac{1}{1-x}</script></span> is the generating function of <span class="arithmatex"><span class="MathJax_Preview">\{1\}</span><script type="math/tex">\{1\}</script></span> for |x|&lt;1.</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">f(x)=\frac{1}{1-ax}</span><script type="math/tex">f(x)=\frac{1}{1-ax}</script></span> is the generating function of <span class="arithmatex"><span class="MathJax_Preview">\{a^n\}</span><script type="math/tex">\{a^n\}</script></span> for |ax|&lt;1.</p>
+<p>Let <span class="arithmatex"><span class="MathJax_Preview">f(x)=\sum_{k=0}^\infty{a}_kx^k</span><script type="math/tex">f(x)=\sum_{k=0}^\infty{a}_kx^k</script></span> and <span class="arithmatex"><span class="MathJax_Preview">g(x)=\sum_{k=0}^\infty{b}_kx^k</span><script type="math/tex">g(x)=\sum_{k=0}^\infty{b}_kx^k</script></span>, then</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+f(x)+g(x)=\sum_{k=0}^\infty(a_k+b_k)x^k and f(x)g(x)=\sum_{k=0}^\infty(\sum_{j=0}^ka_jb_{k-j})x^k.
+</div>
+<script type="math/tex; mode=display">
+f(x)+g(x)=\sum_{k=0}^\infty(a_k+b_k)x^k and f(x)g(x)=\sum_{k=0}^\infty(\sum_{j=0}^ka_jb_{k-j})x^k.
+</script>
+</div>
+<p>Let <span class="arithmatex"><span class="MathJax_Preview">u</span><script type="math/tex">u</script></span> be a real number and <span class="arithmatex"><span class="MathJax_Preview">k</span><script type="math/tex">k</script></span> a nonnegative integer. Then the extended binomial coefficient <span class="arithmatex"><span class="MathJax_Preview">\binom{u}{k}</span><script type="math/tex">\binom{u}{k}</script></span> is defined by </p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\binom{u}{k}=\begin{cases}
+u(u-1)...(u-k+1)/k! &amp;\text{if } k&gt;0\\
+1 &amp;\text{if } k=0.
+\end{cases}
+</div>
+<script type="math/tex; mode=display">
+\binom{u}{k}=\begin{cases}
+u(u-1)...(u-k+1)/k! &\text{if } k>0\\
+1 &\text{if } k=0.
+\end{cases}
+</script>
+</div>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\binom{-n}{r}=(-1)^r\binom{n+r-1}{r}
+</div>
+<script type="math/tex; mode=display">
+\binom{-n}{r}=(-1)^r\binom{n+r-1}{r}
+</script>
+</div>
+<p>The extended binomial theorem: Let <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> be a real number with |x|&lt;1 and let <span class="arithmatex"><span class="MathJax_Preview">u</span><script type="math/tex">u</script></span> be a real number. Then </p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+(1+x)^u=\sum_{k=0}^\infty\binom{u}{k}x^k.
+</div>
+<script type="math/tex; mode=display">
+(1+x)^u=\sum_{k=0}^\infty\binom{u}{k}x^k.
+</script>
+</div>
+<p>Find number of solutions: </p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+e_1+e_2+\cdots+e_n=C,
+</div>
+<script type="math/tex; mode=display">
+e_1+e_2+\cdots+e_n=C,
+</script>
+</div>
+<p><span class="arithmatex"><span class="MathJax_Preview">l_i\leq{e}_i\leq{u_i}</span><script type="math/tex">l_i\leq{e}_i\leq{u_i}</script></span>, then it is the coefficient of <span class="arithmatex"><span class="MathJax_Preview">x^C</span><script type="math/tex">x^C</script></span> from <span class="arithmatex"><span class="MathJax_Preview">(x^{l_i}+...+x^{u_i})...(...)</span><script type="math/tex">(x^{l_i}+...+x^{u_i})...(...)</script></span>. Form value <span class="arithmatex"><span class="MathJax_Preview">r</span><script type="math/tex">r</script></span> with tokens of value <span class="arithmatex"><span class="MathJax_Preview">t_i</span><script type="math/tex">t_i</script></span>: When order matters, ways of exactly <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> tokens is the coefficient of <span class="arithmatex"><span class="MathJax_Preview">x^r</span><script type="math/tex">x^r</script></span> from <span class="arithmatex"><span class="MathJax_Preview">(x^{t_i}+...)^n</span><script type="math/tex">(x^{t_i}+...)^n</script></span>, so for all it is the coefficient of <span class="arithmatex"><span class="MathJax_Preview">x^r</span><script type="math/tex">x^r</script></span> from <span class="arithmatex"><span class="MathJax_Preview">1+...+(x^{t_i}+...)^n</span><script type="math/tex">1+...+(x^{t_i}+...)^n</script></span>; else, it is the coefficient of
+<span class="arithmatex"><span class="MathJax_Preview">x^r</span><script type="math/tex">x^r</script></span> from <span class="arithmatex"><span class="MathJax_Preview">(1+...+(x^{t_i})^n)+...</span><script type="math/tex">(1+...+(x^{t_i})^n)+...</script></span>.</p>
+<p>More powerful and constraint-friendly then simple permutation and combination.</p>
+<p>Solve recurrence relations: Multiply <span class="arithmatex"><span class="MathJax_Preview">x^n</span><script type="math/tex">x^n</script></span> to the recurrence relation. Substitute the multiplied relation into</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+G(x)=\sum_{k=0}^\infty{a}_kx^k=...,
+</div>
+<script type="math/tex; mode=display">
+G(x)=\sum_{k=0}^\infty{a}_kx^k=...,
+</script>
+</div>
+<p>solve for <span class="arithmatex"><span class="MathJax_Preview">G(x)</span><script type="math/tex">G(x)</script></span>, then make it a summation to see <span class="arithmatex"><span class="MathJax_Preview">a_n</span><script type="math/tex">a_n</script></span>.</p>
+<p>Proving identity: Take combination as a coefficient of certain term.</p>
+<h2 id="inclusion-exclusion">Inclusion-Exclusion</h2>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+|A\cup{B}|=|A|+|B|-|A\cap{B}|.\\
+|A\cup{B}\cup{C}|=|A|+|B|+|C|-|A\cap{B}|-|B\cap{C}|-|C\cap{A}|+|A\cap{B}\cap{C}|\\
+…
+</div>
+<script type="math/tex; mode=display">
+|A\cup{B}|=|A|+|B|-|A\cap{B}|.\\
+|A\cup{B}\cup{C}|=|A|+|B|+|C|-|A\cap{B}|-|B\cap{C}|-|C\cap{A}|+|A\cap{B}\cap{C}|\\
+…
+</script>
+</div>
+<p>Number of integers divisible: </p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\lfloor{n}/a\rfloor+\lfloor{n}/b\rfloor-\lfloor{n}/ab\rfloor.
+</div>
+<script type="math/tex; mode=display">
+\lfloor{n}/a\rfloor+\lfloor{n}/b\rfloor-\lfloor{n}/ab\rfloor.
+</script>
+</div>
+<h2 id="applications-of-inclusion-exclusion">Applications of Inclusion-Exclusion</h2>
+<p>Asking element count having none of some properties: Use inclusion-exclusion.</p>
+<p>The number of primes (The sieve of Eratosthenes): A composite number is divisible by a prime smaller than its square root.</p>
+<p>The number of onto functions: The shouldn’t have properties are not having element <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> in the range.</p>
+<p>Let <span class="arithmatex"><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span> and <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> be positive integers with <span class="arithmatex"><span class="MathJax_Preview">m \geq{n}</span><script type="math/tex">m \geq{n}</script></span>. Then, there are </p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+n^m-C(n,1)(n-1)^m+C(n,2)(n-2)^m-...+(-1)^{n-1}C(n,n-1)1^m
+</div>
+<script type="math/tex; mode=display">
+n^m-C(n,1)(n-1)^m+C(n,2)(n-2)^m-...+(-1)^{n-1}C(n,n-1)1^m
+</script>
+</div>
+<p>onto functions from a set with m elements to a set with n elements.</p>
+<p>Derangement: A permutation of objects that leaves no object in its original position.</p>
+<p>The number of derangements of a set with <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> elements is </p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+D_n=n![1-\frac{1}{1!}+\frac{1}{2!}-\frac{1}{3!}+...+(-1)^n\frac{1}{n!}]\to{n}!e^{-1}.
+</div>
+<script type="math/tex; mode=display">
+D_n=n![1-\frac{1}{1!}+\frac{1}{2!}-\frac{1}{3!}+...+(-1)^n\frac{1}{n!}]\to{n}!e^{-1}.
+</script>
+</div>
+<p>For arranging differently between two times, the number is </p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+n!D_n=(n!)^2[1-\frac{1}{1!}+\frac{1}{2!}-\frac{1}{3!}+...+(-1)^n\frac{1}{n!}]
+</div>
+<script type="math/tex; mode=display">
+n!D_n=(n!)^2[1-\frac{1}{1!}+\frac{1}{2!}-\frac{1}{3!}+...+(-1)^n\frac{1}{n!}]
+</script>
+</div>
+<p>because the first arrangement can have <span class="arithmatex"><span class="MathJax_Preview">n!</span><script type="math/tex">n!</script></span> ways.</p>
+<h2 id="relations-their-properties-and-representations">Relations, Their Properties and Representations</h2>
+<p>Binary relation: Let A and B be sets. A binary relation from A to B is a subset of <span class="arithmatex"><span class="MathJax_Preview">A\times{B}</span><script type="math/tex">A\times{B}</script></span>. </p>
+<p><span class="arithmatex"><span class="MathJax_Preview">a\mathrel{R}b</span><script type="math/tex">a\mathrel{R}b</script></span> or <span class="arithmatex"><span class="MathJax_Preview">a\not\!\!R \;b</span><script type="math/tex">a\not\!\!R \;b</script></span>.</p>
+<p>Matrix representation: <span class="arithmatex"><span class="MathJax_Preview">M_R,m_{ij}=(a_i,b_j)\in{R}</span><script type="math/tex">M_R,m_{ij}=(a_i,b_j)\in{R}</script></span>.</p>
+<p>Functions can be relations.</p>
+<p>Relation on a set: A relation on a set <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> is a relation from <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> to <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>.</p>
+<p>Reflexive: A relation <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> on a set <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> is called reflexive if <span class="arithmatex"><span class="MathJax_Preview">(a,a)\in{R}</span><script type="math/tex">(a,a)\in{R}</script></span> for every element <span class="arithmatex"><span class="MathJax_Preview">a\in{A}</span><script type="math/tex">a\in{A}</script></span>.</p>
+<p>Irreflexive: A relation <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> on the set <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> is irreflexive if for every <span class="arithmatex"><span class="MathJax_Preview">a\in{A}</span><script type="math/tex">a\in{A}</script></span>, <span class="arithmatex"><span class="MathJax_Preview">(a,a)\not\in{R}</span><script type="math/tex">(a,a)\not\in{R}</script></span>.</p>
+<p>Symmetric: A relation <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> on a set <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> is called symmetric if <span class="arithmatex"><span class="MathJax_Preview">(b,a)\in{R}</span><script type="math/tex">(b,a)\in{R}</script></span> whenever <span class="arithmatex"><span class="MathJax_Preview">(a,b)\in{R}</span><script type="math/tex">(a,b)\in{R}</script></span>, for all <span class="arithmatex"><span class="MathJax_Preview">a,b\in{A}</span><script type="math/tex">a,b\in{A}</script></span>. In matrix it is 1 to 1 and 0 to 0 mirrored by the main diagonal, or <span class="arithmatex"><span class="MathJax_Preview">M_R=(M_R)^T</span><script type="math/tex">M_R=(M_R)^T</script></span>.</p>
+<p>Asymmetric: A relation <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> is called asymmetric if <span class="arithmatex"><span class="MathJax_Preview">(a,b)\in{R}</span><script type="math/tex">(a,b)\in{R}</script></span> implies that <span class="arithmatex"><span class="MathJax_Preview">(b,a)\not\in{R}</span><script type="math/tex">(b,a)\not\in{R}</script></span>(So the main diagonal are all zeros).</p>
+<p>Antisymmetric: A relation <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> on a set <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> such that for all <span class="arithmatex"><span class="MathJax_Preview">a,b\in{A}</span><script type="math/tex">a,b\in{A}</script></span>,  if <span class="arithmatex"><span class="MathJax_Preview">(a,b)\in{R}</span><script type="math/tex">(a,b)\in{R}</script></span> and <span class="arithmatex"><span class="MathJax_Preview">(b,a)\in{R}</span><script type="math/tex">(b,a)\in{R}</script></span>, then <span class="arithmatex"><span class="MathJax_Preview">a=b</span><script type="math/tex">a=b</script></span> is called antisymmetric. In matrix it is 1 to 0, 0 to 1 or 0 to 0 mirrored by the main diagonal. Antisymmetric is not Asymmetric, but Asymmetric is Antisymmetric.</p>
+<p>Transitive: A relation <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> on a set <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> is called transitive if whenever <span class="arithmatex"><span class="MathJax_Preview">(a,b)\in{R}</span><script type="math/tex">(a,b)\in{R}</script></span> and <span class="arithmatex"><span class="MathJax_Preview">(b,c)\in{R}</span><script type="math/tex">(b,c)\in{R}</script></span>, then <span class="arithmatex"><span class="MathJax_Preview">(a,c)\in{R}</span><script type="math/tex">(a,c)\in{R}</script></span>, for all <span class="arithmatex"><span class="MathJax_Preview">a,b,c\in{A}</span><script type="math/tex">a,b,c\in{A}</script></span>. </p>
+<p>Combining Relations: Relations can be combined like sets.</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+M_{R_1\cup{R}_2}=M_{R_1}\vee{M}_{R_2}\\
+M_{R_1\cap{R}_2}=M_{R_1}\wedge{M}_{R_2}\\
+M_{R\circ{S}}=M_S\bigodot{M}_R (\bigodot \text{stands for boolean product})\\
+M_{R^n}=(M_R)^n
+</div>
+<script type="math/tex; mode=display">
+M_{R_1\cup{R}_2}=M_{R_1}\vee{M}_{R_2}\\
+M_{R_1\cap{R}_2}=M_{R_1}\wedge{M}_{R_2}\\
+M_{R\circ{S}}=M_S\bigodot{M}_R (\bigodot \text{stands for boolean product})\\
+M_{R^n}=(M_R)^n
+</script>
+</div>
+<p>Symmetric difference: The symmetric difference of <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> and <span class="arithmatex"><span class="MathJax_Preview">B</span><script type="math/tex">B</script></span>, denoted by <span class="arithmatex"><span class="MathJax_Preview">A\bigoplus{B}</span><script type="math/tex">A\bigoplus{B}</script></span>, is the set containing those elements in either <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> or$ B$, but not in both <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> and <span class="arithmatex"><span class="MathJax_Preview">B</span><script type="math/tex">B</script></span>.</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">M_{\bigoplus R}</span><script type="math/tex">M_{\bigoplus R}</script></span> is the entry-wise XORed matrix.</p>
+<p>Composition: The composite of <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> and <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> is the relation consisting of ordered pairs <span class="arithmatex"><span class="MathJax_Preview">(a, c)</span><script type="math/tex">(a, c)</script></span>, where <span class="arithmatex"><span class="MathJax_Preview">a\in{A}</span><script type="math/tex">a\in{A}</script></span>, <span class="arithmatex"><span class="MathJax_Preview">c\in{C}</span><script type="math/tex">c\in{C}</script></span>, and for which there exists an element <span class="arithmatex"><span class="MathJax_Preview">b\in{B}</span><script type="math/tex">b\in{B}</script></span> such that <span class="arithmatex"><span class="MathJax_Preview">(a,b)\in{R}</span><script type="math/tex">(a,b)\in{R}</script></span> and <span class="arithmatex"><span class="MathJax_Preview">(b,c)\in{S}</span><script type="math/tex">(b,c)\in{S}</script></span>. We denote the composite of <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> and <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> by <span class="arithmatex"><span class="MathJax_Preview">S\circ{R}</span><script type="math/tex">S\circ{R}</script></span>.</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">S\circ{R}</span><script type="math/tex">S\circ{R}</script></span> is from right to left (inside to outside)!</p>
+<p>Composition can be done by matrix multiplication.</p>
+<p>Power: Let <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> be a relation on the set <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>. The powers <span class="arithmatex"><span class="MathJax_Preview">R^n</span><script type="math/tex">R^n</script></span>, $n=1, 2, 3 ,..., $ are defined recursively by <span class="arithmatex"><span class="MathJax_Preview">R^1=R</span><script type="math/tex">R^1=R</script></span> and <span class="arithmatex"><span class="MathJax_Preview">R^{n+1}=R^n\circ{R}</span><script type="math/tex">R^{n+1}=R^n\circ{R}</script></span>.</p>
+<p>Theorem: The relation <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> on a set <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> is transitive if and only if <span class="arithmatex"><span class="MathJax_Preview">R^n\subseteq{R}</span><script type="math/tex">R^n\subseteq{R}</script></span> for <span class="arithmatex"><span class="MathJax_Preview">n=1, 2, 3, ...</span><script type="math/tex">n=1, 2, 3, ...</script></span>.</p>
+<p>Inverse relation: <span class="arithmatex"><span class="MathJax_Preview">R^{-1}</span><script type="math/tex">R^{-1}</script></span>, with pairs inverted.</p>
+<p>Relations on a finite set can also be represented by digraphs (directed graphs).</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+(R\cup{S})^{-1}=R^{-1}\cup{S}^{-1}\\
+(R\cap{S})^{-1}=R^{-1}\cap{S}^{-1}\\
+(\overline{R})^{-1}=\overline{R^{-1}}\\
+(R-S)^{-1}=R^{-1}-S^{-1}\\
+(A\times{B})^{-1}=B\times{A}
+</div>
+<script type="math/tex; mode=display">
+(R\cup{S})^{-1}=R^{-1}\cup{S}^{-1}\\
+(R\cap{S})^{-1}=R^{-1}\cap{S}^{-1}\\
+(\overline{R})^{-1}=\overline{R^{-1}}\\
+(R-S)^{-1}=R^{-1}-S^{-1}\\
+(A\times{B})^{-1}=B\times{A}
+</script>
+</div>
+<h2 id="closures-of-relations">Closures of Relations</h2>
+<p>Closure of <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> with respect to <strong>P</strong>: The relation with property <strong>P</strong> containing <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> such that it is a subset of every relation with property <strong>P</strong> containing <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span>.</p>
+<p>Diagonal relation: <span class="arithmatex"><span class="MathJax_Preview">\Delta=\{(a,a)|a\in{A}\}</span><script type="math/tex">\Delta=\{(a,a)|a\in{A}\}</script></span>.</p>
+<p>Reflexive closure of <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span>: The smallest reflexive relation that contains <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span>.</p>
+<p>Formed by <span class="arithmatex"><span class="MathJax_Preview">R\cup\Delta</span><script type="math/tex">R\cup\Delta</script></span>.</p>
+<p>Symmetric closure of <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span>: The smallest symmetric relation that contains <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span>.</p>
+<p>Formed by <span class="arithmatex"><span class="MathJax_Preview">R\cup{R}^{-1}</span><script type="math/tex">R\cup{R}^{-1}</script></span>.</p>
+<p>Transitive closure of <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span>: The smallest transitive relation that contains <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span>.</p>
+<p>Path: A sequence of consecutive edges, denoted by <span class="arithmatex"><span class="MathJax_Preview">x_0,x_1,x_2,...,x_{n-1},x_n</span><script type="math/tex">x_0,x_1,x_2,...,x_{n-1},x_n</script></span>, with length <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>.</p>
+<p>Circuit (or cycle): A path of length <span class="arithmatex"><span class="MathJax_Preview">n\geq{1}</span><script type="math/tex">n\geq{1}</script></span> that begins and ends at the same vertex.</p>
+<p>Path on relation: There is a path from <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span> to <span class="arithmatex"><span class="MathJax_Preview">b</span><script type="math/tex">b</script></span> in <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> if there is a sequence of elements <span class="arithmatex"><span class="MathJax_Preview">a,x_1,x_2,...,x_{n−1}</span><script type="math/tex">a,x_1,x_2,...,x_{n−1}</script></span>, <span class="arithmatex"><span class="MathJax_Preview">b</span><script type="math/tex">b</script></span> with <span class="arithmatex"><span class="MathJax_Preview">(a,x_1)\in{R}</span><script type="math/tex">(a,x_1)\in{R}</script></span>, <span class="arithmatex"><span class="MathJax_Preview">(x_1,x_2)\in{R}</span><script type="math/tex">(x_1,x_2)\in{R}</script></span>, ..., and <span class="arithmatex"><span class="MathJax_Preview">(x_{n−1},b)\in{R}</span><script type="math/tex">(x_{n−1},b)\in{R}</script></span>.</p>
+<p>Theorem 1: Let <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> be a relation on a set <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>. There is a path of length <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>, where <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> is a positive integer, from <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span> to <span class="arithmatex"><span class="MathJax_Preview">b</span><script type="math/tex">b</script></span> if and only if <span class="arithmatex"><span class="MathJax_Preview">(a,b)\in{R}^n</span><script type="math/tex">(a,b)\in{R}^n</script></span>.</p>
+<p>Connectivity relation: Let <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> be a relation on a set <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>. The connectivity relation <span class="arithmatex"><span class="MathJax_Preview">R^*</span><script type="math/tex">R^*</script></span> consists of the pairs <span class="arithmatex"><span class="MathJax_Preview">(a,b)</span><script type="math/tex">(a,b)</script></span> such that there is a path of length at least one from <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span> to <span class="arithmatex"><span class="MathJax_Preview">b</span><script type="math/tex">b</script></span> in <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span>.</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+R^*=\bigcup_{n=1}^\infty{R}^n
+</div>
+<script type="math/tex; mode=display">
+R^*=\bigcup_{n=1}^\infty{R}^n
+</script>
+</div>
+<p>Theorem 2: The transitive closure of a relation <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> equals the connectivity relation <span class="arithmatex"><span class="MathJax_Preview">R^*</span><script type="math/tex">R^*</script></span>.</p>
+<p>Lemma 1: Let <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> be a set with n elements, and let <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> be a relation on <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>. If there is a path of length at least one in <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> from <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span> to <span class="arithmatex"><span class="MathJax_Preview">b</span><script type="math/tex">b</script></span>, then there is such a path with length not exceeding <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span>. Moreover, when <span class="arithmatex"><span class="MathJax_Preview">a\neq{b}</span><script type="math/tex">a\neq{b}</script></span>, if there is a path of length at least one in <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> from <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span> to <span class="arithmatex"><span class="MathJax_Preview">b</span><script type="math/tex">b</script></span>, then there is such a path with length not exceeding <span class="arithmatex"><span class="MathJax_Preview">n−1</span><script type="math/tex">n−1</script></span>.</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+R^*=\bigcup_{i=1}^nR^i
+</div>
+<script type="math/tex; mode=display">
+R^*=\bigcup_{i=1}^nR^i
+</script>
+</div>
+<p>Theorem 3: Let <span class="arithmatex"><span class="MathJax_Preview">M_R</span><script type="math/tex">M_R</script></span> be the zero–one matrix of the relation <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> on a set with <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> elements. Then the zero–one matrix of the transitive closure <span class="arithmatex"><span class="MathJax_Preview">R^*</span><script type="math/tex">R^*</script></span> is</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+M_{R^*}=M_R\vee{M}_R^{[2]}\vee{M}_R^{[3]}\vee...\vee{M}_R^{[n]}.
+</div>
+<script type="math/tex; mode=display">
+M_{R^*}=M_R\vee{M}_R^{[2]}\vee{M}_R^{[3]}\vee...\vee{M}_R^{[n]}.
+</script>
+</div>
+<p>Interior vertices: Vertices of a path excluding the first and the last.</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">W_0=M_R, W_i=[w_{ij}^{(k)}]</span><script type="math/tex">W_0=M_R, W_i=[w_{ij}^{(k)}]</script></span>, where <span class="arithmatex"><span class="MathJax_Preview">w_{ij}</span><script type="math/tex">w_{ij}</script></span> is whether there is a path from <span class="arithmatex"><span class="MathJax_Preview">v_i</span><script type="math/tex">v_i</script></span> to <span class="arithmatex"><span class="MathJax_Preview">v_j</span><script type="math/tex">v_j</script></span> such that all interior vertices are in the first <span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span> elements of the list (The list is prepared beforehand).</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+W_n=M_{R^*}.
+</div>
+<script type="math/tex; mode=display">
+W_n=M_{R^*}.
+</script>
+</div>
+<p>Lemma 2: </p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+w_{ij}^{[k]}=w_{ij}^{[k-1]}\vee(w_{ik}^{[k-1]}\wedge{w}_{kj}^{[k-1]})
+</div>
+<script type="math/tex; mode=display">
+w_{ij}^{[k]}=w_{ij}^{[k-1]}\vee(w_{ik}^{[k-1]}\wedge{w}_{kj}^{[k-1]})
+</script>
+</div>
+<h2 id="equivalence-relations">Equivalence Relations</h2>
+<p>Equivalence Relation: <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> relation on a set <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> is called an equivalence relation if it is reflexive, symmetric, and transitive.</p>
+<p>Equivalent: Two elements <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span> and <span class="arithmatex"><span class="MathJax_Preview">b</span><script type="math/tex">b</script></span> that are related by an equivalence relation are called equivalent. The notation <span class="arithmatex"><span class="MathJax_Preview">a\tilde{b}</span><script type="math/tex">a\tilde{b}</script></span> is often used to denote that <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span> and <span class="arithmatex"><span class="MathJax_Preview">b</span><script type="math/tex">b</script></span> are equivalent elements with respect to a particular equivalence relation.</p>
+<p>Congruence Modulo <span class="arithmatex"><span class="MathJax_Preview">m</span><script type="math/tex">m</script></span> is an equivalence relation.</p>
+<p>Equivalence class: Let <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> be an equivalence relation on a set <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>. The set of all elements that are related to an element a of <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> is called the equivalence class of <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span>. The equivalence class of <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span> with respect to <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> is denoted by <span class="arithmatex"><span class="MathJax_Preview">[a]_R</span><script type="math/tex">[a]_R</script></span>. When only one relation is under consideration, we can delete the subscript <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> and write <span class="arithmatex"><span class="MathJax_Preview">[a]</span><script type="math/tex">[a]</script></span> for this equivalence class.</p>
+<p>Representative of equivalence class: If <span class="arithmatex"><span class="MathJax_Preview">b\in[a]_R</span><script type="math/tex">b\in[a]_R</script></span> , then <span class="arithmatex"><span class="MathJax_Preview">b</span><script type="math/tex">b</script></span> is called <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span> representative of this equivalence class.</p>
+<p>Theorem 1: Let <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> be an equivalence relation on a set <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span>. These statements for elements <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span> and <span class="arithmatex"><span class="MathJax_Preview">b</span><script type="math/tex">b</script></span> of <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> are equivalent:</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+aRb \\
+[a]=[b] \\
+[a]\cap[b]\neq\varnothing
+</div>
+<script type="math/tex; mode=display">
+aRb \\
+[a]=[b] \\
+[a]\cap[b]\neq\varnothing
+</script>
+</div>
+<p>Partition: Partition of a set <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> is a collection of disjoint nonempty subsets of <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> that have <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> as their union.</p>
+<p>Theorem 2: Let <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> be an equivalence relation on a set <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>. Then the equivalence classes of <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> form a partition of <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>. Conversely, given a partition <span class="arithmatex"><span class="MathJax_Preview">\{A_i|i\in{I}\}</span><script type="math/tex">\{A_i|i\in{I}\}</script></span> of the set <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>, there is an equivalence relation <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> that has the sets <span class="arithmatex"><span class="MathJax_Preview">A_i,i\in{I}</span><script type="math/tex">A_i,i\in{I}</script></span>, as its equivalence classes.</p>
+<p>The m congruence modulo classes are denoted by <span class="arithmatex"><span class="MathJax_Preview">[0]_m, [1]_m, ..., [m−1]_m</span><script type="math/tex">[0]_m, [1]_m, ..., [m−1]_m</script></span>.</p>
+<h2 id="partial-ordering">Partial Ordering</h2>
+<p>Partial ordering: A relation <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> on a set <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> is called a partial ordering or partial order if it is reflexive, antisymmetric, and transitive.</p>
+<p>Partially ordered set (poset): A set <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> together with a partial ordering <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> is called a partially ordered set, or poset, and is denoted by <span class="arithmatex"><span class="MathJax_Preview">(S,R)</span><script type="math/tex">(S,R)</script></span>. Members of <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> are called elements of the poset.</p>
+<p>Less/greater than or equal (<span class="arithmatex"><span class="MathJax_Preview">\leq/\geq</span><script type="math/tex">\leq/\geq</script></span>), inclusion relation (<span class="arithmatex"><span class="MathJax_Preview">\subseteq</span><script type="math/tex">\subseteq</script></span>), divisibility relation (|) are all partial orderings.</p>
+<p>Less/greater than ($$) are antisymmetric and transitive, but not reflexive, so they are not partial orderings.</p>
+<p>Comparable: The elements <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span> and <span class="arithmatex"><span class="MathJax_Preview">b</span><script type="math/tex">b</script></span> of a poset <span class="arithmatex"><span class="MathJax_Preview">(S,\preceq)</span><script type="math/tex">(S,\preceq)</script></span> are called comparable if either <span class="arithmatex"><span class="MathJax_Preview">a\preceq b</span><script type="math/tex">a\preceq b</script></span> or <span class="arithmatex"><span class="MathJax_Preview">b\preceq a</span><script type="math/tex">b\preceq a</script></span>. When <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span> and <span class="arithmatex"><span class="MathJax_Preview">b</span><script type="math/tex">b</script></span> are elements of <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> such that neither <span class="arithmatex"><span class="MathJax_Preview">a\preceq b</span><script type="math/tex">a\preceq b</script></span> nor <span class="arithmatex"><span class="MathJax_Preview">b\preceq a</span><script type="math/tex">b\preceq a</script></span>, <span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span> and <span class="arithmatex"><span class="MathJax_Preview">b</span><script type="math/tex">b</script></span> are called incomparable.</p>
+<p>Totally/linearly ordered set: If <span class="arithmatex"><span class="MathJax_Preview">(S,\preceq)</span><script type="math/tex">(S,\preceq)</script></span> is a poset and every two elements of <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> are comparable, <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> is called a totally or linearly ordered set, and <span class="arithmatex"><span class="MathJax_Preview">\preceq</span><script type="math/tex">\preceq</script></span> is called a total or linear order. A totally ordered set is also called a chain.</p>
+<p>Well-ordered set: <span class="arithmatex"><span class="MathJax_Preview">(S,\preceq)</span><script type="math/tex">(S,\preceq)</script></span> is a well-ordered set if it is a poset such that <span class="arithmatex"><span class="MathJax_Preview">\preceq</span><script type="math/tex">\preceq</script></span> is a total ordering and every nonempty subset of <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> has a least element.</p>
+<p>The principle of well-ordered induction: Suppose that <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span> is a well-ordered set. Then <span class="arithmatex"><span class="MathJax_Preview">P(x)</span><script type="math/tex">P(x)</script></span> is true for all $x\in S $, if (inductive step:) For every <span class="arithmatex"><span class="MathJax_Preview">y\in{S}</span><script type="math/tex">y\in{S}</script></span>, if <span class="arithmatex"><span class="MathJax_Preview">P(x)</span><script type="math/tex">P(x)</script></span> is true for all <span class="arithmatex"><span class="MathJax_Preview">x\in{S}</span><script type="math/tex">x\in{S}</script></span> with <span class="arithmatex"><span class="MathJax_Preview">x\prec{y}</span><script type="math/tex">x\prec{y}</script></span>, then <span class="arithmatex"><span class="MathJax_Preview">P(y)</span><script type="math/tex">P(y)</script></span> is true.</p>
+<p>Lexicographic ordering: The lexical ordering <span class="arithmatex"><span class="MathJax_Preview">\prec</span><script type="math/tex">\prec</script></span> on <span class="arithmatex"><span class="MathJax_Preview">A_1\times{A}_2</span><script type="math/tex">A_1\times{A}_2</script></span> is defined by specifying that one pair is less than a second pair if the first entry of the first pair is less than (in <span class="arithmatex"><span class="MathJax_Preview">A_1</span><script type="math/tex">A_1</script></span>) the first entry of the second pair, or if the first entries are equal, but the second entry of this pair is less than (in <span class="arithmatex"><span class="MathJax_Preview">A_2</span><script type="math/tex">A_2</script></span>) the second entry of the second pair.</p>
+<p>Hasse diagram: Start with the directed graph for this relation. First, Remove these loops because of reflexivity. Next, remove all edges that must be in the partial ordering because of transitivity. Finally, arrange each edge so that its initial vertex is below its terminal vertex and remove all the arrows on edges.</p>
+<p>Covers: An element <span class="arithmatex"><span class="MathJax_Preview">y\in{S}</span><script type="math/tex">y\in{S}</script></span> covers an element <span class="arithmatex"><span class="MathJax_Preview">x\in{S}</span><script type="math/tex">x\in{S}</script></span> if <span class="arithmatex"><span class="MathJax_Preview">x\prec{y}</span><script type="math/tex">x\prec{y}</script></span> and there is no element <span class="arithmatex"><span class="MathJax_Preview">z\in{S}</span><script type="math/tex">z\in{S}</script></span> such that <span class="arithmatex"><span class="MathJax_Preview">x\prec{z}\prec{y}</span><script type="math/tex">x\prec{z}\prec{y}</script></span>.</p>
+<p>Covering relation: The set of pairs <span class="arithmatex"><span class="MathJax_Preview">(x,y)</span><script type="math/tex">(x,y)</script></span> such that <span class="arithmatex"><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span> covers <span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span> is called the covering relation of <span class="arithmatex"><span class="MathJax_Preview">(S,\preceq)</span><script type="math/tex">(S,\preceq)</script></span>.</p>
+<p>Maximal element: An element of a poset is called maximal if it is not less than any element of the poset. The top element of a Hasse diagram.</p>
+<p>Minimal element: An element of a poset is called minimal if it is not greater than any element of the poset. The bottom element of a Hasse diagram.</p>
+<p>Greatest element: An element in a poset that is greater than every other element.</p>
+<p>Least element: An element in a poset that is less than every other element.</p>
+<p>Upper bound: Element greater than or equal to all the elements in a subset <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> of <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>.</p>
+<p>Lower bound: Element less than or equal to all the elements in a subset <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> of <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>.</p>
+<p>Least upper bound: Upper bound that is less than every other upper bound of a subset <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> of <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>.</p>
+<p>Greatest lower bound: Lower bound that is greater than every other lower bound of a subset <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> of <span class="arithmatex"><span class="MathJax_Preview">S</span><script type="math/tex">S</script></span>.</p>
+<p>Lattice: A partially ordered set in which every pair of elements has both a least upper bound and a greatest lower bound is called a lattice.</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">(\mathcal{P}(S),\subseteq/\supseteq)</span><script type="math/tex">(\mathcal{P}(S),\subseteq/\supseteq)</script></span> is a lattice, with LUB and GLB being <span class="arithmatex"><span class="MathJax_Preview">A\cup{B}</span><script type="math/tex">A\cup{B}</script></span> and <span class="arithmatex"><span class="MathJax_Preview">A\cap{B}</span><script type="math/tex">A\cap{B}</script></span>.</p>
+<p>Compatible: A total ordering <span class="arithmatex"><span class="MathJax_Preview">\preceq</span><script type="math/tex">\preceq</script></span> said to be compatible with the partial ordering <span class="arithmatex"><span class="MathJax_Preview">R</span><script type="math/tex">R</script></span> if <span class="arithmatex"><span class="MathJax_Preview">a\preceq{b}</span><script type="math/tex">a\preceq{b}</script></span> whenever <span class="arithmatex"><span class="MathJax_Preview">aRb</span><script type="math/tex">aRb</script></span>.</p>
+<p>Topological sorting: Constructing a compatible total ordering from a partial ordering.</p>
+<p>Lemma 1: Every finite nonempty poset <span class="arithmatex"><span class="MathJax_Preview">(S,\preceq)</span><script type="math/tex">(S,\preceq)</script></span> has at least one minimal element.</p>
+<p>Algorithm for topological sorting: Pick the least element and remove it from the poset. Can also be done with a Hasse diagram.</p>
+<h2 id="graphs-and-graph-models">Graphs and Graph Models</h2>
+<p>(Undirected) graph: A <em>graph</em> <span class="arithmatex"><span class="MathJax_Preview">G=(V,E)</span><script type="math/tex">G=(V,E)</script></span> consists of V, a nonempty set of vertices (or nodes) and E, a set of edges. Each edge has either one or two vertices associated with it, called its <em>endpoints</em>. An edge is said to <em>connect</em>, its endpoints.</p>
+<p>Simple graph: A graph in which each edge connects two different vertices and where no two edges connect the same pair of vertices is called a simple graph.</p>
+<p>Infinite graph: A graph with an infinite vertex set or an infinite number of edges is called an infinite graph.</p>
+<p>Finite graph: a graph with a finite vertex set and a finite edge set is called a finite graph.</p>
+<p>Multigraph: Graphs that may have multiple edges connecting the same vertices are called multigraphs.</p>
+<p>Loop: Edges that connect a vertex to itself.</p>
+<p>Pseudographs: Graphs that may include loops, and possibly multiple edges connecting the same pair of vertices or a vertex to itself.</p>
+<p>Directed graph (digraph): A directed graph (or digraph) <span class="arithmatex"><span class="MathJax_Preview">(V,E)</span><script type="math/tex">(V,E)</script></span> consists of a nonempty set of vertices V and a set of directed edges (or arcs) E. Each directed edge is associated with an ordered pair of vertices. The directed edge associated with the ordered pair <span class="arithmatex"><span class="MathJax_Preview">(u,v)</span><script type="math/tex">(u,v)</script></span> is said to start at u and end at v.</p>
+<p>Simple directed graph: A directed graph with no loops and no multiple directed edges that start and end at the same vertices.</p>
+<p>Directed multigraphs: Directed graphs that may have multiple directed edges from a vertex to a second (possibly the same) vertex.</p>
+<p>Multiplicity: When there are m directed edges, each associated to an ordered pair of vertices <span class="arithmatex"><span class="MathJax_Preview">(u,v)</span><script type="math/tex">(u,v)</script></span>, we say that <span class="arithmatex"><span class="MathJax_Preview">(u,v)</span><script type="math/tex">(u,v)</script></span> is an edge of multiplicity m.</p>
+<p>Mixed graph: A graph with both directed and undirected edges. </p>
+<h2 id="graph-terminology-and-special-types-of-graphs">Graph Terminology and Special Types of Graphs</h2>
+<p>Adjacent (Neighbor): Two vertices u and v in an undirected graph G are called adjacent (or neighbors) in G if u and v are endpoints of an edge e of G. Such an edge e is called incident with the vertices u and v and e is said to connect u and v.</p>
+<p>Neighborhood: The set of all neighbors of a vertex v of <span class="arithmatex"><span class="MathJax_Preview">G=(V,E)</span><script type="math/tex">G=(V,E)</script></span>, denoted by N(v), is called the neighborhood of v. If A is a subset of V , we denote by N(A) the set of all vertices in G that are adjacent to at least one vertex in A. So, <span class="arithmatex"><span class="MathJax_Preview">N(A)=\bigcup_{v\in{A}}N(v)</span><script type="math/tex">N(A)=\bigcup_{v\in{A}}N(v)</script></span>.</p>
+<p>Degree: The degree of a vertex in an undirected graph is the number of edges incident with it, except that a loop at a vertex contributes twice to the degree of that vertex. The degree of the vertex v is denoted by <span class="arithmatex"><span class="MathJax_Preview">deg(v)</span><script type="math/tex">deg(v)</script></span>.</p>
+<p>Theorem 1, The handshaking theorem: Let <span class="arithmatex"><span class="MathJax_Preview">G=(V,E)</span><script type="math/tex">G=(V,E)</script></span> be an undirected graph with m edges. Then </p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+2m=\sum_{v\in{V}}deg(v).
+</div>
+<script type="math/tex; mode=display">
+2m=\sum_{v\in{V}}deg(v).
+</script>
+</div>
+<p>Theorem 2: An undirected graph has an even number of vertices of odd degree. Adjacent to/from, initial/terminal vertex: When <span class="arithmatex"><span class="MathJax_Preview">(u,v)</span><script type="math/tex">(u,v)</script></span> is an edge of the graph <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> with directed edges, u is said to be adjacent to v and v is said to be adjacent from u. The vertex u is called the initial vertex of <span class="arithmatex"><span class="MathJax_Preview">(u,v)</span><script type="math/tex">(u,v)</script></span>, and v is called the terminal or end vertex of <span class="arithmatex"><span class="MathJax_Preview">(u,v)</span><script type="math/tex">(u,v)</script></span>. The initial vertex and terminal vertex of a loop are the same.</p>
+<p>In/out degree: In a graph with directed edges the in-degree of a vertex v, denoted by <span class="arithmatex"><span class="MathJax_Preview">deg^−(v)</span><script type="math/tex">deg^−(v)</script></span>, is the number of edges with v as their terminal vertex. The out-degree of v, denoted by <span class="arithmatex"><span class="MathJax_Preview">deg^+(v)</span><script type="math/tex">deg^+(v)</script></span>, is the number of edges with v as their initial vertex. (Note that a loop at a vertex contributes 1 to both the in-degree and the out-degree of this vertex.)</p>
+<p>Theorem 3: Let <span class="arithmatex"><span class="MathJax_Preview">G=(V,E)</span><script type="math/tex">G=(V,E)</script></span> be a graph with directed edges. Then </p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+\sum_{v\in{V}}deg^−(v)=\sum_{v\in{V}}deg^+(v)=|E|.
+</div>
+<script type="math/tex; mode=display">
+\sum_{v\in{V}}deg^−(v)=\sum_{v\in{V}}deg^+(v)=|E|.
+</script>
+</div>
+<p>Underlying undirected graph: The undirected graph that results from ignoring directions of edges is called the underlying undirected graph.</p>
+<p>Complete graph: A complete graph on n vertices, denoted by <span class="arithmatex"><span class="MathJax_Preview">K_n</span><script type="math/tex">K_n</script></span>, is a simple graph that contains exactly one edge between each pair of distinct vertices.</p>
+<p>Noncomplete graph: A simple graph for which there is at least one pair of distinct vertex not connected by an edge.</p>
+<p>Cycle: A cycle <span class="arithmatex"><span class="MathJax_Preview">C_n</span><script type="math/tex">C_n</script></span>, <span class="arithmatex"><span class="MathJax_Preview">n\geq3</span><script type="math/tex">n\geq3</script></span>, consists of <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> vertices <span class="arithmatex"><span class="MathJax_Preview">v_1,v_2,...,v_n</span><script type="math/tex">v_1,v_2,...,v_n</script></span> and edges <span class="arithmatex"><span class="MathJax_Preview">\{v_1,v_2\}, \{v_2,v_3\}, ..., \{v_{n−1},v_n\}, \{v_n,v_1\}</span><script type="math/tex">\{v_1,v_2\}, \{v_2,v_3\}, ..., \{v_{n−1},v_n\}, \{v_n,v_1\}</script></span>.</p>
+<p>Wheel: We obtain a wheel W_n when we add an additional vertex to a cycle <span class="arithmatex"><span class="MathJax_Preview">C_n</span><script type="math/tex">C_n</script></span>, for <span class="arithmatex"><span class="MathJax_Preview">n\geq3</span><script type="math/tex">n\geq3</script></span>, and connect this new vertex to each of the <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> vertices in <span class="arithmatex"><span class="MathJax_Preview">C_n</span><script type="math/tex">C_n</script></span>, by new edges.</p>
+<p>n-Cube: An n-dimensional hypercube, or n-cube, denoted by <span class="arithmatex"><span class="MathJax_Preview">Q_n</span><script type="math/tex">Q_n</script></span>, is a graph that has vertices representing the <span class="arithmatex"><span class="MathJax_Preview">2^n</span><script type="math/tex">2^n</script></span> bit strings of length n.</p>
+<p>Bipartite and bipartition: A simple graph <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> is called bipartite if its vertex set <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> can be partitioned into two disjoint sets <span class="arithmatex"><span class="MathJax_Preview">V_1</span><script type="math/tex">V_1</script></span> and <span class="arithmatex"><span class="MathJax_Preview">V_2</span><script type="math/tex">V_2</script></span> such that every edge in the graph connects a vertex in <span class="arithmatex"><span class="MathJax_Preview">V_1</span><script type="math/tex">V_1</script></span> and a vertex in <span class="arithmatex"><span class="MathJax_Preview">V_2</span><script type="math/tex">V_2</script></span> (so that no edge in G connects either two vertices in <span class="arithmatex"><span class="MathJax_Preview">V_1</span><script type="math/tex">V_1</script></span> or two vertices in <span class="arithmatex"><span class="MathJax_Preview">V_2</span><script type="math/tex">V_2</script></span>). When this condition holds, we call the pair <span class="arithmatex"><span class="MathJax_Preview">(V_1,V_2)</span><script type="math/tex">(V_1,V_2)</script></span> a bipartition of the vertex set <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> of <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span>.</p>
+<p>Theorem 4: A simple graph is bipartite if and only if it is possible to assign one of two different colors to each vertex of the graph so that no two adjacent vertices are assigned the same color.</p>
+<p>Complete Bipartite Graph: A complete bipartite graph <span class="arithmatex"><span class="MathJax_Preview">K_{m,n}</span><script type="math/tex">K_{m,n}</script></span> is a graph that has its vertex set partitioned into two subsets of m and n vertices, respectively with an edge between two vertices if and only if one vertex is in the first subset and the other vertex is in the second subset.</p>
+<p>Bipartite graphs can be used to model many types of applications that involve matching the elements of one set to elements of another.</p>
+<p>Regular graph: A simple graph is called regular if every vertex of this graph has the same degree. A regular graph is called n-regular if every vertex in this graph has degree n.</p>
+<p>Subgraph: A subgraph of a graph <span class="arithmatex"><span class="MathJax_Preview">G=(V,E)</span><script type="math/tex">G=(V,E)</script></span> is a graph <span class="arithmatex"><span class="MathJax_Preview">H=(W,F)</span><script type="math/tex">H=(W,F)</script></span>, where <span class="arithmatex"><span class="MathJax_Preview">W\subseteq{V}</span><script type="math/tex">W\subseteq{V}</script></span> and <span class="arithmatex"><span class="MathJax_Preview">F\subseteq{E}</span><script type="math/tex">F\subseteq{E}</script></span>. A subgraph <span class="arithmatex"><span class="MathJax_Preview">H</span><script type="math/tex">H</script></span> of <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> is a proper subgraph of <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> if <span class="arithmatex"><span class="MathJax_Preview">H\neq G</span><script type="math/tex">H\neq G</script></span>.</p>
+<p>Subgraph induced by vertex set: Let <span class="arithmatex"><span class="MathJax_Preview">G=(V,E)</span><script type="math/tex">G=(V,E)</script></span> be a simple graph. The subgraph induced by a subset <span class="arithmatex"><span class="MathJax_Preview">W</span><script type="math/tex">W</script></span> of the vertex set <span class="arithmatex"><span class="MathJax_Preview">V</span><script type="math/tex">V</script></span> is the graph <span class="arithmatex"><span class="MathJax_Preview">(W,F)</span><script type="math/tex">(W,F)</script></span>, where the edge set <span class="arithmatex"><span class="MathJax_Preview">F</span><script type="math/tex">F</script></span> contains an edge in <span class="arithmatex"><span class="MathJax_Preview">E</span><script type="math/tex">E</script></span> if and only if both endpoints of this edge are in <span class="arithmatex"><span class="MathJax_Preview">W</span><script type="math/tex">W</script></span>.</p>
+<p>Spanning subgraph: <span class="arithmatex"><span class="MathJax_Preview">H</span><script type="math/tex">H</script></span> is a spanning subgraph of <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> if <span class="arithmatex"><span class="MathJax_Preview">W=V</span><script type="math/tex">W=V</script></span>, <span class="arithmatex"><span class="MathJax_Preview">F\subseteq{E}</span><script type="math/tex">F\subseteq{E}</script></span>.</p>
+<p>Union of graph: The union of two simple graphs <span class="arithmatex"><span class="MathJax_Preview">G_1=(V_1,E_1)</span><script type="math/tex">G_1=(V_1,E_1)</script></span> and <span class="arithmatex"><span class="MathJax_Preview">G_2= (V_2,E_2)</span><script type="math/tex">G_2= (V_2,E_2)</script></span> is the simple graph with vertex set <span class="arithmatex"><span class="MathJax_Preview">V_1\cup{V}_2</span><script type="math/tex">V_1\cup{V}_2</script></span> and edge set <span class="arithmatex"><span class="MathJax_Preview">E_1\cup{E}_2</span><script type="math/tex">E_1\cup{E}_2</script></span>. The union of <span class="arithmatex"><span class="MathJax_Preview">G_1</span><script type="math/tex">G_1</script></span> and <span class="arithmatex"><span class="MathJax_Preview">G_2</span><script type="math/tex">G_2</script></span> is denoted by <span class="arithmatex"><span class="MathJax_Preview">G_1\cup{G}_2</span><script type="math/tex">G_1\cup{G}_2</script></span>.</p>
+<h2 id="representing-graphs-and-graph">Representing Graphs and Graph</h2>
+<p>Isomorphism</p>
+<p>Adjacency list: Vertex and Adjacent vertices for simple graph, Initial vertex and terminal vertices for directed graph.</p>
+<p>Adjacency matrix: A (or A_G ).</p>
+<p>Incidence matrix: 1 when edge j is incident with vertex i.</p>
+<p>Isomorphism: The simple graphs <span class="arithmatex"><span class="MathJax_Preview">G_1=(V_1,E_1)</span><script type="math/tex">G_1=(V_1,E_1)</script></span> and <span class="arithmatex"><span class="MathJax_Preview">G_2=(V_2,E_2)</span><script type="math/tex">G_2=(V_2,E_2)</script></span> are isomorphic if there exists a one-to-one and onto function f from <span class="arithmatex"><span class="MathJax_Preview">V_1</span><script type="math/tex">V_1</script></span> to <span class="arithmatex"><span class="MathJax_Preview">V_2</span><script type="math/tex">V_2</script></span> with the property that a and b are adjacent in <span class="arithmatex"><span class="MathJax_Preview">G_1</span><script type="math/tex">G_1</script></span> if and only if <span class="arithmatex"><span class="MathJax_Preview">f(a)</span><script type="math/tex">f(a)</script></span> and <span class="arithmatex"><span class="MathJax_Preview">f(b)</span><script type="math/tex">f(b)</script></span> are adjacent in <span class="arithmatex"><span class="MathJax_Preview">G_2</span><script type="math/tex">G_2</script></span>, for all a and b in <span class="arithmatex"><span class="MathJax_Preview">V_1</span><script type="math/tex">V_1</script></span>. Such a function f is called an isomorphism. Two simple graphs that are not isomorphic are called nonisomorphic.</p>
+<p>Graph invariant: A property preserved by isomorphism of graphs is
+called a graph invariant.</p>
+<p>Graph invariants include: The number of vertices, the number of edges, the number of vertices of each degree (useful), bipartite, complete, wheel.</p>
+<p>Can also check isomorphism by making a function that maps vertices and checking whether it is preserving edges using adjacent matrix.</p>
+<h2 id="connectivity">Connectivity</h2>
+<p>Path: A sequence of edges that begins at a vertex of a graph and travels from vertex to vertex along edges of the graph. When there are no multiple edges, the path can be denoted by its vertex sequence.</p>
+<p>Circuit: The path is a circuit if it begins and ends at the same vertex, and has length greater than zero.</p>
+<p>Pass through and traverse: The path or circuit is said to pass through the vertices in between or traverse the edges.</p>
+<p>Simple A path or circuit is simple if it does not contain the same edge more than once.</p>
+<p>Connected: An undirected graph is called connected if there is a path between every pair of distinct vertices of the graph. An undirected graph that is not connected is called disconnected.</p>
+<p>Theorem 1: There is a simple path between every pair of distinct vertices of a connected undirected graph.</p>
+<p>Connected component: A maximal connected subgraph of a graph. </p>
+<p>Cut vertex: A vertex is a cut vertex (or articulation point), if removing it and all edges incident with it results in more connected components than in the original graph.</p>
+<p>Cut edge: If removal of an edge creates more components, the edge is called a cut edge or bridge.</p>
+<p>Strongly connected: A directed graph is strongly connected if there is a path from a to b and from b to a whenever a and b are vertices in the graph.</p>
+<p>Weakly connected: A directed graph is weakly connected if there is a path between every two vertices in the underlying undirected graph.</p>
+<p>Any strongly connected directed graph is also weakly connected. Strongly connected component: A maximal strongly connected subgraph, is called a strongly connected component or strong component.</p>
+<p>Two graphs are isomorphic only if they have simple circuits of the same length.</p>
+<p>Two graphs are isomorphic only if they contain paths that go through vertices so that the corresponding vertices in the two graphs have the same degree.</p>
+<p>Theorem 2: Let <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> be a graph with adjacency matrix <span class="arithmatex"><span class="MathJax_Preview">A</span><script type="math/tex">A</script></span> with respect to the ordering <span class="arithmatex"><span class="MathJax_Preview">v_1,v_2,...,v_n</span><script type="math/tex">v_1,v_2,...,v_n</script></span> of the vertices of the graph (with directed or undirected edges, with multiple edges and loops allowed). The number of different paths of length <span class="arithmatex"><span class="MathJax_Preview">r</span><script type="math/tex">r</script></span> from <span class="arithmatex"><span class="MathJax_Preview">v_i</span><script type="math/tex">v_i</script></span> to <span class="arithmatex"><span class="MathJax_Preview">v_j</span><script type="math/tex">v_j</script></span>, where <span class="arithmatex"><span class="MathJax_Preview">r</span><script type="math/tex">r</script></span> is a positive integer, equals the <span class="arithmatex"><span class="MathJax_Preview">(i,j)</span><script type="math/tex">(i,j)</script></span>th entry of <span class="arithmatex"><span class="MathJax_Preview">A^r</span><script type="math/tex">A^r</script></span>.</p>
+<p>The graph <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> is connected if and only if every off-diagonal entry of <span class="arithmatex"><span class="MathJax_Preview">A+A^2+A^3+...+A^{n−1}</span><script type="math/tex">A+A^2+A^3+...+A^{n−1}</script></span> is positive. The check can end earlier if an <span class="arithmatex"><span class="MathJax_Preview">A^i</span><script type="math/tex">A^i</script></span> is found to be so.</p>
+<h2 id="euler-and-hamilton-paths">Euler and Hamilton Paths</h2>
+<p>Euler circuit: A simple circuit containing every edge of graph G.</p>
+<p>Euler path: A simple path containing every edge of graph G.</p>
+<p>Theorem 1: A connected multigraph with at least two vertices has an Euler circuit if and only if each of its vertices has even degree.</p>
+<p>Algorithm 1: Constructing Euler Circuits.</p>
+<p>Theorem 2: A connected multigraph has an Euler path but not an Euler circuit if and only if it has exactly two vertices of odd degree.</p>
+<p>Hamilton path: A simple path in a graph <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> that passes through every vertex exactly once.</p>
+<p>Hamilton circuit: A simple circuit in a graph <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> that passes through every vertex exactly once.</p>
+<p>A graph with a vertex of degree one cannot have a Hamilton circuit.</p>
+<p>If a vertex in the graph has degree two, then both edges that are incident with this vertex must be part of any Hamilton circuit.</p>
+<p>When a Hamilton circuit is being constructed and this circuit has passed through a vertex, then all remaining edges incident with this vertex, other than the two used in the circuit, can be removed from consideration.</p>
+<p>A Hamilton circuit cannot contain a smaller circuit within it.</p>
+<p>Dirac’s theorem: If <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> is a simple graph with <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> vertices with <span class="arithmatex"><span class="MathJax_Preview">n\geq3</span><script type="math/tex">n\geq3</script></span> such that the degree of every vertex in <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> is at least <span class="arithmatex"><span class="MathJax_Preview">\frac{n}2</span><script type="math/tex">\frac{n}2</script></span>, then <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> has a Hamilton circuit.</p>
+<p>Ore’s theorem: If <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> is a simple graph with <span class="arithmatex"><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span> vertices with <span class="arithmatex"><span class="MathJax_Preview">n\geq3</span><script type="math/tex">n\geq3</script></span> such that <span class="arithmatex"><span class="MathJax_Preview">deg(u)+deg(v)\geq{n}</span><script type="math/tex">deg(u)+deg(v)\geq{n}</script></span> for every pair of nonadjacent vertices u and v in <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span>, then <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> has a Hamilton circuit.</p>
+<p>Finding Gray code is equivalent to finding a Hamilton circuit for n-cube.</p>
+<h2 id="shortest-path-problems">Shortest-Path Problems</h2>
+<p>Algorithm 1: Dijkstra’s Algorithm</p>
+<p>Theorem 1: Dijkstra’s algorithm finds the length of a shortest path between two vertices in a connected simple undirected weighted graph.</p>
+<p>Theorem 2: Dijkstra’s algorithm uses <span class="arithmatex"><span class="MathJax_Preview">O(n^2)</span><script type="math/tex">O(n^2)</script></span> operations (additions and comparisons) to find the length of a shortest path between two vertices in a connected simple undirected weighted graph with n vertices.</p>
+<p>Traveling salesperson problem: The circuit of minimum total weight in aweighted, complete, undirected graph that visits each vertex exactly once and returns to its starting point. This is equivalent to asking for a Hamilton circuit with minimum total weight in the complete graph, because each vertex is visited exactly once in the circuit.</p>
+<h2 id="planar-graphs">Planar Graphs</h2>
+<p>Planar: A graph is called planar if it can be drawn in the plane without any edges crossing (where a crossing of edges is the intersection of the lines or arcs representing them at a point other than their common endpoint). Such a drawing is called a planar representation of the graph.</p>
+<p>Proving no planar representation: Find a loop, divide the plane into regions, divide and conquer.</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">K_{3,3}</span><script type="math/tex">K_{3,3}</script></span> and <span class="arithmatex"><span class="MathJax_Preview">K_5</span><script type="math/tex">K_5</script></span> are non-planar.</p>
+<p>Euler’s formula: Let <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> be a connected planar simple graph with e edges and v vertices. Let r be the number of regions in a planar representation of G. Then </p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+r=e−v+2.
+</div>
+<script type="math/tex; mode=display">
+r=e−v+2.
+</script>
+</div>
+<p>Proved by mathematical induction.</p>
+<p>Corollary 1: If <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> is a connected planar simple graph with <span class="arithmatex"><span class="MathJax_Preview">e</span><script type="math/tex">e</script></span> edges and <span class="arithmatex"><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span> vertices, where <span class="arithmatex"><span class="MathJax_Preview">v\geq3</span><script type="math/tex">v\geq3</script></span>, then <span class="arithmatex"><span class="MathJax_Preview">e\leq3v−6</span><script type="math/tex">e\leq3v−6</script></span>.</p>
+<p>Can be used to show that a graph is non-planar.</p>
+<p>Degree of a region: the number of edges on the boundary of this region.</p>
+<p>Proved by <span class="arithmatex"><span class="MathJax_Preview">2e\geq3r</span><script type="math/tex">2e\geq3r</script></span> and Euler’s formula.</p>
+<p>Corollary 2: If $$$ is a connected planar simple graph, then <span class="arithmatex"><span class="MathJax_Preview">G</span><script type="math/tex">G</script></span> has a vertex of degree not exceeding five.</p>
+<p>Corollary 3: If a connected planar simple graph has e edges and v vertices with <span class="arithmatex"><span class="MathJax_Preview">v\geq3</span><script type="math/tex">v\geq3</script></span> and no circuits of length three, then <span class="arithmatex"><span class="MathJax_Preview">e\leq2v−4</span><script type="math/tex">e\leq2v−4</script></span>.</p>
+<p>Proved like corollary 1, where <span class="arithmatex"><span class="MathJax_Preview">2e\geq4r</span><script type="math/tex">2e\geq4r</script></span>.</p>
+<p>Can be used to show that a graph is non-planar.</p>
+<p>Elementary subdivision: If a graph is planar, so will be any graph obtained by removing an edge {u,v} and adding a new vertex w together with edges <span class="arithmatex"><span class="MathJax_Preview">\{u,w\}</span><script type="math/tex">\{u,w\}</script></span> and <span class="arithmatex"><span class="MathJax_Preview">\{w,v\}</span><script type="math/tex">\{w,v\}</script></span>. Such an operation is called an elementary subdivision.</p>
+<p>Homeomorphic: The graphs <span class="arithmatex"><span class="MathJax_Preview">G_1=(V_1,E_1)</span><script type="math/tex">G_1=(V_1,E_1)</script></span> and <span class="arithmatex"><span class="MathJax_Preview">G_2=(V_2,E_2)</span><script type="math/tex">G_2=(V_2,E_2)</script></span> are called homeomorphic if they can be obtained from the same graph by a sequence of elementary subdivisions.</p>
+<p>Kuratowski’s Theorem: A graph is nonplanar if and only if it contains a subgraph (deleting vertices and incident edges) homeomorphic to <span class="arithmatex"><span class="MathJax_Preview">K_{3,3}</span><script type="math/tex">K_{3,3}</script></span> or <span class="arithmatex"><span class="MathJax_Preview">K_5</span><script type="math/tex">K_5</script></span>.</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">K_{3,3}</span><script type="math/tex">K_{3,3}</script></span> can also be a hexagon with opposing vertices connected, and the parts are the two sets of three unconnected vertices.</p>
+<h2 id="graph-coloring">Graph Coloring</h2>
+<p>Dual graph: Each map in the plane can be represented by a graph. To set up this correspondence, each region of the map is represented by a vertex. Edges connect two vertices if the regions represented by these vertices have a common border. Two regions that touch at only one point are not considered adjacent. The resulting graph is called the dual graph of the map.</p>
+<p>Any map in the plane has a planar dual graph.</p>
+<p>Coloring: A coloring of a simple graph is the assignment of a color to each vertex of the graph so that no two adjacent vertices are assigned the same color.</p>
+<p>Chromatic number: The chromatic number of a graph is the least number of colors needed for a coloring of this graph, denoted by <span class="arithmatex"><span class="MathJax_Preview">\chi(G)</span><script type="math/tex">\chi(G)</script></span>.</p>
+<p>The four color theorem: The chromatic number of a planar graph is no greater than four.</p>
+<p>Nonplanar graphs can have arbitrarily large chromatic numbers.</p>
+<p>Show that the chromatic number of a graph is k:</p>
+<ol>
+<li>Show that the graph can be colored with k colors. This can be done by constructing such a coloring.</li>
+<li>Show that the graph cannot be colored using fewer than k colors, when 3 it is often shown by a three vertices loop.</li>
+</ol>
+<p>The chromatic number of a complete graph <span class="arithmatex"><span class="MathJax_Preview">K_n</span><script type="math/tex">K_n</script></span> is n because every vertex is connected with all others, and this does not contradict the four color theorem because <span class="arithmatex"><span class="MathJax_Preview">K_n</span><script type="math/tex">K_n</script></span> is not planar when n&gt;4.</p>
+<p>The chromatic number of a complete bipartite graph <span class="arithmatex"><span class="MathJax_Preview">K_{m,n}</span><script type="math/tex">K_{m,n}</script></span> is 2, by coloring either set a color.</p>
+<p>The chromatic number of a cycle graph <span class="arithmatex"><span class="MathJax_Preview">C_n</span><script type="math/tex">C_n</script></span>, is 1 when n=1, 2 when n is even, 3 when n is odd and n&gt;1.</p>
+<p>Equivalent to scheduling and required number of time slots.</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../C_Primer/" class="md-footer__link md-footer__link--prev" aria-label="Previous: C++ Primer" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              C++ Primer
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../math_postgraduate/" class="md-footer__link md-footer__link--next" aria-label="Next: 张宇考研数学" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              张宇考研数学
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e1a181d9.min.js"></script>
+      
+        <script src="../../mathjax-config.js"></script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+    
+  </body>
+</html>

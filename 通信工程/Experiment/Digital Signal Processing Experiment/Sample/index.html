@@ -1,0 +1,2665 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.3">
+    
+    
+      
+        <title>抽样 - hrz's notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.edf004c2.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="hrz&#39;s notes" class="md-header__button md-logo" aria-label="hrz's notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            hrz's notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              抽样
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="hrz&#39;s notes" class="md-nav__button md-logo" aria-label="hrz's notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    hrz's notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        书单
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          数据结构与算法
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="数据结构与算法" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          数据结构与算法
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/BasicMathProblem/" class="md-nav__link">
+        公约数与公倍数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/SumOfXOR/" class="md-nav__link">
+        异或的应用
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/code/" class="md-nav__link">
+        代码片段
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          编程语言
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="编程语言" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          编程语言
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/CorCLanguage/" class="md-nav__link">
+        C++
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/LatexSymbol/" class="md-nav__link">
+        Latex
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/TimerInCpp/" class="md-nav__link">
+        时间函数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/remainder/" class="md-nav__link">
+        余数的值
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          英语
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="英语" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          英语
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%8B%B1%E8%AF%AD/class/" class="md-nav__link">
+        类型模板
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%8B%B1%E8%AF%AD/writing/" class="md-nav__link">
+        写作句型
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          读书笔记
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="读书笔记" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          读书笔记
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/CSAPP/" class="md-nav__link">
+        深入理解计算机系统
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/C_Primer/" class="md-nav__link">
+        C++ Primer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/discrete_math/" class="md-nav__link">
+        离散数学
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/math_postgraduate/" class="md-nav__link">
+        张宇考研数学
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/network/" class="md-nav__link">
+        计算机网络
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/politics/" class="md-nav__link">
+        徐涛考研政治
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7" type="checkbox" id="__nav_5_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_7">
+          Ucore操作系统
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Ucore操作系统" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_7">
+          <span class="md-nav__icon md-icon"></span>
+          Ucore操作系统
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7_1" type="checkbox" id="__nav_5_7_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_7_1">
+          Appendix
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Appendix" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_7_1">
+          <span class="md-nav__icon md-icon"></span>
+          Appendix
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/appendix/gcc_inline_asm/" class="md-nav__link">
+        Gcc inline asm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/appendix/gdb/" class="md-nav__link">
+        Gdb
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/appendix/global_var/" class="md-nav__link">
+        Global var
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/appendix/interrupt/" class="md-nav__link">
+        原理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/appendix/struct/" class="md-nav__link">
+        Struct
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7_2" type="checkbox" id="__nav_5_7_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_7_2">
+          Lab1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lab1" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          Lab1
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab1/1/" class="md-nav__link">
+        1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab1/2/" class="md-nav__link">
+        2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab1/3/" class="md-nav__link">
+        3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab1/4/" class="md-nav__link">
+        4
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab1/5/" class="md-nav__link">
+        5
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab1/6/" class="md-nav__link">
+        6
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab1/7/" class="md-nav__link">
+        7
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab1/data_struct/" class="md-nav__link">
+        Data struct
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab1/my_note/" class="md-nav__link">
+        My note
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7_3" type="checkbox" id="__nav_5_7_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_7_3">
+          Lab2
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lab2" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          Lab2
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab2/1/" class="md-nav__link">
+        1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab2/2/" class="md-nav__link">
+        2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab2/3/" class="md-nav__link">
+        3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab2/data_stuct/" class="md-nav__link">
+        Data stuct
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab2/my_note/" class="md-nav__link">
+        My note
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7_4" type="checkbox" id="__nav_5_7_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_7_4">
+          Lab3
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lab3" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_7_4">
+          <span class="md-nav__icon md-icon"></span>
+          Lab3
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab3/1/" class="md-nav__link">
+        1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab3/2/" class="md-nav__link">
+        2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab3/data_struct/" class="md-nav__link">
+        Data struct
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab3/my_note/" class="md-nav__link">
+        My note
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7_5" type="checkbox" id="__nav_5_7_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_7_5">
+          Lab4
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lab4" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_7_5">
+          <span class="md-nav__icon md-icon"></span>
+          Lab4
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab4/1/" class="md-nav__link">
+        1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab4/2/" class="md-nav__link">
+        2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab4/3/" class="md-nav__link">
+        3
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab4/data_struct/" class="md-nav__link">
+        Data struct
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab4/my_note/" class="md-nav__link">
+        My note
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7_6" type="checkbox" id="__nav_5_7_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_7_6">
+          Lab5
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lab5" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_7_6">
+          <span class="md-nav__icon md-icon"></span>
+          Lab5
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab5/data_struct/" class="md-nav__link">
+        Data struct
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab5/lab5/" class="md-nav__link">
+        Lab5 Report
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab5/my_note/" class="md-nav__link">
+        My note
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7_7" type="checkbox" id="__nav_5_7_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_7_7">
+          Lab6
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lab6" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_7_7">
+          <span class="md-nav__icon md-icon"></span>
+          Lab6
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab6/1/" class="md-nav__link">
+        1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab6/2/" class="md-nav__link">
+        2
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7_8" type="checkbox" id="__nav_5_7_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_7_8">
+          Lab7
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lab7" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_7_8">
+          <span class="md-nav__icon md-icon"></span>
+          Lab7
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab7/1/" class="md-nav__link">
+        1
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab7/2/" class="md-nav__link">
+        2
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_7_9" type="checkbox" id="__nav_5_7_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_7_9">
+          Lab8
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lab8" data-md-level="3">
+        <label class="md-nav__title" for="__nav_5_7_9">
+          <span class="md-nav__icon md-icon"></span>
+          Lab8
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab8/lab8/" class="md-nav__link">
+        Lab8 Report
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ucore%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/lab8/my_note/" class="md-nav__link">
+        笔记
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_8" type="checkbox" id="__nav_5_8" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_8">
+          数据结构与算法（C++版）
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="数据结构与算法（C++版）" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_8">
+          <span class="md-nav__icon md-icon"></span>
+          数据结构与算法（C++版）
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%88C%2B%2B%E7%89%88%EF%BC%89/dsa/" class="md-nav__link">
+        原理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%88C%2B%2B%E7%89%88%EF%BC%89/graph/" class="md-nav__link">
+        算法图解
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%EF%BC%88C%2B%2B%E7%89%88%EF%BC%89/info/" class="md-nav__link">
+        代码
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_9" type="checkbox" id="__nav_5_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_9">
+          计算机组成原理 软硬件接口
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="计算机组成原理 软硬件接口" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_9">
+          <span class="md-nav__icon md-icon"></span>
+          计算机组成原理 软硬件接口
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%20%E8%BD%AF%E7%A1%AC%E4%BB%B6%E6%8E%A5%E5%8F%A3/gen/" class="md-nav__link">
+        硬件基础
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%20%E8%BD%AF%E7%A1%AC%E4%BB%B6%E6%8E%A5%E5%8F%A3/mips_cpu/" class="md-nav__link">
+        MIPS CPU
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%20%E8%BD%AF%E7%A1%AC%E4%BB%B6%E6%8E%A5%E5%8F%A3/store/" class="md-nav__link">
+        存储器与IO
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          通信工程
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="通信工程" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          通信工程
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Digital%20Signal%20Processing/" class="md-nav__link">
+        数字信号处理
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../EMC/" class="md-nav__link">
+        EMC
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../High%20Frency/" class="md-nav__link">
+        通信电子线路
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Information%20Theory/" class="md-nav__link">
+        信息论
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5" type="checkbox" id="__nav_6_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_5">
+          Experiment
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Experiment" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_5">
+          <span class="md-nav__icon md-icon"></span>
+          Experiment
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../QuickAlarm/" class="md-nav__link">
+        基于51的定时闹钟
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_5_2" type="checkbox" id="__nav_6_5_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_5_2">
+          Digital Signal Processing Experiment
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Digital Signal Processing Experiment" data-md-level="3">
+        <label class="md-nav__title" for="__nav_6_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Digital Signal Processing Experiment
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DFT/" class="md-nav__link">
+        离散傅里叶变换
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../FrenquencySpectrumAnalyzer/" class="md-nav__link">
+        音频频谱分析仪设计与实现
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IIR%26FIR/" class="md-nav__link">
+        离散时间滤波器设计
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          抽样
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        抽样
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 实验项目名称
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 实验目的
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 实验内容与步骤
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 实验环境
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5. 实验过程与分析程序文本
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 实验过程与分析程序文本">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    1. 抽样引起的混叠
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    2. 抽样的频域视图
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    3. 从样本重建信号
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 从样本重建信号">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    1. 拟合为正弦波
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    2. 线性与多项式内插
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    3. 理想低通滤波器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    4. 设定带宽的选择
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6. 实验结果总结
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    7. 结果分析
+  </a>
+  
+    <nav class="md-nav" aria-label="7. 结果分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    1. 抽样引起的混叠
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    2. 抽样的频域视图
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_3" class="md-nav__link">
+    3. 从样本重建信号
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 从样本重建信号">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_4" class="md-nav__link">
+    1. 拟合为正弦波
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_4" class="md-nav__link">
+    2. 线性与多项式内插
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_4" class="md-nav__link">
+    3. 理想低通滤波器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    4. 设定带宽的选择
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    8.心得体会
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SpectrumAnalysis/" class="md-nav__link">
+        谱分析
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          配置
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="配置" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          配置
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E9%85%8D%E7%BD%AE/Linux%20latex/" class="md-nav__link">
+        Linux latex 配置
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E9%85%8D%E7%BD%AE/LinuxIcon/" class="md-nav__link">
+        Linux 日常
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../%E9%85%8D%E7%BD%AE/Windows10%20Config/" class="md-nav__link">
+        Windows10 Config
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 实验项目名称
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 实验目的
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 实验内容与步骤
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 实验环境
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5. 实验过程与分析程序文本
+  </a>
+  
+    <nav class="md-nav" aria-label="5. 实验过程与分析程序文本">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    1. 抽样引起的混叠
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_1" class="md-nav__link">
+    2. 抽样的频域视图
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    3. 从样本重建信号
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 从样本重建信号">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    1. 拟合为正弦波
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_2" class="md-nav__link">
+    2. 线性与多项式内插
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_2" class="md-nav__link">
+    3. 理想低通滤波器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_1" class="md-nav__link">
+    4. 设定带宽的选择
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    6. 实验结果总结
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    7. 结果分析
+  </a>
+  
+    <nav class="md-nav" aria-label="7. 结果分析">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_3" class="md-nav__link">
+    1. 抽样引起的混叠
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_3" class="md-nav__link">
+    2. 抽样的频域视图
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_3" class="md-nav__link">
+    3. 从样本重建信号
+  </a>
+  
+    <nav class="md-nav" aria-label="3. 从样本重建信号">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_4" class="md-nav__link">
+    1. 拟合为正弦波
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2_4" class="md-nav__link">
+    2. 线性与多项式内插
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_4" class="md-nav__link">
+    3. 理想低通滤波器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4_2" class="md-nav__link">
+    4. 设定带宽的选择
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
+    8.心得体会
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+<h1 id="_1">抽样</h1>
+<h2 id="1">1. 实验项目名称</h2>
+<p>抽样</p>
+<h2 id="2">2. 实验目的</h2>
+<p>研究抽样过程，分析产生混叠效应的原因，实现不同重建方案，要求1人1组，2学时。</p>
+<h2 id="3">3. 实验内容与步骤</h2>
+<ol>
+<li>
+<p>抽样引起的混叠</p>
+<p>对连续正弦信号考虑下面表示式：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">x(t)=sin(2\pi f_0+\phi)</div>
+<script type="math/tex; mode=display">x(t)=sin(2\pi f_0+\phi)</script>
+</div>
+<p>可以按抽样频率<span class="arithmatex"><span class="MathJax_Preview">f_s=1/T_s</span><script type="math/tex">f_s=1/T_s</script></span>对x(t)抽样来获得离散时间信号</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">x[n]=x(t)|_{t=nT_s}=x(t)|_{t=n/f_s}=sin(2\pi\frac{f_0}{f_S}n+\phi)</div>
+<script type="math/tex; mode=display">x[n]=x(t)|_{t=nT_s}=x(t)|_{t=n/f_s}=sin(2\pi\frac{f_0}{f_S}n+\phi)</script>
+</div>
+<p><span class="arithmatex"><span class="MathJax_Preview">f_0</span><script type="math/tex">f_0</script></span>= 500Hz,  分别取100Hz,1KHz,10KHz,绘出x[n]及其DTFT</p>
+</li>
+<li>
+<p>抽样的频域视图</p>
+</li>
+</ol>
+<p>a. <span class="arithmatex"><span class="MathJax_Preview">x_a(t)=e^{-1000|t|}</span><script type="math/tex">x_a(t)=e^{-1000|t|}</script></span>, 求出并绘制其傅里叶变换</p>
+<p>b. 以5000HZ和1000HZ分别对其采样得到x1(n),x2(n);画出他们的DTFT并与<span class="arithmatex"><span class="MathJax_Preview">x_a(j\Omega)</span><script type="math/tex">x_a(j\Omega)</script></span>比较</p>
+<ol>
+<li>从样本重建信号</li>
+</ol>
+<p>(1)拟合为正弦波</p>
+<pre><code>假设三个抽样样本符合下列形式的正弦波形：
+
+$$x(t)=Acos(\omega t+\phi)$$
+
+已知x(0)、x(1)和x(2)，这些信息足以确定$A,\omega,\phi$吗？能建立有关的方程吗？总能解出这些方程吗？如果不能，给出不能求解处的具体数值。
+
+(2)线性与多项式内插
+
+a．使用matlab,用直线段连接样本。在间隔0.01秒的细密网格上绘出结果，解释plot指令将会如何自动的绘出这一结果。
+
+b．将三角形冲激响应与三个样本进行卷积，但首先要在每两个样本之间插入四个零点，并令冲激响应为0.2，0.4，0.6，0.8，1.0，0.8，0.6，0.4，0.2。证明如果假设在t=-1和t=3的样本为零，上面的结果与线性插值相同。
+
+c. 使用MATLAB,将这三个数据点拟合为二阶多项式(见polyfit与polyval指令)。以细密网格对$-5\le t\le 5$绘出这个多项式。在实际意义上，这一曲线是否可实现？它是否能很好地在$0\le t\le 2$区间以外扩展信号值？
+
+(3) 理想低通滤波器
+
+a.假设只有有限数量的样本是非零值，且只需在有限时间区间上进行信号重建，写出sinc内插表达式。
+
+b.对t=0处的数值为1的单点样本进行插值，绘出大约从-5到+5的结果。它应该与sinc函数形状一致。
+
+c.现在对sinc函数内插及实验内容1中的三点情形进行插值，将其结果与拟合为正弦波的结果相比较
+</code></pre>
+<ol>
+<li>
+<p>设定带宽的选择</p>
+<p>带限于某频率<span class="arithmatex"><span class="MathJax_Preview">f_B</span><script type="math/tex">f_B</script></span>的信号可以用<span class="arithmatex"><span class="MathJax_Preview">f_S=2f_B</span><script type="math/tex">f_S=2f_B</script></span>进行抽样，并可以由截止频率为<span class="arithmatex"><span class="MathJax_Preview">f_B</span><script type="math/tex">f_B</script></span>的理想低通重建滤波器恢复，此结论对于带限于<span class="arithmatex"><span class="MathJax_Preview">fb</span><script type="math/tex">fb</script></span>的第二个信号同样成立，其中<span class="arithmatex"><span class="MathJax_Preview">f_b</span><script type="math/tex">f_b</script></span>小于<span class="arithmatex"><span class="MathJax_Preview">f_B</span><script type="math/tex">f_B</script></span>,这是因为带限于<span class="arithmatex"><span class="MathJax_Preview">f_b</span><script type="math/tex">f_b</script></span> 的信号也带限于<span class="arithmatex"><span class="MathJax_Preview">f_B</span><script type="math/tex">f_B</script></span>。同样，带限于<span class="arithmatex"><span class="MathJax_Preview">f_b</span><script type="math/tex">f_b</script></span>的信号也可以用<span class="arithmatex"><span class="MathJax_Preview">f_S</span><script type="math/tex">f_S</script></span> 抽样并由截止频率为<span class="arithmatex"><span class="MathJax_Preview">f_b</span><script type="math/tex">f_b</script></span> 的理想低通重建滤波器恢复，该理想低通重建滤波器的冲激响应（sinc函数）比截止频率为<span class="arithmatex"><span class="MathJax_Preview">f_B=f_S/2</span><script type="math/tex">f_B=f_S/2</script></span>的理想低通重建滤波器的冲激响应更宽。能否使用截止频率为<span class="arithmatex"><span class="MathJax_Preview">f_b &lt; f_S/2</span><script type="math/tex">f_b < f_S/2</script></span>的理想低通重建滤波器的重建响应对带限于<span class="arithmatex"><span class="MathJax_Preview">f_b</span><script type="math/tex">f_b</script></span>并以<span class="arithmatex"><span class="MathJax_Preview">f_S</span><script type="math/tex">f_S</script></span>抽样得到的信号样本进行插值？</p>
+</li>
+</ol>
+<h2 id="4">4. 实验环境</h2>
+<p>MATLAB R2019b</p>
+<h2 id="5">5. 实验过程与分析程序文本</h2>
+<h3 id="1_1">1. 抽样引起的混叠</h3>
+<p>实验内容：</p>
+<p><span class="arithmatex"><span class="MathJax_Preview">f_0</span><script type="math/tex">f_0</script></span>=500Hz,<span class="arithmatex"><span class="MathJax_Preview">f_s</span><script type="math/tex">f_s</script></span>分别取100Hz,1KHz,10KHz,绘出x[n]及其DTFT</p>
+<pre><code class="language-matlab">%100HZ抽样结果
+clear;
+fs=100;%采样频率
+f0=500;
+dt=1/fs;
+w0=0;%初始相位
+t=0:dt:15/500;
+xt=sin(2*pi*f0*t+w0);%函数表达式
+subplot(311);
+stem(t,xt);
+grid on;
+xlabel('时间/秒'),ylabel(' 幅度'); 
+title('以100HZ抽样所得信号');
+[X,W]=dtft(xt,1000);%dtft变换
+subplot(312);
+plot(W/2/pi,abs(X));
+grid,title('抽样信号的响应')
+xlabel('频率/2pi）'),ylabel('幅度');
+subplot(313);
+plot(W/2/pi,180/pi*angle(X));
+grid,title('抽样信号的相位')
+xlabel('频率/2pi）'),ylabel('相位/度）');
+</code></pre>
+<p>同理，当<span class="arithmatex"><span class="MathJax_Preview">f_s</span><script type="math/tex">f_s</script></span>分别取1KHz,10KHz时，把代码中<code>fs=100</code>分别改为<code>fs=1000</code>和<code>fs=10000</code>即可。</p>
+<p>结果如图1.1.1 ,1.1.2 ,1.1.3所示。</p>
+<h3 id="2_1">2. 抽样的频域视图</h3>
+<p>a. <span class="arithmatex"><span class="MathJax_Preview">x_a(t)=e^{-1000|t|}</span><script type="math/tex">x_a(t)=e^{-1000|t|}</script></span>, 求出并绘制其傅里叶变换</p>
+<pre><code class="language-matlab">dt=1/10000;
+t=-0.05:dt:0.05;
+xt=exp(-1000*abs(t));
+figure(1);
+subplot(211);
+plot(t,xt),grid on;
+title('样本信号'),xlabel('时间/秒'),ylabel('幅度');
+subplot(212);
+fmagplot(xt,dt);
+</code></pre>
+<p>结果如图2.1</p>
+<p>b. 以5000HZ和1000HZ分别对其采样得到x1(n),x2(n);画出他们的DTFT并与<span class="arithmatex"><span class="MathJax_Preview">x_a(j\Omega)</span><script type="math/tex">x_a(j\Omega)</script></span>比较</p>
+<pre><code class="language-matlab">%5khz抽样所得的信号
+figure(1);
+fs=5000;
+dt=1/fs;
+t=-0.05:dt:0.05;%5khz抽样的时间范围
+xt=exp(-1000*abs(t));
+subplot(311),stem(t,xt),grid on;
+xlabel('时间/秒'),ylabel('幅度'); 
+title('以5KHZ抽样的信号');
+[X,W]=dtft(xt,10000);
+subplot(312);
+plot(W/2/pi,abs(X));
+grid,title('幅频特性曲线')
+xlabel('频率/2pi'),ylabel('幅度');
+subplot(313);
+plot(W/2/pi,180/pi*angle(X),'r');
+grid,title('Xa的相频特性曲线')
+xlabel('频率/2pi'),ylabel('相位/度');
+</code></pre>
+<p>对于1Khz的采样把<code>fs=5000</code>改为<code>fs=1000</code>即可。</p>
+<p>结果如图2.2.1 ,2.2.2</p>
+<h3 id="3_1">3. 从样本重建信号</h3>
+<h4 id="1_2">1. 拟合为正弦波</h4>
+<p>假设三个抽样样本符合下列形式的正弦波形：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">x(t)=Acos(\omega t+\phi)</div>
+<script type="math/tex; mode=display">x(t)=Acos(\omega t+\phi)</script>
+</div>
+<p>已知x(0)、x(1)和x(2)，这些信息足以确定<span class="arithmatex"><span class="MathJax_Preview">A,\omega,\phi</span><script type="math/tex">A,\omega,\phi</script></span>吗？能建立有关的方程吗？总能解出这些方程吗？如果不能，给出不能求解处的具体数值。</p>
+<p>能，直接解方程，然后画图，使用书中的情形：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">x(0)=2,x(1)=1,x(2)=-1</div>
+<script type="math/tex; mode=display">x(0)=2,x(1)=1,x(2)=-1</script>
+</div>
+<pre><code class="language-matlab">y = [2,1,-1];
+xdata = [0,1,2];
+syms A omega phi
+%三元方程组
+eq1 = A*cos(omega*xdata(1)+phi)-y(1);
+eq2 = A*cos(omega*xdata(2)+phi)-y(2);
+eq3 = A*cos(omega*xdata(3)+phi)-y(3);
+[A ,omega ,phi] = solve(eq1 ,eq2 ,eq3);
+dt = 1/1000;
+x = (xdata(1):dt:xdata(length(xdata)));
+%循环，有几个解画几张图
+for i = 1:length(A)
+   figure(i);
+   plot(x,A(i)*cos(omega(i).*x+phi(i))),grid on;
+   %添加注释，显示三个参数值
+   text(0.05,0,'omega=');
+   text(0.05,-0.15,'A=');
+   text(0.05,-0.3,'phi=');
+   text(0.3,0,char(omega(i)));
+   text(0.3,-0.15,char(A(i)));
+   text(0.3,-0.3,char(phi(i)));
+end 
+</code></pre>
+<p>共有4组解，结果如图3.1.1 ,3.1.2 ,3.1.3 ,3.1.4</p>
+<h4 id="2_2">2. 线性与多项式内插</h4>
+<p>a．使用matlab,用直线段连接样本。在间隔0.01秒的细密网格上绘出结果，解释plot指令将会如何自动的绘出这一结果。</p>
+<pre><code class="language-matlab">clear;
+x0=2,x1=1,x2=-1;%题目提供的三个样本点
+y=zeros(1,201);
+y(1:101)=(x0:-0.01:x1);
+y(101:201)=(x1:-0.02:x2);
+t=(0:0.01:2);
+plot(t,y);
+grid on;
+xlabel('时间/秒'),ylabel('幅度'),title('线性内插');
+</code></pre>
+<p>结果如图3.2.1</p>
+<p>b．将三角形冲激响应与三个样本进行卷积，但首先要在每两个样本之间插入四个零点，并令冲激响应为0.2，0.4，0.6，0.8，1.0，0.8，0.6，0.4，0.2。证明如果假设在t=-1和t=3的样本为零，上面的结果与线性插值相同。</p>
+<pre><code class="language-matlab">clear;
+dt=1/5;%每五个点代表长度1
+n=[0,0.2,0.4,0.6,0.8,1.0,0.8,0.6,0.4,0.2,0];%三角冲激响应
+x=[2,0,0,0,0,1,0,0,0,0,-1];
+y=conv(n,x);%卷积运算
+subplot(2,1,1)
+n=(-1:dt:3);
+stem(n,y),grid on;
+title('三角形冲激响应卷积内插');
+subplot(2,1,2)
+y2=[0,2,1,-1,0];
+x2=(-1:3);%依据样本点创建的横纵序列
+plot(x2,y2);
+grid on;
+title('线性内插');
+</code></pre>
+<p>结果如图3.2.2</p>
+<p>c. 使用MATLAB,将这三个数据点拟合为二阶多项式(见polyfit与polyval指令)。以细密网格对<span class="arithmatex"><span class="MathJax_Preview">-5\le t\le 5</span><script type="math/tex">-5\le t\le 5</script></span>绘出这个多项式。在实际意义上，这一曲线是否可实现？它是否能很好地在<span class="arithmatex"><span class="MathJax_Preview">0\le t\le 2</span><script type="math/tex">0\le t\le 2</script></span>区间以外扩展信号值？</p>
+<pre><code class="language-matlab">x0=2,x1=1,x2=-1;%题目所提供的三个样本点
+y=[x0,x1,x2];
+x=[0,1,2];
+t=(-5:0.1:5);
+C=polyfit(x,y,2);
+Z=polyval(C,t);
+plot(x,y,'r*',t,Z,'b'),grid on;
+xlabel('时间/秒'),ylabel('幅度'),title('二阶多项式拟合内插');
+</code></pre>
+<p>结果如图3.2.3</p>
+<h4 id="3_2">3. 理想低通滤波器</h4>
+<p>a.假设只有有限数量的样本是非零值，且只需在有限时间区间上进行信号重建，写出sinc内插表达式。</p>
+<p>设有限样本函数长度为N，</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">x_a(t)=\sum_{n=0}^{N-1}x_a(t)\frac{sin(\pi(t-nT_s/T_s))}{\pi(t-nT_s/T_s)}</div>
+<script type="math/tex; mode=display">x_a(t)=\sum_{n=0}^{N-1}x_a(t)\frac{sin(\pi(t-nT_s/T_s))}{\pi(t-nT_s/T_s)}</script>
+</div>
+<p>b.对t=0处的数值为1的单点样本进行插值，绘出大约从-5到+5的结果。它应该与sinc函数形状一致。</p>
+<pre><code class="language-matlab">clear;
+T=1;
+dt=0.01;
+t= (-5:dt:5);
+x=1;
+sinc = (sin(pi.*t./T))./(pi.*t./T);%sinc内插表示式
+x_a=conv(x,sinc);
+plot(t,x_a),grid on;
+title('插值重建结果'),xlabel('x'),ylabel('y');
+</code></pre>
+<p>结果如图3.3.1</p>
+<p>c.现在对sinc函数内插及实验内容1中的三点情形进行插值，将其结果与拟合为正弦波的结果相比较</p>
+<pre><code class="language-matlab">clear;
+x0=2;x1=1;x2=-1;
+x=[x0,x1,x2];
+T=1;
+dt=0.01;
+t= (-5:dt:5);
+x_a=zeros(1,1201);%移位相加共1201个点
+sinc = (sin(pi.*t./T))./(pi.*t./T);
+for n = 0:2%移位相加
+   x_a((1+n*100):(1+n*100+1000))=\
+   x_a((1+n*100):(1+n*100+1000))+x(n+1)*(sin(pi.*t./T))./(pi.*t./T);
+end
+x_a=x_a(501:701);%截取t=0到2对应的值
+t_a=(0:dt:2);
+plot(t_a,x_a),grid on;
+title('插值重建结果'),xlabel('x'),ylabel('y');
+</code></pre>
+<p>结果如图3.3.2</p>
+<h4 id="4_1">4. 设定带宽的选择</h4>
+<p>解决下面的问题：带限于某频率<span class="arithmatex"><span class="MathJax_Preview">f_B</span><script type="math/tex">f_B</script></span>的信号可以用<span class="arithmatex"><span class="MathJax_Preview">f_S=2f_B</span><script type="math/tex">f_S=2f_B</script></span>进行抽样，并可以由截止频率为<span class="arithmatex"><span class="MathJax_Preview">f_B</span><script type="math/tex">f_B</script></span>的理想低通重建滤波器恢复，此结论对于带限于<span class="arithmatex"><span class="MathJax_Preview">fb</span><script type="math/tex">fb</script></span>的第二个信号同样成立，其中<span class="arithmatex"><span class="MathJax_Preview">f_b</span><script type="math/tex">f_b</script></span>小于<span class="arithmatex"><span class="MathJax_Preview">f_B</span><script type="math/tex">f_B</script></span>,这是因为带限于<span class="arithmatex"><span class="MathJax_Preview">f_b</span><script type="math/tex">f_b</script></span> 的信号也带限于<span class="arithmatex"><span class="MathJax_Preview">f_B</span><script type="math/tex">f_B</script></span>。同样，带限于<span class="arithmatex"><span class="MathJax_Preview">f_b</span><script type="math/tex">f_b</script></span>的信号也可以用<span class="arithmatex"><span class="MathJax_Preview">f_S</span><script type="math/tex">f_S</script></span> 抽样并由截止频率为<span class="arithmatex"><span class="MathJax_Preview">f_b</span><script type="math/tex">f_b</script></span> 的理想低通重建滤波器恢复，该理想低通重建滤波器的冲激响应（sinc函数）比截止频率为<span class="arithmatex"><span class="MathJax_Preview">f_B=f_S/2</span><script type="math/tex">f_B=f_S/2</script></span>的理想低通重建滤波器的冲激响应更宽。能否使用截止频率为<span class="arithmatex"><span class="MathJax_Preview">f_b &lt; f_S/2</span><script type="math/tex">f_b < f_S/2</script></span>的理想低通重建滤波器的重建响应对带限于<span class="arithmatex"><span class="MathJax_Preview">f_b</span><script type="math/tex">f_b</script></span>并以<span class="arithmatex"><span class="MathJax_Preview">f_S</span><script type="math/tex">f_S</script></span>抽样得到的信号样本进行插值？</p>
+<p>可以，截至频率fb 小于采样频率fS一半，频域无混叠现象，因此可以使用截止频率为fb &lt; fS /2的理想低通重建滤波器的重建响应对带限于fb 并以fS 抽样得到的信号样本进行插值。</p>
+<h2 id="6">6. 实验结果总结</h2>
+<p><center></p>
+<p><img alt="图1.1.1" src="http://gitee.com/mostiray/Images_bed/raw/master/blog/Digital_Signal_Processing_Experiment/lab3/3_1_1_1.png" /></p>
+<p>图1.1.1</p>
+<p><img alt="图1.1.2" src="http://gitee.com/mostiray/Images_bed/raw/master/blog/Digital_Signal_Processing_Experiment/lab3/3_1_1_2.png" /></p>
+<p>图1.1.2</p>
+<p><img alt="图1.1.3" src="http://gitee.com/mostiray/Images_bed/raw/master/blog/Digital_Signal_Processing_Experiment/lab3/3_1_1_3.png" /></p>
+<p>图1.1.3</p>
+<p><img alt="图2.1" src="http://gitee.com/mostiray/Images_bed/raw/master/blog/Digital_Signal_Processing_Experiment/lab3/3_2_1.png" /></p>
+<p>图2.1</p>
+<p><img alt="图2.2.1" src="http://gitee.com/mostiray/Images_bed/raw/master/blog/Digital_Signal_Processing_Experiment/lab3/3_2_2_1.png" /></p>
+<p>图2.2.1</p>
+<p><img alt="图2.2.2" src="http://gitee.com/mostiray/Images_bed/raw/master/blog/Digital_Signal_Processing_Experiment/lab3/3_2_2_2.png" /></p>
+<p>图2.2.2</p>
+<p><img alt="图3.1.1" src="http://gitee.com/mostiray/Images_bed/raw/master/blog/Digital_Signal_Processing_Experiment/lab3/3_3_1_1.png" /></p>
+<p>图3.1.1</p>
+<p><img alt="图3.1.2" src="http://gitee.com/mostiray/Images_bed/raw/master/blog/Digital_Signal_Processing_Experiment/lab3/3_3_1_2.png" /></p>
+<p>图3.1.2]</p>
+<p><img alt="图3.1.3" src="http://gitee.com/mostiray/Images_bed/raw/master/blog/Digital_Signal_Processing_Experiment/lab3/3_3_1_3.png" /></p>
+<p>图3.1.3</p>
+<p><img alt="图3.1.4" src="http://gitee.com/mostiray/Images_bed/raw/master/blog/Digital_Signal_Processing_Experiment/lab3/3_3_1_4.png" /></p>
+<p>图3.1.4</p>
+<p><img alt="图3.2.1" src="http://gitee.com/mostiray/Images_bed/raw/master/blog/Digital_Signal_Processing_Experiment/lab3/3_3_2_1.png" /></p>
+<p>图3.2.1</p>
+<p><img alt="图3.2.2" src="http://gitee.com/mostiray/Images_bed/raw/master/blog/Digital_Signal_Processing_Experiment/lab3/3_3_2_2.png" /></p>
+<p>图3.2.2</p>
+<p><img alt="图3.2.3" src="http://gitee.com/mostiray/Images_bed/raw/master/blog/Digital_Signal_Processing_Experiment/lab3/3_3_2_3.png" /></p>
+<p>图3.2.3</p>
+<p><img alt="图3.3.1" src="http://gitee.com/mostiray/Images_bed/raw/master/blog/Digital_Signal_Processing_Experiment/lab3/3_3_1.png" /></p>
+<p>图3.3.1</p>
+<p><img alt="图3.3.2" src="http://gitee.com/mostiray/Images_bed/raw/master/blog/Digital_Signal_Processing_Experiment/lab3/3_3_3_2.png" /></p>
+<p>图3.3.2</p>
+<p></center></p>
+<h2 id="7">7. 结果分析</h2>
+<h3 id="1_3">1. 抽样引起的混叠</h3>
+<p>只有当(采样频率<span class="arithmatex"><span class="MathJax_Preview">\ge</span><script type="math/tex">\ge</script></span>样本频率的2倍)时，才能较好的还原信号。100HZ时无法重现信号，1KHZ时能重现样本信号的局部关系，10KHZ时能较完整的重现样本信号。</p>
+<h3 id="2_3">2. 抽样的频域视图</h3>
+<p><strong><em>a.</em></strong> 偶函数，在<span class="arithmatex"><span class="MathJax_Preview">|\Omega|&gt;4000\pi</span><script type="math/tex">|\Omega|>4000\pi</script></span>时，幅值几乎为零。</p>
+<p><strong><em>b.</em></strong> 不同采样频率的DTFT与<span class="arithmatex"><span class="MathJax_Preview">X(j\Omega)</span><script type="math/tex">X(j\Omega)</script></span>比较，它们仅在幅值上有差异，这是因为采样点数增加，序列长度增加，幅值增加。</p>
+<h3 id="3_3">3. 从样本重建信号</h3>
+<h4 id="1_4">1. 拟合为正弦波</h4>
+<p>能求出解，三个未知数，三个方程，只不过有4组解，利用matlab解方程组，结果如图3.1.1 ,3.1.2 ,3.1.3 ,3.1.4</p>
+<h4 id="2_4">2. 线性与多项式内插</h4>
+<p><strong><em>a.</em></strong> plot指令通过把每两个点连成一条直线，绘出结果。</p>
+<p><strong><em>b.</em></strong> 通过三角冲激后，和线性插值结果相同。</p>
+<p><strong><em>c.</em></strong> 三个点刚好能唯一确定一个二阶多项式，实际中不能实现这种信号，只能无限接近，且不能很好在<span class="arithmatex"><span class="MathJax_Preview">0\le t\le 2</span><script type="math/tex">0\le t\le 2</script></span>扩展信号值，（衰减迅速）。</p>
+<h4 id="3_4">3. 理想低通滤波器</h4>
+<p><strong><em>c.</em></strong> 插值结果接近正弦波。</p>
+<h4 id="4_2">4. 设定带宽的选择</h4>
+<p>可以，截至频率fb 小于采样频率fS一半，频域无混叠现象。</p>
+<h2 id="8">8.心得体会</h2>
+<ol>
+<li>
+<p>对于采样频率增加，DTFT结果幅度增加的现象有了理解。</p>
+</li>
+<li>
+<p>对不同方式的插值方法重建信号结果进行了分析，加深了理解。</p>
+</li>
+<li>
+<p>直接用for循环写了卷积，认识到其实质为移位不同权值相加。</p>
+</li>
+</ol>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../IIR%26FIR/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 离散时间滤波器设计" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              离散时间滤波器设计
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../SpectrumAnalysis/" class="md-footer__link md-footer__link--next" aria-label="Next: 谱分析" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              谱分析
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.e1a181d9.min.js"></script>
+      
+        <script src="../../../../mathjax-config.js"></script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+      
+    
+  </body>
+</html>
