@@ -2341,7 +2341,7 @@
 
 <h1 id="mips-cpu">MIPS CPU</h1>
 <h2 id="_1">指令</h2>
-<p><img alt="MIPSrefcard" src="../fig/MIPSrefcard.svg" /></p>
+<p><img alt="MIPSrefcard" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/MIPSrefcard.svg" /></p>
 <table>
 <thead>
 <tr>
@@ -2384,9 +2384,9 @@
 <li>各部件利用率低</li>
 </ul>
 <h3 id="_3">控制器</h3>
-<p><img alt="appendix_D-6-7" src="../fig/appendix_D-6-7.svg" /></p>
+<p><img alt="appendix_D-6-7" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/appendix_D-6-7.svg" /></p>
 <h3 id="_4">数据通路</h3>
-<p><img alt="simple_cpu" src="../fig/simple_cpu.svg" /></p>
+<p><img alt="simple_cpu" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/simple_cpu.svg" /></p>
 <table>
 <thead>
 <tr>
@@ -2430,7 +2430,7 @@
 <li>利用率依然偏低</li>
 </ul>
 <h3 id="_6">数据通路</h3>
-<p><img alt="muti_cpu" src="../fig/muti_cpu.svg" /></p>
+<p><img alt="muti_cpu" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/muti_cpu.svg" /></p>
 <h2 id="_7">流水线技术</h2>
 <ul>
 <li>在流水线的各个流水段之间加入了被称为流水线寄存器(流水线锁存器)的寄存器堆。</li>
@@ -2450,10 +2450,10 @@
 <li>读后写冲突</li>
 </ul>
 <p>MIPS指令流水无后两种冲突，在ID段完成所有读操作，WB段所有写操作。</p>
-<p><img alt="data_hazard" src="../fig/data_hazard.svg" /></p>
+<p><img alt="data_hazard" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/data_hazard.svg" /></p>
 <p>CC2, CC3发生写后读冲突。</p>
 <h4 id="_10">旁路技术</h4>
-<p><img alt="data_hazard1" src="../fig/data_hazard1.svg" /></p>
+<p><img alt="data_hazard1" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/data_hazard1.svg" /></p>
 <ul>
 <li>检测</li>
 </ul>
@@ -2468,7 +2468,7 @@
 <ul>
 <li>旁路单元</li>
 </ul>
-<p><img alt="forwarding" src="../fig/forwarding.svg" /></p>
+<p><img alt="forwarding" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/forwarding.svg" /></p>
 <ol>
 <li>EX hazard:</li>
 </ol>
@@ -2494,7 +2494,7 @@ and (EX/MEM.RegisterRd ≠ ID/EX.RegisterRt))
 and (MEM/WB.RegisterRd = ID/EX.RegisterRt)) ForwardB = 01
 </code></pre>
 <h4 id="_11">暂停</h4>
-<p><img alt="lw_stall" src="../fig/lw_stall.svg" /></p>
+<p><img alt="lw_stall" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/lw_stall.svg" /></p>
 <pre><code>if (ID/EX.MemRead and
 ((ID/EX.RegisterRt = IF/ID.RegisterRs) or
 (ID/EX.RegisterRt = IF/ID.RegisterRt)))
@@ -2509,7 +2509,7 @@ stall the pipeline
 <p>动态调度并不能真正消除数据冲突，但它能在出现数据冲突时尽量避免出现处理器暂停。而静态调度方法
 则是尽量通过分离有冲突问题的指令使它们不会导致冲突，从而减少暂停的影响。</p>
 <h4 id="_13">数据通路</h4>
-<p><img alt="data_hazard_cir" src="../fig/data_hazard_cir.svg" /></p>
+<p><img alt="data_hazard_cir" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/data_hazard_cir.svg" /></p>
 <h3 id="_14">控制冲突</h3>
 <h4 id="_15">暂停流水线</h4>
 <p>尽早判断分支转移是否成功，尽早计算成功转移的PC值</p>
@@ -2525,14 +2525,14 @@ stall the pipeline
 <li>保留IF/ID段寄存器的值(IF/ID寄存器=BEQ的后一条指令)</li>
 <li>当前指令的控制信号为0(ID/EX寄存器=0)</li>
 </ul>
-<p><img alt="control_hazard" src="../fig/control_hazard.svg" /></p>
+<p><img alt="control_hazard" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/control_hazard.svg" /></p>
 <p>由于beq和前一条指令可能存在数据冲突，所以数据旁路还需要提前。</p>
 <h3 id="_17">分支预测</h3>
 <h4 id="_18">预测成功，预测不成功</h4>
 <p>上图实际上是预测不成功的一种实现。</p>
 <h4 id="_19">动态预测</h4>
 <p>硬件根据上次分支的结果进行本次预测</p>
-<p><img alt="Screenshot_2021-11-18_20-56-35" src="../fig/Screenshot_2021-11-18_20-56-35.png" /></p>
+<p><img alt="Screenshot_2021-11-18_20-56-35" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/Screenshot_2021-11-18_20-56-35.png" /></p>
 <p>可增加至２位预测位。</p>
 <h4 id="_20">编译器处理</h4>
 <p>延迟槽</p>
@@ -2556,7 +2556,7 @@ stall the pipeline
 <li>MIPS CP0</li>
 </ul>
 <p>如下图为在EX阶段增加一个异常检测的数据通路，若发生异常，还需将IF/ID写入nop，ID/EX，EX/MEM的控制信号写0。</p>
-<p><img alt="Screenshot_2021-11-18_21-02-46" src="../fig/Screenshot_2021-11-18_21-02-46.png" /></p>
+<p><img alt="Screenshot_2021-11-18_21-02-46" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/Screenshot_2021-11-18_21-02-46.png" /></p>
 
               
             </article>

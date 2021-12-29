@@ -2369,14 +2369,14 @@
 <p><span class="arithmatex"><span class="MathJax_Preview">HR</span><script type="math/tex">HR</script></span> 为命中率。</p>
 <h4 id="_2">地址之间的映射关系</h4>
 <p>全相联方式</p>
-<p><img alt="store1" src="../fig/store1.svg" /></p>
+<p><img alt="store1" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/store1.svg" /></p>
 <p>直接映射</p>
-<p><img alt="store2" src="../fig/store2.svg" /></p>
+<p><img alt="store2" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/store2.svg" /></p>
 <p>多路组相联</p>
-<p><img alt="store3" src="../fig/store3.svg" /></p>
+<p><img alt="store3" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/store3.svg" /></p>
 <h4 id="_3">一致性保证</h4>
 <p>Cache（不命中）写</p>
-<p><img alt="write" src="../fig/write.svg" /></p>
+<p><img alt="write" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/write.svg" /></p>
 <h4 id="cache_1">提高 Cache 的命中率</h4>
 <ul>
 <li>必然缺失 Compulsory Miss(开机或者是进程切换、首次访问
@@ -2417,7 +2417,7 @@
 <p>以段作为存储管理的对象,段长动态可变,段起点、终点不定。易于编译、管理、修改、保护和共享,空间分配困难,容易产生碎片。</p>
 <p>段(Segment)程序模块化设计的结果(过程、函数、数组、...),逻辑上相对独立,是共享和保护的最小单元。</p>
 <p>实现:设置段表进行管理,段表基地址,段起始地址,段长,装入位,保护、共享等标志。</p>
-<p><img alt="seg" src="../fig/seg.svg" /></p>
+<p><img alt="seg" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/seg.svg" /></p>
 <ul>
 <li>页式存储管理</li>
 </ul>
@@ -2432,18 +2432,18 @@
 <li>若该页已在内存中,则根据实页号得到实地址,访问内存;</li>
 <li>否则,启动输入输出系统,读出对应页装入主存,再进行访问。</li>
 </ol>
-<p><img alt="page" src="../fig/page.svg" /></p>
+<p><img alt="page" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/page.svg" /></p>
 <h4 id="tlb">转换旁路缓冲(TLB)</h4>
 <p>为页表设置的专用 Cache,高效实现虚页号到实页号的转换,容量较小,128~256 个表项。</p>
 <p>TLB 缺失:流水线停,通知操作系统,读页表,将表项写入 TLB,返回用户程序,重新访问。</p>
 <p>页面大小:缩小页面大小可减少内部碎片,但需更大的页表。</p>
 <p>页面替换算法:最近最少使用(LRU)</p>
-<p><img alt="tlb" src="../fig/tlb.svg" /></p>
+<p><img alt="tlb" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/tlb.svg" /></p>
 <h4 id="pentium">Pentium 的虚存管理</h4>
 <p>程序员给出的虚拟地址,格式为段号+段内偏移(16位+32位),每段大小不超过4GB。</p>
-<p><img alt="seg_num" src="../fig/seg_num.svg" /></p>
-<p><img alt="linear" src="../fig/linear.svg" /></p>
-<p><img alt="tras" src="../fig/tras.svg" /></p>
+<p><img alt="seg_num" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/seg_num.svg" /></p>
+<p><img alt="linear" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/linear.svg" /></p>
+<p><img alt="tras" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/tras.svg" /></p>
 <h3 id="_6">磁表面存储设备</h3>
 <p>容量大,成本低,断电保存,脱机保存,串行访问,数据交换频率低,数
 据交换量大。一般为磁盘、光盘等。</p>
@@ -2462,7 +2462,7 @@
 <h4 id="_7">磁记录方式</h4>
 <p>一种编码方法,即如何将一串二进制信息,通过读写电路变换成磁层介质中的磁化翻转序列。(编码效率,自同步能力,读写可靠性)</p>
 <p>归零制(RZ),不归零制(NRZ),见 1 翻转的不归零制(NRZ1),调相制(PM),调频制(FM),改进的调频制(MFM)</p>
-<p><img alt="wave" src="../fig/wave.svg" /></p>
+<p><img alt="wave" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/wave.svg" /></p>
 <h4 id="_8">磁盘</h4>
 <p>磁盘访问时间= 寻道时间+ 平均旋转延迟+ 传输时间+ 磁盘控制器延迟</p>
 <p>例:平均寻道时间= 12ms,旋转速度= 5400rpm,磁盘控制器延迟=2ms,传输速度=5MB,扇区大小= 512 bytes,页大小 8KB。</p>
@@ -2482,27 +2482,27 @@
 <ul>
 <li>raid0</li>
 </ul>
-<p><img alt="raid0" src="../fig/raid0.svg" /></p>
+<p><img alt="raid0" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/raid0.svg" /></p>
 <ul>
 <li>raid1</li>
 </ul>
-<p><img alt="raid1" src="../fig/raid1.svg" /></p>
+<p><img alt="raid1" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/raid1.svg" /></p>
 <ul>
 <li>raid2</li>
 </ul>
-<p><img alt="raid2" src="../fig/raid2.svg" /></p>
+<p><img alt="raid2" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/raid2.svg" /></p>
 <ul>
 <li>raid3</li>
 </ul>
-<p><img alt="raid3" src="../fig/raid3.svg" /></p>
+<p><img alt="raid3" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/raid3.svg" /></p>
 <ul>
 <li>raid4</li>
 </ul>
-<p><img alt="raid4" src="../fig/raid4.svg" /></p>
+<p><img alt="raid4" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/raid4.svg" /></p>
 <ul>
 <li>raid5</li>
 </ul>
-<p><img alt="raid5" src="../fig/raid5.svg" /></p>
+<p><img alt="raid5" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/raid5.svg" /></p>
 <h2 id="_9">输入/输出系统</h2>
 <ul>
 <li>要解决的问题</li>

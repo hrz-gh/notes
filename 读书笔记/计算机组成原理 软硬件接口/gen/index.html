@@ -2255,7 +2255,7 @@
 <p>汉明校验码：用于并行数据传送中 <span class="arithmatex"><span class="MathJax_Preview">2^r \ge m+r+1</span><script type="math/tex">2^r \ge m+r+1</script></span>，码距为 <span class="arithmatex"><span class="MathJax_Preview">4</span><script type="math/tex">4</script></span>​​，偶校验编解码都直接异或。</p>
 </li>
 </ul>
-<p><img alt="hamming_code" src="../fig/hamming_code.svg" /></p>
+<p><img alt="hamming_code" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/hamming_code.svg" /></p>
 <ul>
 <li>
 <p>若要实现纠一位错，且同时发现两位错，可再加一位总校验位，译码后总校验位为 <span class="arithmatex"><span class="MathJax_Preview">0</span><script type="math/tex">0</script></span> 说明有两位错。</p>
@@ -2268,20 +2268,20 @@
 </li>
 <li>如 <span class="arithmatex"><span class="MathJax_Preview">G(x)=x^4+x+1</span><script type="math/tex">G(x)=x^4+x+1</script></span>​，帧为 <span class="arithmatex"><span class="MathJax_Preview">1101011111</span><script type="math/tex">1101011111</script></span>​​ </li>
 </ul>
-<p><img alt="crc_code" src="../fig/crc_code.svg" /></p>
+<p><img alt="crc_code" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/crc_code.svg" /></p>
 <h2 id="_7">算术运算及电路实现</h2>
 <h3 id="alu">ALU</h3>
 <h4 id="_8">基于一位加法器实现</h4>
-<p><img alt="ALU1" src="../fig/ALU1.svg" /></p>
-<p><img alt="ALU2" src="../fig/ALU2.svg" /></p>
-<p><img alt="ALU32" src="../fig/ALU32.svg" /></p>
-<p><img alt="ALU_OP" src="../fig/ALU_OP.svg" /></p>
+<p><img alt="ALU1" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/ALU1.svg" /></p>
+<p><img alt="ALU2" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/ALU2.svg" /></p>
+<p><img alt="ALU32" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/ALU32.svg" /></p>
+<p><img alt="ALU_OP" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/ALU_OP.svg" /></p>
 <h4 id="_9">基于超前进位器</h4>
 <p><span class="arithmatex"><span class="MathJax_Preview">P_i=a_i+b_i</span><script type="math/tex">P_i=a_i+b_i</script></span>，<span class="arithmatex"><span class="MathJax_Preview">G_i=a_ib_i</span><script type="math/tex">G_i=a_ib_i</script></span>​，<span class="arithmatex"><span class="MathJax_Preview">P^*</span><script type="math/tex">P^*</script></span> 和 <span class="arithmatex"><span class="MathJax_Preview">G^*</span><script type="math/tex">G^*</script></span> 用于级联更高位的进位器。</p>
-<p><img alt="add_super" src="../fig/add_super.png" /></p>
+<p><img alt="add_super" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/add_super.png" /></p>
 <h3 id="_10">乘法</h3>
 <h4 id="_11">原码</h4>
-<p><img alt="multi" src="../fig/multi.svg" /></p>
+<p><img alt="multi" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/multi.svg" /></p>
 <h4 id="_12">补码</h4>
 <p>dsapp：补码在不溢出的情况下，可以用直接使用原码的乘法来代替。</p>
 <p>布斯算法：</p>
@@ -2290,7 +2290,7 @@ $$
 [x\cdot y]<em>{\text{补}}=[x]</em>{\text{补}}\cdot\sum_{i=0}^{n-1}(y_{i-1}-y_i)
 $$
 其中 <span class="arithmatex"><span class="MathJax_Preview">y_{-1}=0</span><script type="math/tex">y_{-1}=0</script></span>，即初始化附加位。</p>
-<p><img alt="booth" src="../fig/booth.svg" /></p>
+<p><img alt="booth" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/booth.svg" /></p>
 <h3 id="_13">除法</h3>
 <h4 id="_14">原码</h4>
 <div class="arithmatex">
@@ -2310,10 +2310,10 @@ $$
 </li>
 <li>
 <p><span class="arithmatex"><span class="MathJax_Preview">x=-0.1101</span><script type="math/tex">x=-0.1101</script></span>，<span class="arithmatex"><span class="MathJax_Preview">y=0.1011</span><script type="math/tex">y=0.1011</script></span></p>
-<p><img alt="div" src="../fig/div.svg" /></p>
+<p><img alt="div" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/div.svg" /></p>
 </li>
 </ul>
-<p><img alt="div_hard" src="../fig/div_hard.svg" /></p>
+<p><img alt="div_hard" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/div_hard.svg" /></p>
 <h3 id="_15">浮点数</h3>
 <h4 id="ieee">IEEE</h4>
 <div class="arithmatex">
@@ -2363,7 +2363,7 @@ NaN: e = 1, f \neq 0\\
 <li>浮点数加法、减法不可结合</li>
 <li>浮点数也不能进行相等比较</li>
 </ul>
-<p><img alt="float" src="../fig/float.svg" /></p>
+<p><img alt="float" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/float.svg" /></p>
 
               
             </article>
