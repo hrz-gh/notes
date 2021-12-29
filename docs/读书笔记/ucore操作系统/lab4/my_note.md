@@ -4,7 +4,7 @@
 
 由原先的按4KB的倍数分配，改为使用slub算法分配更小粒度的内存块。
 
-![svg1](../lab4_fig/svg1.svg)
+![](https://gitee.com/mostiray/Images_bed/raw/master/notes/svg1.svg)
 
 **copy_thread()**
 

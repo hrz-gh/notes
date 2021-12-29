@@ -2,17 +2,17 @@
 
 ## 原理
 
-![](./fig/1.png)
+![](https://pic.imgdb.cn/item/61cbf4112ab3f51d91ab0a4d.png)
 
-![](./fig/2.png)
+![](https://pic.imgdb.cn/item/61cbf4a92ab3f51d91ab833d.png)
 
-![](./fig/3.png)
+![](https://pic.imgdb.cn/item/61cbf4a92ab3f51d91ab8342.png)
 
-![](./fig/4.png)
+![](https://pic.imgdb.cn/item/61cbf4a92ab3f51d91ab835a.png)
 
-![](./fig/5.png)
+![](https://pic.imgdb.cn/item/61cbf4a92ab3f51d91ab8369.png)
 
-![](./fig/6.png)
+![](https://pic.imgdb.cn/item/61cbf4a92ab3f51d91ab8376.png)
 
 ## ELEMENTARY DATA LINK PROTOCOLS
 

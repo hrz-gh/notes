@@ -50,21 +50,21 @@ $HR$ 为命中率。
 
 全相联方式
 
-![store1](./fig/store1.svg)
+![store1](https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/store1.svg)
 
 直接映射
 
-![store2](./fig/store2.svg)
+![store2](https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/store2.svg)
 
 多路组相联
 
-![store3](./fig/store3.svg)
+![store3](https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/store3.svg)
 
 #### 一致性保证
 
 Cache（不命中）写
 
-![write](./fig/write.svg)
+![write](https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/write.svg)
 
 #### 提高 Cache 的命中率
 
@@ -95,7 +95,7 @@ Cache（不命中）写
 
 实现:设置段表进行管理,段表基地址,段起始地址,段长,装入位,保护、共享等标志。
 
-![seg](./fig/seg.svg)
+![seg](https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/seg.svg)
 
 - 页式存储管理
 
@@ -113,7 +113,7 @@ Cache（不命中）写
 4. 若该页已在内存中,则根据实页号得到实地址,访问内存;
 5. 否则,启动输入输出系统,读出对应页装入主存,再进行访问。
 
-![page](./fig/page.svg)
+![page](https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/page.svg)
 
 #### 转换旁路缓冲(TLB)
 
@@ -125,17 +125,17 @@ TLB 缺失:流水线停,通知操作系统,读页表,将表项写入 TLB,返回�
 
 页面替换算法:最近最少使用(LRU)
 
-![tlb](./fig/tlb.svg)
+![tlb](https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/tlb.svg)
 
 #### Pentium 的虚存管理
 
 程序员给出的虚拟地址,格式为段号+段内偏移(16位+32位),每段大小不超过4GB。
 
-![seg_num](./fig/seg_num.svg)
+![seg_num](https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/seg_num.svg)
 
-![linear](./fig/linear.svg)
+![linear](https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/linear.svg)
 
-![tras](./fig/tras.svg)
+![tras](https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/tras.svg)
 
 ### 磁表面存储设备
 
@@ -160,7 +160,7 @@ TLB 缺失:流水线停,通知操作系统,读页表,将表项写入 TLB,返回�
 
 归零制(RZ),不归零制(NRZ),见 1 翻转的不归零制(NRZ1),调相制(PM),调频制(FM),改进的调频制(MFM)
 
-![wave](./fig/wave.svg)
+![wave](https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/wave.svg)
 
 #### 磁盘
 
@@ -191,27 +191,27 @@ TLB 缺失:流水线停,通知操作系统,读页表,将表项写入 TLB,返回�
 
 - raid0
 
-![raid0](./fig/raid0.svg)
+![raid0](https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/raid0.svg)
 
 - raid1
 
-![raid1](./fig/raid1.svg)
+![raid1](https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/raid1.svg)
 
 - raid2
 
-![raid2](./fig/raid2.svg)
+![raid2](https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/raid2.svg)
 
 - raid3
 
-![raid3](./fig/raid3.svg)
+![raid3](https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/raid3.svg)
 
 - raid4
 
-![raid4](./fig/raid4.svg)
+![raid4](https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/raid4.svg)
 
 - raid5
 
-![raid5](./fig/raid5.svg)
+![raid5](https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/raid5.svg)
 
 ## 输入/输出系统
 

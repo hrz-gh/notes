@@ -441,31 +441,31 @@ $$I(\boldsymbol{X}^N;\boldsymbol{Y}^N) \le \sum_{i = 1}^N (\boldsymbol{X_i};\bol
 
 ## 1. 信息论基本概念
 
-![](./fig/732e07cfe22ff199709915aec3e1bd72.jpeg)
+![](https://gitee.com/mostiray/Images_bed/raw/master/config/732e07cfe22ff199709915aec3e1bd72.jpeg)
 
 
 
-![](./fig/9f90e17e8caff368599843a8947d561b.jpeg)
+![](https://gitee.com/mostiray/Images_bed/raw/master/config/9f90e17e8caff368599843a8947d561b.jpeg)
 
 
 
-![](./fig/64ba7fa2263b50c7eac103668a91e619.jpeg)
+![](https://gitee.com/mostiray/Images_bed/raw/master/config/64ba7fa2263b50c7eac103668a91e619.jpeg)
 
 
 
-![](./fig/817582050dda755e58f517c0211b0c75.jpeg)
+![](https://gitee.com/mostiray/Images_bed/raw/master/config/817582050dda755e58f517c0211b0c75.jpeg)
 
 
 
-![](./fig/1bc1646f8aaffb80d7344e01cf3bd568.jpeg)
+![](https://gitee.com/mostiray/Images_bed/raw/master/config/1bc1646f8aaffb80d7344e01cf3bd568.jpeg)
 
 ## 2. 信源与信源无失真编码
 
-![](./fig/a1661fbd5f91c36f1c36307c1a4d3565.jpeg)
+![](https://gitee.com/mostiray/Images_bed/raw/master/config/a1661fbd5f91c36f1c36307c1a4d3565.jpeg)
 
 
 
-![](./fig/bde0e3d9df2634ef9dd76da8750d82bc.jpeg)
+![](https://gitee.com/mostiray/Images_bed/raw/master/config/bde0e3d9df2634ef9dd76da8750d82bc.jpeg)
 
 
 
@@ -473,16 +473,16 @@ $$I(\boldsymbol{X}^N;\boldsymbol{Y}^N) \le \sum_{i = 1}^N (\boldsymbol{X_i};\bol
 
 
 
-![](./fig/d188e0e233d3c93b22a90f13ff10b9e2.jpeg)
+![](https://gitee.com/mostiray/Images_bed/raw/master/config/d188e0e233d3c93b22a90f13ff10b9e2.jpeg)
 
 
 
-![](./fig/4ab28756be200f6cfa3614af6b8c18e3.jpeg)
+![](https://gitee.com/mostiray/Images_bed/raw/master/config/4ab28756be200f6cfa3614af6b8c18e3.jpeg)
 
 
 
-![](./fig/751b2633ba6fdf11f50e7abb5f87f5b3.jpeg)
+![](https://gitee.com/mostiray/Images_bed/raw/master/config/751b2633ba6fdf11f50e7abb5f87f5b3.jpeg)
 
 
 
-![](./fig/afbd3085b23092333230b419dd169a38.jpeg)
+![](https://gitee.com/mostiray/Images_bed/raw/master/config/afbd3085b23092333230b419dd169a38.jpeg)

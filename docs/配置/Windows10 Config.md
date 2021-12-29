@@ -12,7 +12,9 @@ New `DWORD` named `AllowCortana`, and it't value is `0`.
 
 Swap `Esc` with `Caps`:
 
-New `Binaray Value` named `Scancode Map`, and value like this ![Input](./fig/1.png)
+New `Binaray Value` named `Scancode Map`, and value like this:
+
+![](https://gitee.com/mostiray/Images_bed/raw/master/config/win10_switchesc.png)
 
 ### Install App
 

@@ -40,7 +40,7 @@
 
 - 汉明校验码：用于并行数据传送中 $2^r \ge m+r+1$，码距为 $4$​​，偶校验编解码都直接异或。
 
-  ![hamming_code](./fig/hamming_code.svg)
+  ![hamming_code](https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/hamming_code.svg)
 
   - 若要实现纠一位错，且同时发现两位错，可再加一位总校验位，译码后总校验位为 $0$ 说明有两位错。
 
@@ -49,7 +49,7 @@
   - 接受双方商定一个生成多项式 $G(x)$​，在帧的尾部附加一个校验和,使得附加之后的帧所对应的多项式能够被 $G(x)$ 除尽。当接收方收到了带校验和的帧之后,它试着用$G(x)$​去除它。如果有余数的话,则表明传输过程中有错误。
   - 如 $G(x)=x^4+x+1$​，帧为 $1101011111$​​ 
 
-  ![crc_code](./fig/crc_code.svg)
+  ![crc_code](https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/crc_code.svg)
 
 ## 算术运算及电路实现
 
@@ -57,25 +57,25 @@
 
 #### 基于一位加法器实现
 
-![ALU1](./fig/ALU1.svg)
+![ALU1](https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/ALU1.svg)
 
-![ALU2](./fig/ALU2.svg)
+![ALU2](https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/ALU2.svg)
 
-![ALU32](./fig/ALU32.svg)
+![ALU32](https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/ALU32.svg)
 
-![ALU_OP](./fig/ALU_OP.svg)
+![ALU_OP](https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/ALU_OP.svg)
 
 #### 基于超前进位器
 
 $P_i=a_i+b_i$，$G_i=a_ib_i$​，$P^*$ 和 $G^*$ 用于级联更高位的进位器。
 
-![add_super](./fig/add_super.png)
+![add_super](https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/add_super.png)
 
 ### 乘法
 
 #### 原码
 
-![multi](./fig/multi.svg)
+![multi](https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/multi.svg)
 
 #### 补码
 
@@ -89,7 +89,7 @@ $$
 $$
 其中 $y_{-1}=0$，即初始化附加位。
 
-![booth](./fig/booth.svg)
+![booth](https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/booth.svg)
 
 ### 除法
 
@@ -105,9 +105,9 @@ $$
 
   - $x=-0.1101$，$y=0.1011$
 
-    ![div](./fig/div.svg)
+    ![div](https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/div.svg)
 
-![div_hard](./fig/div_hard.svg)
+![div_hard](https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/div_hard.svg)
 
 ### 浮点数
 
@@ -148,5 +148,5 @@ $$
 - 浮点数加法、减法不可结合
 - 浮点数也不能进行相等比较
 
-![float](./fig/float.svg)
+![float](https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/float.svg)
 

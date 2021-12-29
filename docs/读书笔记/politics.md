@@ -2,12 +2,10 @@
 
 ## 马克思原理
 
-![](./fig/max.png)
+![](https://pic.imgdb.cn/item/61cbf5112ab3f51d91abdbfc.png)
 
 ## 思修法基
 
-![](./fig/policy1.png)
-
-![](./fig/policy2.png)
-
-![](./fig/policy3.png)
+![](https://pic.imgdb.cn/item/61cbf51b2ab3f51d91abe59c.png)
+![](https://pic.imgdb.cn/item/61cbf51b2ab3f51d91abe5a8.png)
+![](https://pic.imgdb.cn/item/61cbf51b2ab3f51d91abe5b2.png)

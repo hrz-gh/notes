@@ -2,7 +2,7 @@
 
 ## 指令
 
-![MIPSrefcard](./fig/MIPSrefcard.svg)
+![MIPSrefcard](https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/MIPSrefcard.svg)
 
 | 类型 |       代表指令        |              作用              |
 | :--: | :-------------------: | :----------------------------: |
@@ -19,11 +19,11 @@
 
 ### 控制器
 
-![appendix_D-6-7](./fig/appendix_D-6-7.svg)
+![appendix_D-6-7](https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/appendix_D-6-7.svg)
 
 ### 数据通路
 
-![simple_cpu](./fig/simple_cpu.svg)
+![simple_cpu](https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/simple_cpu.svg)
 
 |    器件     |    端口    |           可能值           |
 | :---------: | :--------: | :------------------------: |
@@ -41,7 +41,7 @@
 
 ### 数据通路
 
-![muti_cpu](./fig/muti_cpu.svg)
+![muti_cpu](https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/muti_cpu.svg)
 
 ## 流水线技术
 
@@ -64,13 +64,13 @@
 
 MIPS指令流水无后两种冲突，在ID段完成所有读操作，WB段所有写操作。
 
-![data_hazard](./fig/data_hazard.svg)
+![data_hazard](https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/data_hazard.svg)
 
 CC2, CC3发生写后读冲突。
 
 #### 旁路技术
 
-![data_hazard1](./fig/data_hazard1.svg)
+![data_hazard1](https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/data_hazard1.svg)
 
 - 检测
 
@@ -87,7 +87,7 @@ Rd可能是原指令的rt或rd值。
 
 - 旁路单元
 
-![forwarding](./fig/forwarding.svg)
+![forwarding](https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/forwarding.svg)
 
 1. EX hazard:
 
@@ -117,7 +117,7 @@ and (MEM/WB.RegisterRd = ID/EX.RegisterRt)) ForwardB = 01
 
 #### 暂停
 
-![lw_stall](./fig/lw_stall.svg)
+![lw_stall](https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/lw_stall.svg)
 
 ```
 if (ID/EX.MemRead and
@@ -138,7 +138,7 @@ stall the pipeline
 
 #### 数据通路
 
-![data_hazard_cir](./fig/data_hazard_cir.svg)
+![data_hazard_cir](https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/data_hazard_cir.svg)
 
 ### 控制冲突
 
@@ -159,7 +159,7 @@ stall the pipeline
   - 保留IF/ID段寄存器的值(IF/ID寄存器=BEQ的后一条指令)
   - 当前指令的控制信号为0(ID/EX寄存器=0)
 
-![control_hazard](./fig/control_hazard.svg)
+![control_hazard](https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/control_hazard.svg)
 
 由于beq和前一条指令可能存在数据冲突，所以数据旁路还需要提前。
 
@@ -173,7 +173,7 @@ stall the pipeline
 
 硬件根据上次分支的结果进行本次预测
 
-![Screenshot_2021-11-18_20-56-35](./fig/Screenshot_2021-11-18_20-56-35.png)
+![Screenshot_2021-11-18_20-56-35](https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/Screenshot_2021-11-18_20-56-35.png)
 
 可增加至２位预测位。
 
@@ -204,5 +204,5 @@ stall the pipeline
 
 如下图为在EX阶段增加一个异常检测的数据通路，若发生异常，还需将IF/ID写入nop，ID/EX，EX/MEM的控制信号写0。
 
-![Screenshot_2021-11-18_21-02-46](./fig/Screenshot_2021-11-18_21-02-46.png)
+![Screenshot_2021-11-18_21-02-46](https://gitee.com/mostiray/Images_bed/raw/master/notes/cod/Screenshot_2021-11-18_21-02-46.png)
 

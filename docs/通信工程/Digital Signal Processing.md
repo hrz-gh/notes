@@ -5,7 +5,7 @@
 1. 连续信号频谱非周期，离散信号频谱周期
 2. 离散周期信号频谱离散周期
 
-![t.png](./fig/WEBRESOURCE0833003b57c43afdc320ac9e35b0cb33.png)
+![t.png](https://gitee.com/mostiray/Images_bed/raw/master/config/WEBRESOURCE0833003b57c43afdc320ac9e35b0cb33.png)
 
 ## 常用的z变换
 
