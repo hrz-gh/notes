@@ -649,6 +649,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/ACM/PAT/PAT%20A2022%E6%98%A5%20%E6%9C%80%E5%90%8E/" class="md-nav__link">
+        PAT A2022春 最后一题
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -2481,6 +2495,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#pgfault_handler" class="md-nav__link">
+    pgfault_handler
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do_pgfault" class="md-nav__link">
+    do_pgfault
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3797,6 +3825,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#pgfault_handler" class="md-nav__link">
+    pgfault_handler
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do_pgfault" class="md-nav__link">
+    do_pgfault
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3882,16 +3924,75 @@ page_table_begin -&gt; +---------------------------------+ 0x001bb000
 <p>TTS 中的 ess0 和 esp0 加载内核栈地址（定义在 <code>entry.S</code> 中），大小为 2 页。</p>
 <p>ltr是将gdt中tss描述符索引值加载到tr中。</p>
 <h2 id="idt_init">idt_init</h2>
-<p>共256个中断向量，[32, 255]可由操作系统定义。其地址保存在<code>__vectors</code>中，需要将其加载到IDT中去，IDT包含3种类型的Descriptor：</p>
+<p>IDT包含3种类型的Descriptor：
+- Task-gate descriptor （这里没有使用）
+- Interrupt-gate descriptor （中断方式用到，Interrupt会被CPU自动禁止）
+- Trap-gate descriptor（系统调用用到，CPU不改变中断）</p>
+<p>中断访问如下图，需要进行两次特权级检测，<code>CPL&lt;=DPL（门）</code>且<code>CPL&gt;=DPL（段）</code>，而<code>CPL&gt;DPL（段）</code>满足了用户态到系统态的跳转。：</p>
+<p><img alt="" src="https://gitee.com/mostiray/Images_bed/raw/master/202203060925365.svg" /></p>
+<p>而普通访问内存只需要进行一次特权级检测，满足：<code>MAX(CPL, RPL) &lt;= DPL(段)</code>即可。</p>
+<p>中断处理时，进行特权级切换如下图：</p>
+<p><img alt="" src="https://gitee.com/mostiray/Images_bed/raw/master/202203050903500.svg" /></p>
 <ul>
-<li>Task-gate descriptor （这里没有使用）</li>
-<li>Interrupt-gate descriptor （中断方式用到，Interrupt会被CPU自动禁止）</li>
-<li>Trap-gate descriptor（系统调用用到，CPU不改变中断）</li>
+<li>共256个中断向量，[32, 255]可由操作系统定义。其地址保存在<code>__vectors</code>中，需要将其加载到IDT中去，所有IDT项中只有<code>idt[T_SWITCH_TOK=121]</code>（对应系统调用）中的DPL为<code>DPL_USER=3</code>，其他的为<code>DPL_KERNEL=0</code>。而门中选择子位数为16位，实际只用了高13位，低3位为0。</li>
+<li><code>vector8</code>到<code>vector14</code>会由硬件压入相应的<code>error_code</code>，为统一操作，其余不需要<code>error_code</code>的均压入 0 填充 <code>error_code</code>的位置。</li>
 </ul>
-<p>访问一个门特权级检测：CPL&lt;=DPL（门）且CPL&gt;=DPL（段），CPL&gt;DPL（段）满足了用户态到系统态的跳转。所有IDT项中只有<code>idt[T_SWITCH_TOK=121]</code>（对应系统调用）中的DPL为<code>DPL_USER=3</code>，其他的为<code>DPL_KERNEL=0</code>。而门中选择子位数为16位，实际只用了高13位，低3位为0。</p>
-<p>中断处理时：
-- 由硬件保存完对应的值后，多数中断均压入0代表error_code，以及相应的中断号，某些中断的error_code由硬件压入，如<code>vector8</code>到<code>vector14</code>。
-- 服务例程参数保存在<code>trapframe</code>中，其中<code>pushal</code>压栈的顺序为：eax，ecx，edx，ebx，oesp，ebp，ebp，esi，edi</p>
+<p>统一接口为以下代码，对应<a href="../struct/#trapframe"><code>trapframe</code></a>中的值， 其中<code>pushal</code>压栈的顺序为：eax，ecx，edx，ebx，oesp，ebp，ebp，esi，edi。</p>
+<pre><code class="language-c">__alltraps:
+    # push registers to build a trap frame
+    # therefore make the stack look like a struct trapframe
+    pushl %ds
+    pushl %es
+    pushl %fs
+    pushl %gs
+    pushal
+
+    # load GD_KDATA into %ds and %es to set up data segments for kernel
+    movl $GD_KDATA, %eax
+    movw %ax, %ds
+    movw %ax, %es
+
+    # push %esp to pass a pointer to the trapframe as an argument to trap()
+    pushl %esp
+
+    # call trap(tf), where tf=%esp
+    call trap
+
+    # pop the pushed stack pointer
+    popl %esp
+
+    # return falls through to trapret...
+</code></pre>
+<h2 id="pgfault_handler">pgfault_handler</h2>
+<ul>
+<li>初始化 <code>struct mm_struct *mm = (check_mm_struct != NULL ? check_mm_struct  : current-&gt;mm )</code></li>
+<li>调用 <a href="./#do_pgfault"><code>do_pgfault(mm, tf-&gt;tf_err, rcr2())</code></a>，<code>rcr2</code> 为获取 cr2 值，其中保存了引起页访问异常的线性地址</li>
+</ul>
+<h2 id="do_pgfault">do_pgfault</h2>
+<ul>
+<li>检测 <code>add</code> 是否为 <code>mm</code> 中的合法地址</li>
+<li>检测异常错误码与 <code>add</code> 权限的对应关系<ul>
+<li>页访问异常错误码有32位。位0为 0表示对应物理页不存在；位１为１表示写异常，位２为１表示访问权限异常（比如用户态程序访问内核空间的数据）</li>
+<li>只检测了 <code>error_code</code> 的最低 2 位</li>
+</ul>
+</li>
+<li>按 <code>vma-&gt;flags</code> 定义 <code>pte</code> 权限，若空闲物理内存足够，获取其 <code>pte</code>：<ul>
+<li>全 0 时，表示不存在，<code>pte</code> 第 0 位 <code>pte_p</code> 为 1 时表示页在内存中，当<code>pte_p</code>为 0 且<code>offset</code>不为 0 时，表示页到硬盘扇区的一个映射</li>
+<li>全 0 时，内存足够时，创建一页</li>
+<li>否则若 <code>swap</code> 分区初始化已经完成，调用 <code>swap_in</code> 加载外存</li>
+</ul>
+</li>
+</ul>
+<pre><code>pte
+-------------------------
+| offset | reserved | 0 |
+-------------------------
+24 bits    7 bits   1 bit
+
+</code></pre>
+<ul>
+<li></li>
+</ul>
 
               
             </article>

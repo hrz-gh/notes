@@ -649,6 +649,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/ACM/PAT/PAT%20A2022%E6%98%A5%20%E6%9C%80%E5%90%8E/" class="md-nav__link">
+        PAT A2022春 最后一题
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -2471,6 +2485,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#trapframe" class="md-nav__link">
+    trapframe
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mm_struct" class="md-nav__link">
+    mm_struct
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     段页映射机制
   </a>
@@ -2491,6 +2519,48 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#proc_struct" class="md-nav__link">
+    proc_struct
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pcb" class="md-nav__link">
+    PCB 全局变量
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proc_state" class="md-nav__link">
+    proc_state
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    段选择符
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    段描述符
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    门描述符
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tss" class="md-nav__link">
     TSS
   </a>
@@ -2498,7 +2568,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     特权级切换
   </a>
   
@@ -3784,6 +3854,20 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#trapframe" class="md-nav__link">
+    trapframe
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mm_struct" class="md-nav__link">
+    mm_struct
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     段页映射机制
   </a>
@@ -3804,6 +3888,48 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#proc_struct" class="md-nav__link">
+    proc_struct
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pcb" class="md-nav__link">
+    PCB 全局变量
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proc_state" class="md-nav__link">
+    proc_state
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    段选择符
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    段描述符
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    门描述符
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tss" class="md-nav__link">
     TSS
   </a>
@@ -3811,7 +3937,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     特权级切换
   </a>
   
@@ -3880,6 +4006,74 @@ struct Page {
     uintptr_t pra_vaddr;            // used for pra (page replace algorithm)
 };
 </code></pre>
+<h2 id="trapframe">trapframe</h2>
+<pre><code class="language-c">/* registers as pushed by pushal */
+struct pushregs {
+    uint32_t reg_edi;
+    uint32_t reg_esi;
+    uint32_t reg_ebp;
+    uint32_t reg_oesp;          /* Useless */
+    uint32_t reg_ebx;
+    uint32_t reg_edx;
+    uint32_t reg_ecx;
+    uint32_t reg_eax;
+};
+
+
+struct trapframe {
+    struct pushregs tf_regs;
+    uint16_t tf_gs;
+    uint16_t tf_padding0;
+    uint16_t tf_fs;
+    uint16_t tf_padding1;
+    uint16_t tf_es;
+    uint16_t tf_padding2;
+    uint16_t tf_ds;
+    uint16_t tf_padding3;
+    uint32_t tf_trapno;
+    /* below here defined by x86 hardware */
+    uint32_t tf_err;
+    uintptr_t tf_eip;
+    uint16_t tf_cs;
+    uint16_t tf_padding4;
+    uint32_t tf_eflags;
+    /* below here only when crossing rings, such as from user to kernel */
+    uintptr_t tf_esp;
+    uint16_t tf_ss;
+    uint16_t tf_padding5;
+} __attribute__((packed));
+</code></pre>
+<h2 id="mm_struct">mm_struct</h2>
+<pre><code class="language-c">struct vma_struct {
+    struct mm_struct *vm_mm; // the set of vma using the same PDT 
+    uintptr_t vm_start;      //    start addr of vma    
+    uintptr_t vm_end;        // end addr of vma
+    uint32_t vm_flags;       // flags of vma
+    list_entry_t list_link;  // linear list link which sorted by start addr of vma
+};
+
+#define le2vma(le, member)                  \
+    to_struct((le), struct vma_struct, member)
+
+#define VM_READ                 0x00000001
+#define VM_WRITE                0x00000002
+#define VM_EXEC                 0x00000004
+#define VM_STACK                0x00000008
+
+// the control struct for a set of vma using the same PDT
+struct mm_struct {
+    list_entry_t mmap_list;        // linear list link which sorted by start addr of vma
+    struct vma_struct *mmap_cache; // current accessed vma, used for speed purpose
+    pde_t *pgdir;                  // the PDT of these vma
+    int map_count;                 // the count of these vma
+    void *sm_priv;                 // the private data for swap manager
+    int mm_count;                  // the number ofprocess which shared the mm
+    semaphore_t mm_sem;            // mutex for using dup_mmap fun to duplicat the mm 
+    int locked_by;                 // the lock owner process's pid
+
+};
+</code></pre>
+<p><img alt="" src="https://gitee.com/mostiray/Images_bed/raw/master/202203061707802.svg" /></p>
 <h2 id="_1">段页映射机制</h2>
 <p><img alt="" src="https://gitee.com/mostiray/Images_bed/raw/master/202203031058256.svg" /></p>
 <h3 id="cr3-pde-pte">cr3, pde, pte</h3>
@@ -3889,18 +4083,69 @@ struct Page {
 <li>A: 1 if this page has been accessed</li>
 </ul>
 <p><img alt="" src="https://gitee.com/mostiray/Images_bed/raw/master/202203031129077.svg" /></p>
-<p><strong>段选择符</strong></p>
+<h2 id="proc_struct">proc_struct</h2>
+<pre><code>struct proc_struct {
+    enum proc_state state;                      // Process state
+    int pid;                                    // Process ID
+    int runs;                                   // the running times of Proces
+    uintptr_t kstack;                           // Process kernel stack
+    volatile bool need_resched;                 // bool value: need to be rescheduled to release CPU?
+    struct proc_struct *parent;                 // the parent process
+    struct mm_struct *mm;                       // Process's memory management field
+    struct context context;                     // Switch here to run process
+    struct trapframe *tf;                       // Trap frame for current interrupt
+    uintptr_t cr3;                              // CR3 register: the base addr of Page Directroy Table(PDT)
+    uint32_t flags;                             // Process flag
+    char name[PROC_NAME_LEN + 1];               // Process name
+    list_entry_t list_link;                     // Process link list
+    list_entry_t hash_link;                     // Process hash list
+    int exit_code;                              // exit code (be sent to parent proc)
+    uint32_t wait_state;                        // waiting state
+    struct proc_struct *cptr, *yptr, *optr;     // relations between processes
+    struct run_queue *rq;                       // running queue contains Process
+    list_entry_t run_link;                      // the entry linked in run queue
+    int time_slice;                             // time slice for occupying the CPU
+    skew_heap_entry_t lab6_run_pool;            // FOR LAB6 ONLY: the entry in the run pool
+    uint32_t lab6_stride;                       // FOR LAB6 ONLY: the current stride of the process
+    uint32_t lab6_priority;                     // FOR LAB6 ONLY: the priority of process, set by lab6_set_priority(uint32_t)
+    struct files_struct *filesp;                // the file related info(pwd, files_count, files_array, fs_semaphore) of process
+};
+</code></pre>
+<h2 id="pcb">PCB 全局变量</h2>
+<p>在 <code>kern/process/proc.c</code> 维护以下全局变量：</p>
+<pre><code class="language-c">// the process set's list
+list_entry_t proc_list;
+// 所有进程控制块的双向线性列表，proc_struct 中的成员变量list_link 将链接入这个链表中。
+static list_entry_t hash_list[HASH_LIST_SIZE];
+// idle proc
+struct proc_struct *idleproc = NULL;
+// 此指针将指向第一个用户态进程
+struct proc_struct *initproc = NULL;
+// 当前占用CPU且处于“运行”状态进程控制块指针
+struct proc_struct *current = NULL;
+// 进程总数
+static int nr_process = 0;
+</code></pre>
+<h2 id="proc_state">proc_state</h2>
+<pre><code class="language-c">enum proc_state {
+    PROC_UNINIT = 0,  // uninitialized
+    PROC_SLEEPING,    // sleeping
+    PROC_RUNNABLE,    // runnable(maybe running)
+    PROC_ZOMBIE,      // almost dead, and wait parent proc to reclaim his resource
+};
+</code></pre>
+<h2 id="_2">段选择符</h2>
 <p>在CS中，RPL为CPL</p>
 <p><img alt="段选择子结构" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/ucore/svg1.svg" /></p>
-<p><strong>段描述符</strong></p>
+<h2 id="_3">段描述符</h2>
 <p><img alt="" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/ucore/svg2.svg" /></p>
-<p><strong>门描述符</strong></p>
+<h2 id="_4">门描述符</h2>
 <p><img alt="" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/ucore/svg3.svg" /></p>
 <h2 id="tss">TSS</h2>
 <p><img alt="" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/ucore/svg4.svg" /></p>
 <p>TTS 段描述符</p>
 <p><img alt="" src="https://gitee.com/mostiray/Images_bed/raw/master/notes/ucore/svg5.svg" /></p>
-<h2 id="_2">特权级切换</h2>
+<h2 id="_5">特权级切换</h2>
 <p>3 向 0 转换要向栈中压入 SS，esp</p>
 <p><img alt="" src="https://gitee.com/mostiray/Images_bed/raw/master/202203050903500.svg" /></p>
 

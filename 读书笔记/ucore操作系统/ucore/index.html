@@ -649,6 +649,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/ACM/PAT/PAT%20A2022%E6%98%A5%20%E6%9C%80%E5%90%8E/" class="md-nav__link">
+        PAT A2022春 最后一题
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -2482,28 +2496,29 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#mm" class="md-nav__link">
     mm
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#kern_1" class="md-nav__link">
-    kern
-  </a>
-  
-    <nav class="md-nav" aria-label="kern">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#init_1" class="md-nav__link">
+    init
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mm_1" class="md-nav__link">
+    mm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init_2" class="md-nav__link">
     init
   </a>
   
@@ -3775,28 +3790,29 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#mm" class="md-nav__link">
     mm
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#kern_1" class="md-nav__link">
-    kern
-  </a>
-  
-    <nav class="md-nav" aria-label="kern">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#init_1" class="md-nav__link">
+    init
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mm_1" class="md-nav__link">
+    mm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#init_2" class="md-nav__link">
     init
   </a>
   
@@ -3872,7 +3888,7 @@ CS.Base-&gt;0x000f0000
 <li>初始化终端，显示字符串，显示堆栈中的多层函数调用关系；</li>
 <li>调用<code>pmm_init</code></li>
 </ul>
-<h2 id="mm">mm</h2>
+<h3 id="mm">mm</h3>
 <p><strong>pmm.c::pmm_init</strong></p>
 <ul>
 <li><a href="../struct/#default_pmm_manager">默认物理内存管理器</a>初始化（初始化<a href="../struct/#free_area_t">free_area</a>）</li>
@@ -3882,14 +3898,27 @@ CS.Base-&gt;0x000f0000
 <li>调用 <a href="../detail/#gdt_init"><code>gdt_init</code></a></li>
 <li>返回 <code>kern_init</code></li>
 </ul>
-<h2 id="kern_1">kern</h2>
 <h3 id="init_1">init</h3>
 <p><strong>init.c::kern_init</strong></p>
 <ul>
 <li>调用 <code>pic_init</code>，初始化中断控制器</li>
 <li>调用 <a href="../detail/#idt_init"><code>idt_init</code></a>，初始化中断描述符表</li>
-<li>，初始化时钟中断，使能整个系统的中断机制；</li>
-<li>执行while（1）死循环。</li>
+<li>通过 <code>vmm_init</code>，调用 <a href="../detail/#check_vmm"><code>check_vmm</code></a>，模拟缺页，检测页替换算法</li>
+</ul>
+<h3 id="mm_1">mm</h3>
+<p><strong>vmm.c::check_vmm</strong></p>
+<ul>
+<li>调用 <code>check_vma_struct</code>，检测  <a href="../struct/#mm_struct"><code>mm_struct</code></a> 相应操作的正确性<ul>
+<li>调用 <code>check_pgfault</code>，初始化 <code>check_mm_struct</code>，其页目录地址为 <code>boot_pgdir</code>，向里面插入一个 0 ~ 4M 的合法虚拟地址空间，由于 <code>boot_map_segment</code> 未对 0 ~ 4M 的虚拟地址映射，所以访问 <code>addr = 0x100</code>时，将产生缺页异常，中断号为 0xE （中断向量 vector14），通过 <code>trap_dispatch</code> 进入 <a href="../detail/#pgfault_handler"><code>pgfault_handler</code></a> ，缺页异常处理完成后，对 0 ~ 4M 空间进行读写，检测正确性。</li>
+<li>返回 <code>kern_init</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="init_2">init</h3>
+<p><strong>init.c::kern_init</strong></p>
+<ul>
+<li>初始化调度器</li>
+<li>调用 <code>proc_init</code> </li>
 </ul>
 
               
